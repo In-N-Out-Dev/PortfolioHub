@@ -1,0 +1,45 @@
+{
+  "rules": {
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index",
+          "object",
+          "type"
+        ],
+        "pathGroups": [
+          {
+            "pattern": "react*",
+            "group": "builtin"
+          },
+          {
+            "pattern": "hooks/*",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "components/*",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "styles/*",
+            "group": "internal",
+            "position": "after"
+          }
+        ],
+        "newlines-between": "always",
+        "pathGroupsExcludedImportTypes": ["react*"],
+        "alphabetize": {
+          "order": "asc"
+        }
+      }
+    ]
+  }
+}
