@@ -1,8 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-import { GlobalStyle, theme } from 'styles';
+
 import { ThemeProvider } from '@emotion/react';
+import ReactDOM from 'react-dom/client';
+import { GlobalStyle, theme } from 'styles';
+
+import App from './App';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
