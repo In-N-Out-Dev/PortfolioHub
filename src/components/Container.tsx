@@ -6,7 +6,7 @@ const Container = () => {
 
 const Wrap = styled.div`
   color: red;
-  background-color: ${({ theme }) => theme.colors.PIN};
+  background-color: ${({ theme }) => theme.colors.HIGHTLIGHT};
 `;
 
 export default Container;

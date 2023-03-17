@@ -1,33 +1,15 @@
 export const darkTheme = {
-  MAIN_FONT: '#FFFFFF',
-  SUB_FONT: '#FFFFFF',
-  PIN: '#F5FF80',
-  BACKGROUND: '#0E1116',
-  NAV_BACKGROUND: '#0E1116',
-  COMPONENT: `#0E1116`,
-  CASUAL_LINE: '#20262F',
-  CASUAL_FIELD: '#171B21',
-  CASUAL_SUB_FIELD: '#1B2027',
-  BUTTON_FIELD: '#2C3037',
-  SHADOW: '',
-  TYPE: 'dark',
-  BORDER: '',
+  MAIN_FONT: '#000000',
+  SUB_FONT: '#0D0D0D',
+  HIGHTLIGHT: '#E85913',
+  BACKGROUND: '#FFFFFF',
 };
 
 export const lightTheme: ColorTheme = {
   MAIN_FONT: '#FFFFFF',
-  SUB_FONT: '#000000',
-  PIN: '#F5FF80',
-  BACKGROUND: 'linear-gradient(180deg, #ADE8DF 0%, #DCF8A4 73.81%)',
-  NAV_BACKGROUND: '#A5DCD2',
-  COMPONENT: `rgb(14, 17, 22, 0.08)`,
-  CASUAL_LINE: '#FFFFFF;',
-  CASUAL_FIELD: 'rgba(255, 255, 255, 0.08);',
-  CASUAL_SUB_FIELD: 'rgba(255, 255, 255, 0.1);',
-  BUTTON_FIELD: 'rgba(23, 27, 33, 0.1);',
-  SHADOW: '0px 4px 20px rgba(0, 0, 0, 0.1);',
-  TYPE: 'light',
-  BORDER: '#FFF',
+  SUB_FONT: '#f0f0f0',
+  HIGHTLIGHT: '#E85913',
+  BACKGROUND: '#000000',
 };
 
 const Color = {
