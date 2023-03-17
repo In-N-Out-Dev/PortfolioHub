@@ -1,4 +1,13 @@
 {
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "import"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/warnings",
+    "plugin:prettier/recommended"
+  ],
   "rules": {
     "import/order": [
       "error",
@@ -19,17 +28,7 @@
             "group": "builtin"
           },
           {
-            "pattern": "hooks/*",
-            "group": "internal",
-            "position": "after"
-          },
-          {
-            "pattern": "components/*",
-            "group": "internal",
-            "position": "after"
-          },
-          {
-            "pattern": "styles/*",
+            "pattern": "@/*",
             "group": "internal",
             "position": "after"
           }
