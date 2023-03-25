@@ -36,17 +36,16 @@ export const fontSize = {
 
 // constants
 export const MEDIA_QUERY_BREAK_POINT = {
-  SMALL: '768px',
-  MEDIUM: '1080px',
-  LARGE: '1440px',
-  X_LARGE: '1920px',
+  SMALL: '320px',
+  MEDIUM: '768px',
+  LARGE: '1024px',
 };
 
 export const breakPoint = {
-  small: `@media (max-width: ${MEDIA_QUERY_BREAK_POINT.SMALL})`,
-  medium: `@media (min-width: 769px) and (max-width: ${MEDIA_QUERY_BREAK_POINT.MEDIUM})`,
-  large: `@media (min-width: 1081px) and (max-width: ${MEDIA_QUERY_BREAK_POINT.LARGE})`,
-  xLarge: `@media (min-width: ${MEDIA_QUERY_BREAK_POINT.LARGE})`,
+  small: `@media (max-width: ${MEDIA_QUERY_BREAK_POINT.SMALL})`, // Smaller than mobile size
+  medium: `@media (min-width: 321px) and (max-width: ${MEDIA_QUERY_BREAK_POINT.MEDIUM})`, // Mobile size
+  large: `@media (min-width: 769px) and (max-width: ${MEDIA_QUERY_BREAK_POINT.LARGE})`, // Tablet size
+  xlarge: `@media (min-width: 1025px)`, // Desktop+ size
 };
 
 export type BreakPointType = typeof breakPoint;
