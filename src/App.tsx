@@ -1,11 +1,8 @@
 import Container from '@/components/Container';
+import Layout from './components/common/Layout';
 
 function App() {
-  return (
-    <>
-      <Container />
-    </>
-  );
+  return <Layout content={<Container />} />;
 }
 
 export default App;
