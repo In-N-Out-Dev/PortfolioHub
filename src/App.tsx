@@ -1,8 +1,7 @@
-import Container from '@/components/Container';
-import MainPage from '@/pages/MainPage';
+import Layout from 'components/common/Layout';
 
 function App() {
-  return <MainPage childElement={<Container />} />;
+  return <Layout />;
 }
 
 export default App;

@@ -1,14 +1,17 @@
 import styled from '@emotion/styled';
-import Nav from '@/components/nav/Nav';
-import SideNav from '@/components/nav/SideNav';
+import Nav from 'components/nav/Nav';
+import SideNav from 'components/nav/SideNav';
+import Container from 'components/Container';
 
-const MainPage = ({ childElement }: { childElement: JSX.Element }) => {
+const Layout = () => {
   return (
     <>
       <Nav />
       <MainWrapper>
         <SideNav />
-        <SectionWrapper>{childElement}</SectionWrapper>
+        <SectionWrapper>
+          <Container />
+        </SectionWrapper>
       </MainWrapper>
     </>
   );
@@ -26,4 +29,4 @@ const SectionWrapper = styled.div`
   width: 100%;
 `;
 
-export default MainPage;
+export default Layout;
