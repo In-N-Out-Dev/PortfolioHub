@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import React from 'react';
 
 const Nav = () => {
   return (
@@ -21,7 +20,7 @@ const NavWrapper = styled.nav`
   justify-content: space-between;
   padding: 20px 120px;
   width: 100%;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.MAIN_FONT};
 `;
 
 const Logo = styled.h1`
