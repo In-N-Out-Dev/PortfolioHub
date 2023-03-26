@@ -16,8 +16,15 @@ const IntroContents = () => {
         <li>{INTRODUCE_DATA.contact}</li>
       </Contact>
       <Resume>
-        {INTRODUCE_DATA.resume.map((resume, index) => {
-          return <StackButton url={resume.url}>{resume.title}</StackButton>;
+        {INTRODUCE_DATA.resume.map((resume) => {
+          return (
+            <StackButton
+              key={resume.title}
+              url={resume.url}
+            >
+              {resume.title}
+            </StackButton>
+          );
         })}
       </Resume>
     </Wrap>
