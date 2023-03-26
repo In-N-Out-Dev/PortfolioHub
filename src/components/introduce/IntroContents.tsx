@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import Mail from 'assets/Mail';
+import MailIcon from 'assets/\bMailIcon';
 import StackButton from 'components/common/StackButton';
 
 import INTRODUCE_DATA from './introduceData';
@@ -11,7 +11,7 @@ const IntroContents = () => {
       <Contents>{INTRODUCE_DATA.contnets}</Contents>
       <Contact>
         <li>
-          <Mail />
+          <MailIcon />
         </li>
         <li>{INTRODUCE_DATA.contact}</li>
       </Contact>
