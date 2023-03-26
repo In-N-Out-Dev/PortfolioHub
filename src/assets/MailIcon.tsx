@@ -1,4 +1,4 @@
-const Mail = () => {
+const MailIcon = () => {
   return (
     <svg
       width="15"
@@ -17,4 +17,4 @@ const Mail = () => {
   );
 };
 
-export default Mail;
+export default MailIcon;
