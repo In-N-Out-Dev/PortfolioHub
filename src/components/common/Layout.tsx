@@ -31,4 +31,4 @@ const SectionWrapper = styled.div`
   width: 100%;
 `;
 
-export default MainPage;
+export default Layout;
