@@ -1,7 +1,8 @@
 import styled from '@emotion/styled';
-import Container from 'components/Container';
-import Header from 'components/common/Header';
-import SideNav from 'components/common/SideNav';
+
+import Container from '@/components/Container';
+import Header from '@/components/common/Header';
+import SideNav from '@/components/common/SideNav';
 
 const Layout = () => {
   return (
