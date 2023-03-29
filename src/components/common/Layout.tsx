@@ -1,12 +1,12 @@
 import styled from '@emotion/styled';
-import Nav from 'components/nav/Nav';
-import SideNav from 'components/nav/SideNav';
 import Container from 'components/Container';
+import Header from 'components/common/Header';
+import SideNav from 'components/common/SideNav';
 
 const Layout = () => {
   return (
     <>
-      <Nav />
+      <Header />
       <MainWrapper>
         <SideNav />
         <SectionWrapper>

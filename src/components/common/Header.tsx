@@ -1,20 +1,20 @@
 import styled from '@emotion/styled';
 
-const Nav = () => {
+const Header = () => {
   return (
-    <NavWrapper>
+    <HeaderWrapper>
       <Logo>name here</Logo>
-      <NavMenuWrapper>
+      <ButtonsWrapper>
         <button>contact</button>
         <button>theme toggler</button>
-      </NavMenuWrapper>
-    </NavWrapper>
+      </ButtonsWrapper>
+    </HeaderWrapper>
   );
 };
 
-export default Nav;
+export default Header;
 
-const NavWrapper = styled.nav`
+const HeaderWrapper = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -27,7 +27,7 @@ const Logo = styled.h1`
   font-size: 48px;
 `;
 
-const NavMenuWrapper = styled.div`
+const ButtonsWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 20px;

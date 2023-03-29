@@ -13,7 +13,7 @@ const SideNav = () => {
   );
 };
 
-const SideNavWrapper = styled.aside``;
+const SideNavWrapper = styled.nav``;
 
 const ContentWrapper = styled.ul`
   position: sticky;
