@@ -1,4 +1,4 @@
-const skillsData: SkillData[] = [
+const SKILLS_DATA: SkillData[] = [
   {
     category: 'Category 1',
     skills: [
@@ -6,21 +6,21 @@ const skillsData: SkillData[] = [
       { skill: 'Redux', highlight: true },
       { skill: 'Node.js', highlight: false },
       { skill: 'Next.js', highlight: false },
-      { skill: 'Node.js', highlight: false },
-      { skill: 'Next.js', highlight: false },
-      { skill: 'Node.js', highlight: false },
-      { skill: 'Next.js', highlight: false },
+      { skill: 'Recoil', highlight: false },
+      { skill: 'Zustand', highlight: false },
     ],
   },
   {
     category: 'Category 2',
     skills: [
+      { skill: 'React', highlight: true },
+      { skill: 'Redux', highlight: true },
       { skill: 'Highlight 1', highlight: true },
       { skill: 'Highlight 2', highlight: true },
       { skill: 'Node.js', highlight: false },
       { skill: 'Next.js', highlight: false },
-      { skill: 'Node.js', highlight: false },
-      { skill: 'Next.js', highlight: false },
+      { skill: 'Recoil', highlight: false },
+      { skill: 'Zustand', highlight: false },
     ],
   },
 ];
@@ -35,4 +35,4 @@ export interface SkillData {
   skills: Skill[];
 }
 
-export default skillsData;
+export default SKILLS_DATA;
