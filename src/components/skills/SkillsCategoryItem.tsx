@@ -10,26 +10,25 @@ const Item = styled.li<{ highlight: boolean }>`
   margin: 0px 14px 16px 0px;
   padding: 10px 14px;
   width: fit-content;
-  border: 1px solid
-    ${({
-      highlight,
-      theme: {
-        colors: { HIGHTLIGHT, BUTTON_BORDER },
-      },
-    }) => (highlight ? HIGHTLIGHT : BUTTON_BORDER)};
+  border: 1px solid;
   border-radius: 50px;
-  background-color: ${({
+  ${({
     highlight,
     theme: {
-      colors: { HIGHTLIGHT, BACKGROUND },
+      colors: { HIGHTLIGHT, BUTTON_BORDER, BACKGROUND, MAIN_FONT },
     },
-  }) => (highlight ? HIGHTLIGHT : BACKGROUND)};
-  color: ${({
-    highlight,
-    theme: {
-      colors: { MAIN_FONT, BACKGROUND },
-    },
-  }) => (highlight ? BACKGROUND : MAIN_FONT)};
+  }) =>
+    highlight
+      ? {
+          borderColor: HIGHTLIGHT,
+          backgroundColor: HIGHTLIGHT,
+          color: BACKGROUND,
+        }
+      : {
+          borderColor: BUTTON_BORDER,
+          backgroundColor: BACKGROUND,
+          color: MAIN_FONT,
+        }};
 `;
 
 export default SkillsCategoryItem;

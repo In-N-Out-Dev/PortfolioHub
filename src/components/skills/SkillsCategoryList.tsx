@@ -3,17 +3,14 @@ import { Fragment } from 'react';
 import styled from '@emotion/styled';
 
 import SkillsCategory from './SkillsCategory';
-import skillsData from './SkillsData';
+import SKILLS_DATA from './SkillsData';
 
-const SkillsCategoryContainer = () => {
+const SkillsCategoryList = () => {
   return (
     <CategoryList>
-      {skillsData.map((skillData, i) => (
-        <Fragment key={i}>
-          <SkillsCategory
-            key={i}
-            {...skillData}
-          />
+      {SKILLS_DATA.map((skillData) => (
+        <Fragment key={skillData.category}>
+          <SkillsCategory {...skillData} />
           <Divider />
         </Fragment>
       ))}
@@ -29,4 +26,4 @@ const Divider = styled.hr`
   margin: 34px 0px 50px;
 `;
 
-export default SkillsCategoryContainer;
+export default SkillsCategoryList;

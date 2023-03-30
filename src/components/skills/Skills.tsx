@@ -1,12 +1,12 @@
 import styled from '@emotion/styled';
 
-import SkillsCategoryContainer from './SkillsCategoryContainer';
+import SkillsCategoryList from './SkillsCategoryList';
 
 const Skills = () => {
   return (
     <Container>
       <Title>SKILLS</Title>
-      <SkillsCategoryContainer />
+      <SkillsCategoryList />
     </Container>
   );
 };
