@@ -22,7 +22,7 @@ const SkillsCategoryContainer = () => {
 };
 
 const CategoryList = styled.ul`
-  width: 588px;
+  width: 100%;
 `;
 
 const Divider = styled.hr`
