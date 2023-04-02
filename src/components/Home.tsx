@@ -1,10 +1,10 @@
-import TextChild from '@/components/TextChild';
 import Layout from '@/components/common/Layout';
+import Introduce from '@/components/introduce/Introduce';
 
 const Home = () => {
   return (
     <Layout>
-      <TextChild />
+      <Introduce />
     </Layout>
   );
 };
