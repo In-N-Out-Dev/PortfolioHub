@@ -1,18 +1,19 @@
 import styled from '@emotion/styled';
 
-import Container from '@/components/Container';
 import Header from '@/components/common/Header';
 import SideNav from '@/components/common/SideNav';
 
-const Layout = () => {
+interface LayoutProps {
+  children: React.ReactNode;
+}
+
+const Layout = ({ children }: LayoutProps) => {
   return (
     <>
       <Header />
       <MainWrapper>
         <SideNav />
-        <SectionWrapper>
-          <Container />
-        </SectionWrapper>
+        <SectionWrapper>{children}</SectionWrapper>
       </MainWrapper>
     </>
   );
