@@ -9,15 +9,13 @@ interface StackButtonProps {
 
 const StackButton = ({ children, url }: StackButtonProps) => {
   return (
-    <Border>
-      <a
-        href={url}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        {children}
-      </a>
-    </Border>
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <Border>{children}</Border>
+    </a>
   );
 };
 
