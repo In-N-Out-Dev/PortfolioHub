@@ -1,12 +1,11 @@
-import styled from '@emotion/styled';
+import Introduce from 'components/introduce/Introduce';
 
 const Container = () => {
-  return <Wrap>Container</Wrap>;
+  return (
+    <>
+      <Introduce />
+    </>
+  );
 };
-
-const Wrap = styled.div`
-  color: red;
-  background-color: ${({ theme }) => theme.colors.HIGHTLIGHT};
-`;
 
 export default Container;

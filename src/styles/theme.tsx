@@ -17,7 +17,7 @@ const Color = {
   light: lightTheme,
 };
 
-const mode = 'light' || 'dark';
+const mode = 'dark' || 'light';
 
 export const colors = Color[mode];
 
