@@ -4,24 +4,22 @@ const SideNav = () => {
   return (
     <SideNavWrapper>
       <ContentWrapper>
-        <div>menu</div>
-        <div>menu</div>
-        <div>menu</div>
-        <div>menu</div>
+        <li>menu</li>
+        <li>menu</li>
+        <li>menu</li>
+        <li>menu</li>
       </ContentWrapper>
     </SideNavWrapper>
   );
 };
 
-const SideNavWrapper = styled.aside`
-  background-color: lightblue;
-`;
+const SideNavWrapper = styled.aside``;
 
-const ContentWrapper = styled.div`
+const ContentWrapper = styled.ul`
   position: sticky;
   top: 50vh;
   height: fit-content;
-  border: 1px solid #000;
+  width: 100%;
 `;
 
 export default SideNav;
