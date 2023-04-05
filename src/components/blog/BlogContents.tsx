@@ -11,6 +11,7 @@ const BlogContents = () => {
           image={item.image}
           date={item.date}
           index={(index + 1).toString().padStart(2, '0')}
+          link={item.link}
         />
       ))}
     </Wrapper>
