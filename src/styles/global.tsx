@@ -88,9 +88,9 @@ const style = css`
 
   .sr-only {
     position: absolute;
-    margin: -1px;
-    width: 1px;
-    height: 1px;
+    margin: -0.1rem;
+    width: 0.1rem;
+    height: 0.1rem;
     padding: 0;
     border: 0;
     white-space: nowrap;

@@ -23,7 +23,7 @@ const CategoryList = styled.ul`
 `;
 
 const Divider = styled.hr`
-  margin: 34px 0px 50px;
+  margin: 3.4rem 0 5rem;
 `;
 
 export default SkillsCategoryList;

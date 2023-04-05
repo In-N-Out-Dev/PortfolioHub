@@ -18,7 +18,7 @@ const HeaderWrapper = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 120px;
+  padding: 2rem 12rem;
   width: 100%;
   border-bottom: 1px solid ${({ theme }) => theme.colors.MAIN_FONT};
   background: ${({ theme }) => theme.colors.BACKGROUND};
@@ -33,7 +33,7 @@ const Logo = styled.h1`
 const ButtonsWrapper = styled.div`
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 2rem;
   /* TODO: this code is temp */
   * {
     color: ${({ theme }) => theme.colors.MAIN_FONT};

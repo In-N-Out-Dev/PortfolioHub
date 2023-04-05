@@ -27,7 +27,7 @@ const SkillsList = styled.ul`
   /**
    *  @todos: #10 Skills/modify width of category skill list
    */
-  max-width: 480px;
+  max-width: 48rem;
 `;
 
 export default SkillsCategoryItemList;
