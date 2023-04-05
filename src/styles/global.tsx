@@ -11,7 +11,6 @@ const style = css`
   :after,
   :before {
     box-sizing: border-box;
-    flex-shrink: 0;
   }
   :root {
     -webkit-tap-highlight-color: transparent;
