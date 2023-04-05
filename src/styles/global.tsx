@@ -28,6 +28,13 @@ const style = css`
   body {
     height: 100%;
   }
+  html {
+    /* 62.5% equals to 10px: 1rem = 10px */
+    font-size: 62.5%;
+  }
+  body {
+    font-size: 1.6rem;
+  }
   dl,
   li,
   menu,
