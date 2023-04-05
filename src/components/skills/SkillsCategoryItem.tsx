@@ -15,7 +15,7 @@ const Item = styled.li<{ highlight: boolean }>`
   ${({
     highlight,
     theme: {
-      colors: { HIGHTLIGHT, BUTTON_BORDER, BACKGROUND, MAIN_FONT },
+      colors: { HIGHTLIGHT, BORDER, BACKGROUND, MAIN_FONT },
     },
   }) =>
     highlight
@@ -25,7 +25,7 @@ const Item = styled.li<{ highlight: boolean }>`
           color: BACKGROUND,
         }
       : {
-          borderColor: BUTTON_BORDER,
+          borderColor: BORDER,
           backgroundColor: BACKGROUND,
           color: MAIN_FONT,
         }};
