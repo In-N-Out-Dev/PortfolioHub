@@ -2,7 +2,7 @@ export const lightTheme: ColorTheme = {
   MAIN_FONT: '#000000',
   HIGHTLIGHT: '#E85913',
   BACKGROUND: '#FFFFFF',
-  BORDER: '#D9D9D9',
+  BORDER: '#0D0D0D',
 };
 
 export const darkTheme = {

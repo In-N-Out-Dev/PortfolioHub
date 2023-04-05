@@ -22,7 +22,9 @@ const BlogItem = ({ index, title, date, image }: BlogItemProps) => {
   );
 };
 
-const ItemWrapper = styled.li``;
+const ItemWrapper = styled.li`
+  border-bottom: 1px solid ${({ theme }) => theme.colors.BORDER};
+`;
 
 const ImageWrapper = styled.div`
   background-color: #f5f5f5;
