@@ -11,14 +11,12 @@ const style = css`
   :after,
   :before {
     box-sizing: border-box;
-    flex-shrink: 0;
   }
   :root {
     -webkit-tap-highlight-color: transparent;
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
     cursor: default;
-    line-height: 1.5;
     overflow-wrap: break-word;
     word-break: break-word;
     -moz-tab-size: 4;
@@ -27,6 +25,13 @@ const style = css`
   html,
   body {
     height: 100%;
+  }
+  html {
+    /* 62.5% equals to 10px: 1rem = 10px */
+    font-size: 62.5%;
+  }
+  body {
+    font-size: 1.6rem;
   }
   dl,
   li,
@@ -83,9 +88,9 @@ const style = css`
 
   .sr-only {
     position: absolute;
-    margin: -1px;
-    width: 1px;
-    height: 1px;
+    margin: -0.1rem;
+    width: 0.1rem;
+    height: 0.1rem;
     padding: 0;
     border: 0;
     white-space: nowrap;

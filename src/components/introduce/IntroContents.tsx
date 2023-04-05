@@ -32,34 +32,33 @@ const IntroContents = () => {
 };
 
 const Wrap = styled.div`
-  width: 600px;
+  width: 60rem;
   color: ${({ theme }) => theme.colors.MAIN_FONT};
 `;
 
 const Title = styled.h3`
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
+  margin-bottom: 1.4rem;
+  font-size: 2.4rem;
   font-weight: bold;
 `;
 
 const Contents = styled.p`
   margin-bottom: 1.4rem;
-  font-size: 1rem;
-  line-height: 1.4rem;
+  font-size: 1.6rem;
   white-space: normal;
 `;
 
 const Contact = styled.ul`
   display: flex;
   align-items: center;
-  gap: 9px;
-  margin-bottom: 1.4rem;
-  font-size: 1.1rem;
+  gap: 0.9rem;
+  margin-bottom: 2rem;
+  font-size: 1.4rem;
 `;
 
 const Resume = styled.ul`
   display: flex;
-  gap: 14px;
+  gap: 1.4rem;
 `;
 
 export default IntroContents;

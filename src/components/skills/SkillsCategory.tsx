@@ -17,8 +17,8 @@ const CategoryCard = styled.li``;
 
 const Title = styled.h4`
   font-family: 'Bebas Neue', cursive;
-  margin-bottom: 16px;
-  font-size: 32px;
+  margin-bottom: 1.6rem;
+  font-size: 3.2rem;
 `;
 
 export default SkillsCategory;

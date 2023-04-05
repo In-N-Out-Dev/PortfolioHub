@@ -2,14 +2,14 @@ export const lightTheme: ColorTheme = {
   MAIN_FONT: '#000000',
   HIGHTLIGHT: '#E85913',
   BACKGROUND: '#FFFFFF',
-  BUTTON_BORDER: '#FFFFFF',
+  BORDER: '#D9D9D9',
 };
 
 export const darkTheme = {
   MAIN_FONT: '#FFFFFF',
   HIGHTLIGHT: '#E85913',
   BACKGROUND: '#000000',
-  BUTTON_BORDER: '#D9D9D9',
+  BORDER: '#FFFFFF',
 };
 
 const Color = {
@@ -17,7 +17,7 @@ const Color = {
   light: lightTheme,
 };
 
-const mode = 'dark' || 'light';
+const mode = 'light' || 'dark';
 
 export const colors = Color[mode];
 

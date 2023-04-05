@@ -22,8 +22,8 @@ const Layout = ({ children }: LayoutProps) => {
 const MainWrapper = styled.main`
   display: grid;
   grid-template-columns: 1fr 3fr;
-  gap: 20px;
-  padding: 0 120px;
+  gap: 2rem;
+  padding: 0 12rem;
   background-color: ${({ theme }) => theme.colors.BACKGROUND};
 `;
 

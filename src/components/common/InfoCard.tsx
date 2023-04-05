@@ -30,7 +30,7 @@ const Wrap = styled.section`
 
 const Title = styled.h2`
   font-family: 'Bebas Neue', cursive;
-  font-size: 3rem;
+  font-size: 4.8rem;
   color: ${({ theme }) => theme.colors.MAIN_FONT};
 `;
 

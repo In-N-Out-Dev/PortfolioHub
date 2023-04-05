@@ -18,7 +18,7 @@ const Stroke = styled.div<{ height: number; margin: number }>`
   width: 100%;
   height: ${(props) => props.height + 'px'};
   margin-bottom: ${(props) => props.margin + 'px'};
-  background-color: ${({ theme }) => theme.colors.SUB_FONT};
+  background-color: ${({ theme }) => theme.colors.BORDER};
 `;
 
 export default Divider;

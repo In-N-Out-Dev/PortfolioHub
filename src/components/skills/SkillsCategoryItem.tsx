@@ -7,15 +7,15 @@ const SkillsCategoryItem = ({ highlight, skill }: Skill) => {
 };
 
 const Item = styled.li<{ highlight: boolean }>`
-  margin: 0px 14px 16px 0px;
-  padding: 10px 14px;
+  margin: 0 1.4rem 1.6rem 0;
+  padding: 1rem 1.4rem;
   width: fit-content;
-  border: 1px solid;
-  border-radius: 50px;
+  border: 0.1rem solid;
+  border-radius: 5rem;
   ${({
     highlight,
     theme: {
-      colors: { HIGHTLIGHT, BUTTON_BORDER, BACKGROUND, MAIN_FONT },
+      colors: { HIGHTLIGHT, BORDER, BACKGROUND, MAIN_FONT },
     },
   }) =>
     highlight
@@ -25,7 +25,7 @@ const Item = styled.li<{ highlight: boolean }>`
           color: BACKGROUND,
         }
       : {
-          borderColor: BUTTON_BORDER,
+          borderColor: BORDER,
           backgroundColor: BACKGROUND,
           color: MAIN_FONT,
         }};

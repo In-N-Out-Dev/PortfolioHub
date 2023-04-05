@@ -18,7 +18,7 @@ const Container = styled.li`
 
 const Title = styled.h3`
   font-family: 'Bebas Neue', cursive;
-  font-size: 48px;
+  font-size: 4.8rem;
 `;
 
 export default Skills;
