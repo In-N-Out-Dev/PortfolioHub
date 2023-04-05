@@ -1,5 +1,4 @@
-import styled from '@emotion/styled';
-
+import * as S from './Contact.style';
 import ContactContents from './ContactContents';
 import ContactTitle from './ContactTitle';
 
@@ -9,18 +8,12 @@ const Contact = () => {
   return (
     <>
       <Divider />
-      <Section>
+      <S.Section>
         <ContactTitle />
         <ContactContents />
-      </Section>
+      </S.Section>
     </>
   );
 };
-
-const Section = styled.section`
-  display: flex;
-  justify-content: space-between;
-  height: 9.3rem;
-`;
 
 export default Contact;
