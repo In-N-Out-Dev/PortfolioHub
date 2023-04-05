@@ -20,9 +20,11 @@ const StackButton = ({ children, url }: StackButtonProps) => {
 };
 
 const Border = styled.li`
-  padding: 0.4rem 0.6rem;
-  border: 1.5px solid ${({ theme }) => theme.colors.MAIN_FONT};
-  border-radius: 2.3rem;
+  padding: 10px 14px;
+  border: 1px solid ${({ theme }) => theme.colors.MAIN_FONT};
+  border-radius: 50px;
+  font-size: 1.6rem;
+  font-weight: 600;
 
   :hover {
     border: 1.5px solid ${({ theme }) => theme.colors.HIGHTLIGHT};

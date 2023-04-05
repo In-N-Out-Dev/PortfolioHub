@@ -45,7 +45,6 @@ const Title = styled.h3`
 const Contents = styled.p`
   margin-bottom: 14px;
   font-size: 1.6rem;
-  line-height: 2.2rem;
   white-space: normal;
 `;
 

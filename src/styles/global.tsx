@@ -17,7 +17,6 @@ const style = css`
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
     cursor: default;
-    line-height: 1.5;
     overflow-wrap: break-word;
     word-break: break-word;
     -moz-tab-size: 4;
