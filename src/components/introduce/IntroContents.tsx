@@ -37,15 +37,15 @@ const Wrap = styled.div`
 `;
 
 const Title = styled.h3`
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
+  margin-bottom: 14px;
+  font-size: 2.4rem;
   font-weight: bold;
 `;
 
 const Contents = styled.p`
-  margin-bottom: 1.4rem;
-  font-size: 1rem;
-  line-height: 1.4rem;
+  margin-bottom: 14px;
+  font-size: 1.6rem;
+  line-height: 2.2rem;
   white-space: normal;
 `;
 
@@ -53,8 +53,8 @@ const Contact = styled.ul`
   display: flex;
   align-items: center;
   gap: 9px;
-  margin-bottom: 1.4rem;
-  font-size: 1.1rem;
+  margin-bottom: 20px;
+  font-size: 1.4rem;
 `;
 
 const Resume = styled.ul`

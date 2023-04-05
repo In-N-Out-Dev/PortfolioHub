@@ -24,7 +24,8 @@ const HeaderWrapper = styled.header`
 `;
 
 const Logo = styled.h1`
-  font-size: 48px;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 4.8rem;
 `;
 
 const ButtonsWrapper = styled.div`
