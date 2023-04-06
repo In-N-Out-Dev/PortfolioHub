@@ -4,6 +4,8 @@ import Layout from 'components/common/Layout';
 import Introduce from 'components/introduce/Introduce';
 import Skills from 'components/skills/Skills';
 
+import Project from './project/Project';
+
 import Carrer from '@/components/career/Career';
 
 const Home = () => {
@@ -14,6 +16,7 @@ const Home = () => {
       <Blog />
       <Carrers />
       <Carrer />
+      <Project />
     </Layout>
   );
 };
