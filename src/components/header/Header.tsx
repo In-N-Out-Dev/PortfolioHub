@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import ThemeToggleButton from 'components/header/ThemeToggleButton';
 
 const Header = () => {
   return (
@@ -6,7 +7,7 @@ const Header = () => {
       <Logo>name here</Logo>
       <ButtonsWrapper>
         <button>contact</button>
-        <button>theme toggler</button>
+        <ThemeToggleButton />
       </ButtonsWrapper>
     </HeaderWrapper>
   );

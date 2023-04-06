@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
-import Header from '@/components/common/Header';
 import SideNav from '@/components/common/SideNav';
+import Header from '@/components/header/Header';
 
 interface LayoutProps {
   children: React.ReactNode;
