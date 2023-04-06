@@ -12,7 +12,10 @@ interface InfoCardProps {
 const InfoCard = ({ title, children }: InfoCardProps) => {
   return (
     <>
-      <Divider />
+      <Divider
+        height={2}
+        backgroundBlack={true}
+      />
       <Wrap>
         <Title>{title}</Title>
         <Article>{children}</Article>

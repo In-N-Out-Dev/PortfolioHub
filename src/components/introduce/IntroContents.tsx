@@ -72,6 +72,7 @@ const Contents = styled.p`
   margin-bottom: 1.4rem;
   font-size: 1.6rem;
   white-space: normal;
+  line-height: 2.2rem;
 `;
 
 const Contact = styled.ul`

@@ -7,10 +7,10 @@ import CARRER_DATA from '@/components/career/careerData';
 const CareerContents = () => {
   return (
     <Wrap>
-      {CARRER_DATA.map((carrer) => {
+      {CARRER_DATA.map((carrer, index) => {
         return (
           <>
-            <TitleWrap>
+            <TitleWrap key={index}>
               <h3>{carrer.company}</h3>
               {carrer.cureentCompany ? (
                 <CurrentDate>{carrer.date}</CurrentDate>
@@ -20,9 +20,6 @@ const CareerContents = () => {
             </TitleWrap>
             <Position>{carrer.position}</Position>
             <Contents>{carrer.contnets}</Contents>
-            <Contact>
-              <li></li>
-            </Contact>
             <Divider />
           </>
         );
@@ -84,17 +81,14 @@ const Position = styled.p`
 `;
 
 const Contents = styled.p`
-  margin-bottom: 1.4rem;
+  margin-bottom: 3.8rem;
   font-size: 1.6rem;
+  line-height: 2.2rem;
   white-space: normal;
-`;
 
-const Contact = styled.ul`
-  display: flex;
-  align-items: center;
-  gap: 0.9rem;
-  margin-bottom: 2rem;
-  font-size: 1.4rem;
+  ${({ theme }) => theme.breakPoint.small} {
+    margin-bottom: 6rem;
+  }
 `;
 
 export default CareerContents;
