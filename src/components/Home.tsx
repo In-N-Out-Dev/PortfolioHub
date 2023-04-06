@@ -4,6 +4,8 @@ import Layout from 'components/common/Layout';
 import Introduce from 'components/introduce/Introduce';
 import Skills from 'components/skills/Skills';
 
+import Carrer from '@/components/career/Career';
+
 const Home = () => {
   return (
     <Layout>
@@ -11,6 +13,7 @@ const Home = () => {
       <Skills />
       <Blog />
       <Carrers />
+      <Carrer />
     </Layout>
   );
 };
