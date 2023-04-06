@@ -1,6 +1,8 @@
 import Layout from 'components/common/Layout';
 import Introduce from 'components/introduce/Introduce';
 
+import Project from './project/Project';
+
 import Carrer from '@/components/career/Career';
 
 const Home = () => {
@@ -8,6 +10,7 @@ const Home = () => {
     <Layout>
       <Introduce />
       <Carrer />
+      <Project />
     </Layout>
   );
 };
