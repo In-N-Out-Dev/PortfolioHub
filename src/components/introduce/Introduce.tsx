@@ -1,5 +1,3 @@
-import React from 'react';
-
 import InfoCard from 'components/common/InfoCard';
 import IntroContents from 'components/introduce/IntroContents';
 
