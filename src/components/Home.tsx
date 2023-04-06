@@ -1,12 +1,13 @@
-import Carrers from 'components/carrer/Carrers';
 import Layout from 'components/common/Layout';
 import Introduce from 'components/introduce/Introduce';
+
+import Carrer from '@/components/career/Career';
 
 const Home = () => {
   return (
     <Layout>
       <Introduce />
-      <Carrers />
+      <Carrer />
     </Layout>
   );
 };
