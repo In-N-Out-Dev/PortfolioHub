@@ -1,4 +1,5 @@
 import Blog from 'components/blog/Blog';
+import Carrers from 'components/carrer/Carrers';
 import Layout from 'components/common/Layout';
 import Introduce from 'components/introduce/Introduce';
 import Skills from 'components/skills/Skills';
@@ -9,6 +10,7 @@ const Home = () => {
       <Introduce />
       <Skills />
       <Blog />
+      <Carrers />
     </Layout>
   );
 };
