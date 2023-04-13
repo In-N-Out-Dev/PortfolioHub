@@ -32,3 +32,53 @@ export const FoldedCardTitle = styled.h4`
   font-size: 2rem;
   white-space: nowrap;
 `;
+
+/**
+ * OpenedCard
+ */
+
+export const OpenedCard = styled.li<{ width: number }>`
+  position: relative;
+  ${({ theme: { colors } }) => {
+    return {
+      color: colors.BACKGROUND,
+      backgroundColor: colors.HIGHTLIGHT,
+    };
+  }};
+  padding: 3.2rem 2.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: ${({ width }) => width}rem;
+`;
+
+export const OpenedCardInfoWrapper = styled.div`
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+`;
+
+export const OpenedCardTitleWrapper = styled.div`
+  font-size: 3.6rem;
+  line-height: 1;
+`;
+
+export const OpenedCardNo = styled.p`
+  font-family: 'Bebas Neue', cursive;
+`;
+
+export const OpenedInfoDate = styled.p`
+  font-size: 1.4rem;
+`;
+
+export const SkillList = styled.ul`
+  display: flex;
+  gap: 1rem;
+  justify-content: right;
+`;
+
+export const Skill = styled.li`
+  font-size: 1.2rem;
+  border: 0.1rem solid ${({ theme }) => theme.colors.BACKGROUND};
+  padding: 0.8rem 0.7rem;
+`;
