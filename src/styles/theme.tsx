@@ -1,15 +1,21 @@
 export const lightTheme: ColorTheme = {
-  MAIN_FONT: '#000000',
+  MAIN_FONT: '#0D0D0D',
   HIGHTLIGHT: '#E85913',
-  BACKGROUND: '#FFFFFF',
+  CONTENT_FONT: '#444444',
+  SUB_FONT: '#858585',
   BORDER: '#0D0D0D',
+  BUTTON_BORDER: '#D9D9D9',
+  BACKGROUND: '#FFFFFF',
 };
 
 export const darkTheme = {
   MAIN_FONT: '#FFFFFF',
   HIGHTLIGHT: '#E85913',
-  BACKGROUND: '#000000',
+  CONTENT_FONT: '#444444',
+  SUB_FONT: '#858585',
   BORDER: '#FFFFFF',
+  BUTTON_BORDER: '#333333',
+  BACKGROUND: '#000000',
 };
 
 const Color = {
