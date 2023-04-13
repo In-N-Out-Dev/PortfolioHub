@@ -81,7 +81,7 @@ const TextWrapper = styled.div`
 `;
 
 const IndexText = styled.p`
-  font-family: 'Bebas Neue';
+  font-family: 'Bebas Neue', cursive;
   font-size: 2.4rem;
   color: ${({ theme }) => theme.colors.MAIN_FONT};
 `;
