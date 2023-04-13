@@ -1,6 +1,5 @@
 import { useTheme } from '@emotion/react';
-
-import * as S from './Portfolio.style';
+import styled from '@emotion/styled';
 
 import GalleryIcon from '@/assets/GalleryIcon';
 import ListIcon from '@/assets/ListIcon';
@@ -14,18 +13,36 @@ const PortfolioHeader = ({ portfolioState, setPortfolioState }: PortfolioHeaderP
     portfolioState === type ? colors.HIGHTLIGHT : colors.MAIN_FONT;
 
   return (
-    <S.TitleWrapper>
-      <S.Title>PORTFOLIO</S.Title>
-      <S.IconWrapper>
+    <TitleWrapper>
+      <Title>PORTFOLIO</Title>
+      <IconWrapper>
         <button onClick={() => handleClick('GALLERY')}>
           <GalleryIcon color={isHighlighted('GALLERY')} />
         </button>
         <button onClick={() => handleClick('LIST')}>
           <ListIcon color={isHighlighted('LIST')} />
         </button>
-      </S.IconWrapper>
-    </S.TitleWrapper>
+      </IconWrapper>
+    </TitleWrapper>
   );
 };
+
+const TitleWrapper = styled.div`
+  margin-bottom: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const Title = styled.h3`
+  font-family: 'Bebas Neue', cursive;
+  font-size: 4.8rem;
+`;
+
+const IconWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+`;
 
 export default PortfolioHeader;

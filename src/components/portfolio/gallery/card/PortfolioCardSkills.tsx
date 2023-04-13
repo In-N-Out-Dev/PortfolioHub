@@ -1,13 +1,19 @@
-import * as S from './PortfolioCard.style';
+import styled from '@emotion/styled';
 
 const PortfolioCardSkills = ({ skills }: { skills: string[] }) => {
   return (
     <>
       {skills.map((skill) => (
-        <S.Skill key={skill}>{skill}</S.Skill>
+        <Skill key={skill}>{skill}</Skill>
       ))}
     </>
   );
 };
+
+const Skill = styled.li`
+  font-size: 1.2rem;
+  border: 0.1rem solid ${({ theme }) => theme.colors.BACKGROUND};
+  padding: 0.8rem 0.7rem;
+`;
 
 export default PortfolioCardSkills;
