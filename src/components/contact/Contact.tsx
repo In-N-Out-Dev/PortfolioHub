@@ -8,7 +8,7 @@ import Divider from '@/components/common/Divider';
 const Contact = () => {
   return (
     <>
-      <Divider />
+      <Divider backgroundBlack={true} />
       <Section>
         <ContactTitle />
         <ContactContents />
