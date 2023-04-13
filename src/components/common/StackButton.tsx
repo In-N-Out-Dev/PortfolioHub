@@ -21,15 +21,19 @@ const StackButton = ({ children, url }: StackButtonProps) => {
 
 const Border = styled.li`
   padding: 1rem 1.4rem;
-  border: 1px solid ${({ theme }) => theme.colors.MAIN_FONT};
+  border: 0.1rem solid ${({ theme }) => theme.colors.MAIN_FONT};
   border-radius: 5rem;
   font-size: 1.6rem;
   font-weight: 600;
 
   :hover {
-    border: 0.15rem solid ${({ theme }) => theme.colors.HIGHTLIGHT};
-    background-color: ${({ theme }) => theme.colors.HIGHTLIGHT};
-    color: ${({ theme }) => theme.colors.BACKGROUND};
+    ${({ theme: { colors } }) => {
+      return {
+        borderColor: colors.HIGHTLIGHT,
+        backgroundColor: colors.HIGHTLIGHT,
+        color: colors.BACKGROUND,
+      };
+    }};
   }
 `;
 
