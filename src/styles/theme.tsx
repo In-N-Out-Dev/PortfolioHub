@@ -3,8 +3,7 @@ export const lightTheme: ColorTheme = {
   HIGHTLIGHT: '#E85913',
   CONTENT_FONT: '#444444',
   SUB_FONT: '#858585',
-  BORDER: '#0D0D0D',
-  BUTTON_BORDER: '#D9D9D9',
+  BORDER: '#D9D9D9',
   BACKGROUND: '#FFFFFF',
 };
 
@@ -13,8 +12,7 @@ export const darkTheme = {
   HIGHTLIGHT: '#E85913',
   CONTENT_FONT: '#444444',
   SUB_FONT: '#858585',
-  BORDER: '#FFFFFF',
-  BUTTON_BORDER: '#333333',
+  BORDER: '#333333',
   BACKGROUND: '#000000',
 };
 
