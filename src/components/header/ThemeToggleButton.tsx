@@ -1,23 +1,11 @@
 import styled from '@emotion/styled';
-import ToggleButton from 'components/common/buttons/ToggleButton';
-import SunIcon from 'components/common/icons/SunIcon';
-
-import MoonIcon from '../common/icons/MoonIcon';
+import '@theme-toggles/react/css/Classic.css';
+import { Classic } from '@theme-toggles/react';
 
 const ThemeToggleButton = () => {
   return (
     <Wrapper>
-      <SunIcon
-        width={22}
-        height={22}
-        color={'#000'}
-      />
-      <ToggleButton />
-      <MoonIcon
-        width={20}
-        height={20}
-        color={'#000'}
-      />
+      <Classic duration={750} />
     </Wrapper>
   );
 };
@@ -26,6 +14,7 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 0.8rem;
+  font-size: 35px;
 `;
 
 export default ThemeToggleButton;
