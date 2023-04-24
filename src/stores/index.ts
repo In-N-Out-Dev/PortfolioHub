@@ -1,10 +1,11 @@
 import { create } from 'zustand';
 
 export interface ModeProps {
-  isDarkMode: boolean;
+  theme: 'light' | 'dark';
+  toggleTheme: () => void;
 }
 
 export const useThemeStore = create<ModeProps>((set) => ({
-  isDarkMode: false,
-  toggleMode: () => set((state) => ({ isDarkMode: !state.isDarkMode })),
+  theme: 'light',
+  toggleTheme: () => set((state) => ({ theme: state.theme === 'light' ? 'dark' : 'light' })),
 }));
