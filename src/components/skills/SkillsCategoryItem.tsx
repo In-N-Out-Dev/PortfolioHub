@@ -7,7 +7,6 @@ const SkillsCategoryItem = ({ highlight, skill }: Skill) => {
 };
 
 const Item = styled.li<{ highlight: boolean }>`
-  margin: 0 1.4rem 1.6rem 0;
   padding: 1rem 1.4rem;
   width: fit-content;
   border: 0.1rem solid;

@@ -6,19 +6,24 @@ import type { SkillData } from './SkillsData';
 
 const SkillsCategory = ({ category, skills }: SkillData) => {
   return (
-    <CategoryCard>
+    <li>
       <Title>{category}</Title>
       <SkillsCategoryItemList skills={skills} />
-    </CategoryCard>
+      <Divider />
+    </li>
   );
 };
-
-const CategoryCard = styled.li``;
 
 const Title = styled.h4`
   font-family: 'Bebas Neue', cursive;
   margin-bottom: 1.6rem;
   font-size: 3.2rem;
+`;
+
+const Divider = styled.div`
+  margin-top: 6rem;
+  background-color: ${({ theme }) => theme.colors.BORDER};
+  height: 0.1rem;
 `;
 
 export default SkillsCategory;
