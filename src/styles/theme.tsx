@@ -5,6 +5,7 @@ export const lightTheme: ColorTheme = {
   SUB_FONT: '#858585',
   BORDER: '#D9D9D9',
   BACKGROUND: '#FFFFFF',
+  BACKGROUND_SUB: 'rgba(217, 217, 217, 0.2)',
 };
 
 export const darkTheme = {
@@ -14,6 +15,7 @@ export const darkTheme = {
   SUB_FONT: '#858585',
   BORDER: '#333333',
   BACKGROUND: '#000000',
+  BACKGROUND_SUB: '#333333',
 };
 
 const Color = {
