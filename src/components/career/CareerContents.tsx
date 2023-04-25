@@ -62,7 +62,7 @@ const CurrentDate = styled.div`
   padding: 1.1rem 1rem;
   font-size: 1.4rem;
   font-weight: 400;
-  color: #fff;
+  color: ${({ theme }) => theme.colors.MAIN_FONT};
   background-color: ${({ theme }) => theme.colors.HIGHTLIGHT};
 
   ${({ theme }) => theme.breakPoint.small} {
