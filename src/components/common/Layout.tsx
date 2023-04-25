@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
 
+import Footer from './Footer';
+
 import Header from '@/components/common/Header';
 import SideNav from '@/components/common/SideNav';
 
@@ -15,6 +17,7 @@ const Layout = ({ children }: LayoutProps) => {
         <SideNav />
         <SectionWrapper>{children}</SectionWrapper>
       </MainWrapper>
+      <Footer />
     </>
   );
 };
