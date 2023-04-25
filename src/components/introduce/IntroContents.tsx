@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import MailIcon from 'assets/\bMailIcon';
+import MailIcon from 'assets/MailIcon';
 import StackButton from 'components/common/StackButton';
 
 import INTRODUCE_DATA from './introduceData';
@@ -32,7 +32,7 @@ const IntroContents = () => {
 };
 
 const Wrap = styled.div`
-  width: 60rem;
+  width: 100%;
   color: ${({ theme }) => theme.colors.MAIN_FONT};
 `;
 
