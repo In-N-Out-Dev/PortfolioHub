@@ -5,19 +5,14 @@ import Introduce from 'components/introduce/Introduce';
 import Project from 'components/project/Project';
 import Skills from 'components/skills/Skills';
 
-import Project from './project/Project';
-
-import Carrer from '@/components/career/Career';
-
 const Home = () => {
   return (
     <Layout>
       <Introduce />
-      <Skills />
       <Blog />
       <Career />
-      <Carrer />
       <Project />
+      {/* <Skills /> */}
     </Layout>
   );
 };
