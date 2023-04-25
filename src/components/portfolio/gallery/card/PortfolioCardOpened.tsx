@@ -2,6 +2,8 @@ import styled from '@emotion/styled';
 
 import PortfolioCardSkills from './PortfolioCardSkills';
 
+import type { PortfolioData } from '@/types/portfolio';
+
 const PortfolioCardOpened = ({
   title,
   no,

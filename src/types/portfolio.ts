@@ -1,4 +1,4 @@
-interface PortfolioData {
+export interface PortfolioData {
   no: number;
   title: string;
   start: string;
@@ -6,14 +6,14 @@ interface PortfolioData {
   skills: string[];
 }
 
-type PortfolioState = 'GALLERY' | 'LIST';
+export type PortfolioState = 'GALLERY' | 'LIST';
 
-interface PortfolioHeaderProps {
+export type PortfolioHeaderProps = {
   portfolioState: PortfolioState;
   setPortfolioState: React.Dispatch<React.SetStateAction<PortfolioState>>;
-}
+};
 
-interface PortfolioCartListProps {
+export type PortfolioCartListProps = {
   portfolios: PortfolioData[];
   openedWidth: number;
-}
+};

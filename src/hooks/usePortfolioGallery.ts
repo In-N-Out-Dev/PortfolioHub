@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import type { PortfolioData } from '@/types/portfolio';
+
 const usePortfolioGallery = (portfolioData: PortfolioData[]) => {
   const totalCnt = portfolioData.length;
   const [openedNo, setOpenedNo] = useState(0); // totalCnt 미만으로

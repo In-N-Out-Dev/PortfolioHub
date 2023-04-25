@@ -5,6 +5,8 @@ import { usePortfolioGallery } from '@/hooks';
 
 import PortfolioCardList from './card/PortfolioCardList';
 
+import type { PortfolioData } from '@/types/portfolio';
+
 import ForwardIcon from '@/assets/ForwardIcon';
 
 const PortfolioGallery = ({ portfolioData }: { portfolioData: PortfolioData[] }) => {

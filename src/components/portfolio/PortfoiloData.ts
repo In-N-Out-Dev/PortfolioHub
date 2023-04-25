@@ -1,3 +1,5 @@
+import type { PortfolioData } from '@/types/portfolio';
+
 const portfolioData: PortfolioData[] = [
   {
     no: 1,
