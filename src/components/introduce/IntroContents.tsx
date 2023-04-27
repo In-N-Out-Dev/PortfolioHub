@@ -1,13 +1,20 @@
 import styled from '@emotion/styled';
-import MailIcon from 'assets/MailIcon';
 import StackButton from 'components/common/StackButton';
 
 import INTRODUCE_DATA from './introduceData';
 
+import MailIcon from '@/assets/MailIcon';
+
 const IntroContents = () => {
   return (
     <Wrap>
-      <Title>{INTRODUCE_DATA.title}</Title>
+      <TitleWrap>
+        <h3>{INTRODUCE_DATA.title}</h3>
+        <div>
+          <p>{INTRODUCE_DATA.name}</p>
+          <p>입니다.</p>
+        </div>
+      </TitleWrap>
       <Contents>{INTRODUCE_DATA.contnets}</Contents>
       <Contact>
         <li>
@@ -32,20 +39,40 @@ const IntroContents = () => {
 };
 
 const Wrap = styled.div`
-  width: 100%;
   color: ${({ theme }) => theme.colors.MAIN_FONT};
+  margin-bottom: 10rem;
 `;
 
-const Title = styled.h3`
+const TitleWrap = styled.div`
+  display: flex;
+  align-items: center;
   margin-bottom: 1.4rem;
   font-size: 2.4rem;
   font-weight: bold;
+
+  ${({ theme }) => theme.breakPoint.small} {
+    display: block;
+  }
+
+  h3 {
+    margin-right: 0.4rem;
+  }
+
+  div {
+    display: flex;
+    align-items: center;
+  }
+
+  p:nth-child(1) {
+    color: ${({ theme }) => theme.colors.HIGHTLIGHT};
+  }
 `;
 
 const Contents = styled.p`
   margin-bottom: 1.4rem;
   font-size: 1.6rem;
   white-space: normal;
+  line-height: 2.2rem;
 `;
 
 const Contact = styled.ul`
