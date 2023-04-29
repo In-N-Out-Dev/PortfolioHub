@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
+import ContactButton from 'components/header/ContactButton';
+import HEADER_DATA from 'components/header/HeaderData';
 import ThemeToggleButton from 'components/header/ThemeToggleButton';
-
-import HEADER_DATA from './HeaderData';
 
 const Header = () => {
   const handleTitleClick = () => {
@@ -10,11 +10,12 @@ const Header = () => {
       behavior: 'smooth',
     });
   };
+
   return (
     <HeaderWrapper>
       <TitleLogo onClick={handleTitleClick}>{HEADER_DATA.title}</TitleLogo>
       <ButtonsWrapper>
-        <button>contact</button>
+        <ContactButton />
         <ThemeToggleButton />
       </ButtonsWrapper>
     </HeaderWrapper>
