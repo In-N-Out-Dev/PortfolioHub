@@ -12,14 +12,19 @@ const Portfolio = () => {
   const [portfolioState, setPortfolioState] = useState<PortfolioState>('GALLERY');
 
   return (
-    <Section>
-      <Divider />
-      <PortfolioHeader
-        portfolioState={portfolioState}
-        setPortfolioState={setPortfolioState}
+    <>
+      <Divider
+        marginBottom={10}
+        marginTop={10}
       />
-      <PortfolioContents portfolioState={portfolioState} />
-    </Section>
+      <Section>
+        <PortfolioHeader
+          portfolioState={portfolioState}
+          setPortfolioState={setPortfolioState}
+        />
+        <PortfolioContents portfolioState={portfolioState} />
+      </Section>
+    </>
   );
 };
 

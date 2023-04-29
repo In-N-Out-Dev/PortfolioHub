@@ -7,7 +7,10 @@ import ContactTitle from './ContactTitle';
 const Contact = () => {
   return (
     <>
-      <Divider backgroundBlack={true} />
+      <Divider
+        marginBottom={10}
+        marginTop={8}
+      />
       <Section>
         <ContactTitle />
         <ContactContents />

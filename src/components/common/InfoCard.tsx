@@ -13,8 +13,9 @@ const InfoCard = ({ title, children }: InfoCardProps) => {
   return (
     <>
       <Divider
-        height={2}
-        backgroundBlack={true}
+        height={0.2}
+        marginBottom={10}
+        marginTop={10}
       />
       <Wrap>
         <Title>{title}</Title>
