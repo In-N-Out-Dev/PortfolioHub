@@ -57,9 +57,16 @@ export const breakPoint = {
 export type BreakPointType = typeof breakPoint;
 
 const theme = {
-  colors,
-  fontSize,
-  breakPoint,
+  light: {
+    colors: Color['light'],
+    fontSize,
+    breakPoint,
+  },
+  dark: {
+    colors: Color['dark'],
+    fontSize,
+    breakPoint,
+  },
 };
 
 export default theme;
