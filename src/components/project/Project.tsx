@@ -1,4 +1,4 @@
-import InfoCard from '../common/InfoCard';
+import InfoCard from 'components/common/InfoCard';
 
 import ProjectContents from './ProjectContents';
 

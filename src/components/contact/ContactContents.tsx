@@ -1,8 +1,7 @@
 import styled from '@emotion/styled';
+import StackButton from 'components/common/StackButton';
 
 import contactData from './ContactData';
-
-import StackButton from '@/components/common/StackButton';
 
 const ContactContents = () => {
   return (
@@ -21,6 +20,7 @@ const Article = styled.article`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  color: ${({ theme }) => theme.colors.MAIN_FONT};
 `;
 
 const Email = styled.p`

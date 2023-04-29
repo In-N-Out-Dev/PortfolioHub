@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
-
-import CARRER_DATA from '@/components/career/careerData';
-import Divider from '@/components/common/Divider';
+import CARRER_DATA from 'components/career/careerData';
+import Divider from 'components/common/Divider';
 
 const CareerContents = () => {
   return (

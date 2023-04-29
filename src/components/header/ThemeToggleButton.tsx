@@ -1,8 +1,7 @@
 import styled from '@emotion/styled';
 import '@theme-toggles/react/css/Classic.css';
 import { Classic } from '@theme-toggles/react';
-
-import { useThemeStore } from '@/stores/useThemeStore';
+import { useThemeStore } from 'stores/useThemeStore';
 
 const ThemeToggleButton = () => {
   const handleClickThemeToggler = useThemeStore((state) => state.toggleTheme);

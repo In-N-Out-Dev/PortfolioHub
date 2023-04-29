@@ -1,10 +1,9 @@
 import { useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
+import GalleryIcon from 'assets/GalleryIcon';
+import ListIcon from 'assets/ListIcon';
 
-import type { PortfolioHeaderProps, PortfolioState } from '@/types/portfolio';
-
-import GalleryIcon from '@/assets/GalleryIcon';
-import ListIcon from '@/assets/ListIcon';
+import type { PortfolioHeaderProps, PortfolioState } from 'types/portfolio';
 
 const PortfolioHeader = ({ portfolioState, setPortfolioState }: PortfolioHeaderProps) => {
   const { colors } = useTheme();

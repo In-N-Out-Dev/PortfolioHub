@@ -1,10 +1,8 @@
 import styled from '@emotion/styled';
-
-import Divider from '../common/Divider';
+import LinkIcon from 'assets/LinkIcon';
+import Divider from 'components/common/Divider';
 
 import PROJECT_DATA from './projectData';
-
-import LinkIcon from '@/assets/LinkIcon';
 
 const ProjectContents = () => {
   return (

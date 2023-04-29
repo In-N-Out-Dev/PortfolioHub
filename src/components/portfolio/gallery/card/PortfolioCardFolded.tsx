@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-import type { PortfolioData } from '@/types/portfolio';
+import type { PortfolioData } from 'types/portfolio';
 
 const PortfolioCardFolded = ({ no, title }: PortfolioData) => {
   return (

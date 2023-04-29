@@ -1,9 +1,8 @@
 import styled from '@emotion/styled';
+import MailIcon from 'assets/MailIcon';
 import StackButton from 'components/common/StackButton';
 
 import INTRODUCE_DATA from './introduceData';
-
-import MailIcon from '@/assets/MailIcon';
 
 const IntroContents = () => {
   return (
