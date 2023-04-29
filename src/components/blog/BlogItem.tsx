@@ -4,6 +4,7 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
 export interface BlogItemProps {
+  id?: number;
   index?: string;
   title: string;
   date: string;

@@ -1,12 +1,16 @@
 import styled from '@emotion/styled';
+import ContactButton from 'components/header/ContactButton';
+import HEADER_DATA from 'components/header/HeaderData';
 import ThemeToggleButton from 'components/header/ThemeToggleButton';
 
 const Header = () => {
   return (
     <HeaderWrapper>
-      <Logo>name here</Logo>
+      <TitleLogo>
+        <Title href={'/'}>{HEADER_DATA.title}</Title>
+      </TitleLogo>
       <ButtonsWrapper>
-        <button>contact</button>
+        <ContactButton />
         <ThemeToggleButton />
       </ButtonsWrapper>
     </HeaderWrapper>
@@ -23,9 +27,14 @@ const HeaderWrapper = styled.header`
   width: 100%;
   border-bottom: 1px solid ${({ theme }) => theme.colors.MAIN_FONT};
   background: ${({ theme }) => theme.colors.BACKGROUND};
+  position: sticky;
+  top: 0;
+  z-index: 10;
 `;
 
-const Logo = styled.h1`
+const TitleLogo = styled.h1``;
+
+const Title = styled.a`
   font-family: 'Bebas Neue', cursive;
   font-size: 4.8rem;
   color: ${({ theme }) => theme.colors.MAIN_FONT};
