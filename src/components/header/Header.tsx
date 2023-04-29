@@ -1,10 +1,18 @@
 import styled from '@emotion/styled';
 import ThemeToggleButton from 'components/header/ThemeToggleButton';
 
+import HEADER_DATA from './HeaderData';
+
 const Header = () => {
+  const handleTitleClick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
   return (
     <HeaderWrapper>
-      <Logo>name here</Logo>
+      <TitleLogo onClick={handleTitleClick}>{HEADER_DATA.title}</TitleLogo>
       <ButtonsWrapper>
         <button>contact</button>
         <ThemeToggleButton />
@@ -23,12 +31,16 @@ const HeaderWrapper = styled.header`
   width: 100%;
   border-bottom: 1px solid ${({ theme }) => theme.colors.MAIN_FONT};
   background: ${({ theme }) => theme.colors.BACKGROUND};
+  position: sticky;
+  top: 0;
+  z-index: 10;
 `;
 
-const Logo = styled.h1`
+const TitleLogo = styled.h1`
   font-family: 'Bebas Neue', cursive;
   font-size: 4.8rem;
   color: ${({ theme }) => theme.colors.MAIN_FONT};
+  cursor: pointer;
 `;
 
 const ButtonsWrapper = styled.div`
