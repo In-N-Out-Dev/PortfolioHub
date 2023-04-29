@@ -4,16 +4,11 @@ import HEADER_DATA from 'components/header/HeaderData';
 import ThemeToggleButton from 'components/header/ThemeToggleButton';
 
 const Header = () => {
-  const handleTitleClick = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-  };
-
   return (
     <HeaderWrapper>
-      <TitleLogo onClick={handleTitleClick}>{HEADER_DATA.title}</TitleLogo>
+      <TitleLogo>
+        <Title href={'/'}>{HEADER_DATA.title}</Title>
+      </TitleLogo>
       <ButtonsWrapper>
         <ContactButton />
         <ThemeToggleButton />
@@ -37,11 +32,12 @@ const HeaderWrapper = styled.header`
   z-index: 10;
 `;
 
-const TitleLogo = styled.h1`
+const TitleLogo = styled.h1``;
+
+const Title = styled.a`
   font-family: 'Bebas Neue', cursive;
   font-size: 4.8rem;
   color: ${({ theme }) => theme.colors.MAIN_FONT};
-  cursor: pointer;
 `;
 
 const ButtonsWrapper = styled.div`
