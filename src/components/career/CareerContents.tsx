@@ -1,3 +1,5 @@
+import { Fragment } from 'react';
+
 import styled from '@emotion/styled';
 import CARRER_DATA from 'components/career/careerData';
 import Divider from 'components/common/Divider';
@@ -7,8 +9,8 @@ const CareerContents = () => {
     <Wrap>
       {CARRER_DATA.map((carrer, index) => {
         return (
-          <>
-            <TitleWrap key={index}>
+          <Fragment key={index}>
+            <TitleWrap>
               <h3>{carrer.company}</h3>
               {carrer.cureentCompany ? (
                 <CurrentDate>{carrer.date}</CurrentDate>
@@ -19,7 +21,7 @@ const CareerContents = () => {
             <Position>{carrer.position}</Position>
             <Contents>{carrer.contnets}</Contents>
             <Divider />
-          </>
+          </Fragment>
         );
       })}
     </Wrap>
