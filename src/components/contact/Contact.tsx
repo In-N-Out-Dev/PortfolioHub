@@ -1,14 +1,16 @@
 import styled from '@emotion/styled';
+import Divider from 'components/common/Divider';
 
 import ContactContents from './ContactContents';
 import ContactTitle from './ContactTitle';
 
-import Divider from '@/components/common/Divider';
-
 const Contact = () => {
   return (
     <>
-      <Divider backgroundBlack={true} />
+      <Divider
+        marginBottom={10}
+        marginTop={8}
+      />
       <Section>
         <ContactTitle />
         <ContactContents />

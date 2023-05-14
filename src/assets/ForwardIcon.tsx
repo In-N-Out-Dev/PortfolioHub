@@ -1,4 +1,4 @@
-import type { IconProps } from '@/types/props';
+import type { IconProps } from 'types/props';
 
 const ForwardIcon = ({ width = 21, height = 20, color = '#0D0D0D' }: IconProps) => {
   return (

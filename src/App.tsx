@@ -1,8 +1,7 @@
 import { ThemeProvider } from '@emotion/react';
+import Home from 'components/Home';
+import { useThemeStore } from 'stores/useThemeStore';
 import { GlobalStyle, theme } from 'styles';
-
-import Home from '@/components/Home';
-import { useThemeStore } from '@/stores/useThemeStore';
 
 function App() {
   const mode = useThemeStore((state) => state.theme);

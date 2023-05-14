@@ -1,15 +1,16 @@
-import styled from '@emotion/styled';
+import { Fragment } from 'react';
 
-import CARRER_DATA from '@/components/career/careerData';
-import Divider from '@/components/common/Divider';
+import styled from '@emotion/styled';
+import CARRER_DATA from 'components/career/careerData';
+import Divider from 'components/common/Divider';
 
 const CareerContents = () => {
   return (
     <Wrap>
       {CARRER_DATA.map((carrer, index) => {
         return (
-          <>
-            <TitleWrap key={index}>
+          <Fragment key={index}>
+            <TitleWrap>
               <h3>{carrer.company}</h3>
               {carrer.cureentCompany ? (
                 <CurrentDate>{carrer.date}</CurrentDate>
@@ -20,7 +21,7 @@ const CareerContents = () => {
             <Position>{carrer.position}</Position>
             <Contents>{carrer.contnets}</Contents>
             <Divider />
-          </>
+          </Fragment>
         );
       })}
     </Wrap>

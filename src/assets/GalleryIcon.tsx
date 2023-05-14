@@ -1,4 +1,4 @@
-import type { IconProps } from '@/types/props';
+import type { IconProps } from 'types/props';
 
 const GalleryIcon = ({ width = 28, height = 28, color = '#0d0d0d' }: IconProps) => {
   return (

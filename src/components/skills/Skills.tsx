@@ -1,24 +1,13 @@
-import styled from '@emotion/styled';
+import InfoCard from 'components/common/InfoCard';
 
 import SkillsCategoryList from './SkillsCategoryList';
 
 const Skills = () => {
   return (
-    <Container>
-      <Title>SKILLS</Title>
+    <InfoCard title="SKILLS">
       <SkillsCategoryList />
-    </Container>
+    </InfoCard>
   );
 };
-
-const Container = styled.li`
-  display: flex;
-  justify-content: space-between;
-`;
-
-const Title = styled.h3`
-  font-family: 'Bebas Neue', cursive;
-  font-size: 4.8rem;
-`;
 
 export default Skills;

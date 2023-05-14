@@ -1,18 +1,18 @@
-import styled from '@emotion/styled';
+import { Fragment } from 'react';
 
-import Divider from '../common/Divider';
+import styled from '@emotion/styled';
+import LinkIcon from 'assets/LinkIcon';
+import Divider from 'components/common/Divider';
 
 import PROJECT_DATA from './projectData';
-
-import LinkIcon from '@/assets/LinkIcon';
 
 const ProjectContents = () => {
   return (
     <Wrap>
       {PROJECT_DATA.map((project, index) => {
         return (
-          <>
-            <TitleWrap key={index}>
+          <Fragment key={index}>
+            <TitleWrap>
               <h3>{project.company}</h3>
               <p>{project.date}</p>
             </TitleWrap>
@@ -37,7 +37,7 @@ const ProjectContents = () => {
               })}
             </StackList>
             <Divider />
-          </>
+          </Fragment>
         );
       })}
     </Wrap>

@@ -1,9 +1,8 @@
 import styled from '@emotion/styled';
+import SideNav from 'components/common/SideNav';
+import Header from 'components/header/Header';
 
 import Footer from './Footer';
-
-import SideNav from '@/components/common/SideNav';
-import Header from '@/components/header/Header';
 
 interface LayoutProps {
   children: React.ReactNode;

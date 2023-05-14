@@ -1,4 +1,4 @@
-import type { PortfolioData } from '@/types/portfolio';
+import type { PortfolioData } from 'types/portfolio';
 
 const portfolioData: PortfolioData[] = [
   {

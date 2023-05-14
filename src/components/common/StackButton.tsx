@@ -9,17 +9,20 @@ interface StackButtonProps {
 
 const StackButton = ({ children, url }: StackButtonProps) => {
   return (
-    <a
-      href={url}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <Border>{children}</Border>
-    </a>
+    <li>
+      <Border
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {children}
+      </Border>
+    </li>
   );
 };
 
-const Border = styled.li`
+const Border = styled.a`
+  display: block;
   padding: 1rem 1.4rem;
   border: 0.1rem solid ${({ theme }) => theme.colors.MAIN_FONT};
   border-radius: 5rem;

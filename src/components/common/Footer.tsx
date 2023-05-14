@@ -17,12 +17,21 @@ const Footer = () => {
 };
 
 const FooterWrapper = styled.footer`
+  position: relative;
   width: 100%;
-  padding: 3.5rem 6.6rem;
-  /**TODO: 추후 머지된 BACKGROUND_SUB로 변경
-   */
-  background-color: rgba(217, 217, 217, 0.2);
+  padding: 3.5rem 12rem;
   font-family: 'Bebas Neue', cursive;
+  background-color: ${({ theme }) => theme.colors.BACKGROUND_SUB};
+  ::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: ${({ theme }) => theme.colors.BACKGROUND};
+    z-index: -1;
+  }
 `;
 
 const Contents = styled.div`
@@ -32,6 +41,7 @@ const Contents = styled.div`
 
 const Texts = styled.p`
   font-size: 2.4rem;
+  color: ${({ theme }) => theme.colors.MAIN_FONT};
 `;
 
 const NameLink = styled.a`

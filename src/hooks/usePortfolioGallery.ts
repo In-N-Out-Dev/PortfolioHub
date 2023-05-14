@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import type { PortfolioData } from '@/types/portfolio';
+import type { PortfolioData } from 'types/portfolio';
 
 const usePortfolioGallery = (portfolioData: PortfolioData[]) => {
   const totalCnt = portfolioData.length;

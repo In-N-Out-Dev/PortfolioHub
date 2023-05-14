@@ -1,13 +1,11 @@
 import { useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
-
-import { usePortfolioGallery } from '@/hooks';
+import ForwardIcon from 'assets/ForwardIcon';
+import { usePortfolioGallery } from 'hooks';
 
 import PortfolioCardList from './card/PortfolioCardList';
 
-import type { PortfolioData } from '@/types/portfolio';
-
-import ForwardIcon from '@/assets/ForwardIcon';
+import type { PortfolioData } from 'types/portfolio';
 
 const PortfolioGallery = ({ portfolioData }: { portfolioData: PortfolioData[] }) => {
   const { colors } = useTheme();
