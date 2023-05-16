@@ -1,15 +1,15 @@
 import styled from '@emotion/styled';
 import StackButton from 'components/common/StackButton';
-import contactData from 'content/ContactData';
+import CONTACT_DATA from 'content/ContactData';
 
 const ContactContents = () => {
   return (
     <Article>
-      <Email>{contactData.email}</Email>
+      <Email>{CONTACT_DATA.email}</Email>
       <List>
-        <StackButton url={contactData.github}>Github</StackButton>
-        <StackButton url={contactData.linkedin}>Linkedin</StackButton>
-        <StackButton url={contactData.instagram}>Instagram</StackButton>
+        <StackButton url={CONTACT_DATA.github}>Github</StackButton>
+        <StackButton url={CONTACT_DATA.linkedin}>Linkedin</StackButton>
+        <StackButton url={CONTACT_DATA.instagram}>Instagram</StackButton>
       </List>
     </Article>
   );

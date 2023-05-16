@@ -1,6 +1,6 @@
 import type { PortfolioData } from 'types/portfolio';
 
-const portfolioData: PortfolioData[] = [
+const PORTFOLIO_DATA: PortfolioData[] = [
   {
     no: 1,
     start: '2022.02',
@@ -52,4 +52,4 @@ const portfolioData: PortfolioData[] = [
   },
 ];
 
-export default portfolioData;
+export default PORTFOLIO_DATA;
