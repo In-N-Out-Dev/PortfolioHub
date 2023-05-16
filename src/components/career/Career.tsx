@@ -4,7 +4,7 @@ import CareerContents from './CareerContents';
 
 const Career = () => {
   return (
-    <InfoCard title="CARRER">
+    <InfoCard title="CAREER">
       <CareerContents />
     </InfoCard>
   );
