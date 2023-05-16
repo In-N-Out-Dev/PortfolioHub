@@ -1,14 +1,32 @@
 import styled from '@emotion/styled';
+import { MENU_LIST, MenuListProps } from 'content';
 
 const SideNav = () => {
+  const renderMenu = () => {
+    return MENU_LIST.map((menu) => {
+      return (
+        <MenuItem
+          key={menu}
+          onClick={() => onClickMenu(menu)}
+        >
+          {menu}
+        </MenuItem>
+      );
+    });
+  };
+  const onClickMenu = (menu: MenuListProps) => {
+    const element = document.getElementById(menu);
+    console.log('eleemtn', element);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
   return (
     <SideNavWrapper>
-      <ContentWrapper>
-        <li>menu</li>
-        <li>menu</li>
-        <li>menu</li>
-        <li>menu</li>
-      </ContentWrapper>
+      <ContentWrapper>{renderMenu()}</ContentWrapper>
     </SideNavWrapper>
   );
 };
@@ -21,5 +39,7 @@ const ContentWrapper = styled.ul`
   height: fit-content;
   width: 100%;
 `;
+
+const MenuItem = styled.li``;
 
 export default SideNav;
