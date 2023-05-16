@@ -1,4 +1,5 @@
-import portfolioData from './PortfoiloData';
+import portfolioData from 'content/PortfoiloData';
+
 import PortfolioGallery from './gallery/PortfolioGallery';
 
 import type { PortfolioState } from 'types/portfolio';
