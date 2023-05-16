@@ -10,7 +10,7 @@ interface ListCardProps {
 
 const ListCard = ({ title, children }: ListCardProps) => {
   return (
-    <>
+    <div id={title}>
       <Divider
         marginBottom={10}
         marginTop={10}
@@ -22,7 +22,7 @@ const ListCard = ({ title, children }: ListCardProps) => {
         </TitleWrapper>
         <ArticleWrapper>{children}</ArticleWrapper>
       </Wrap>
-    </>
+    </div>
   );
 };
 
