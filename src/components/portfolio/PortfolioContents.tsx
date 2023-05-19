@@ -1,4 +1,4 @@
-import PORTFOLIO_DATA from 'content/PortfolioData';
+import PORTFOLIO_DATA from 'contents/portfolioData';
 
 import PortfolioGallery from './gallery/PortfolioGallery';
 

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import styled from '@emotion/styled';
-import { MENU_LIST, MenuListProps } from 'content';
+import { MENU_LIST, MenuListProps } from 'contents';
 
 const SideNav = () => {
   const [selectedMenu, setSelectedMenu] = useState<MenuListProps>('HOME');

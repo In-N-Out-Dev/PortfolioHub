@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import StackButton from 'components/common/StackButton';
-import CONTACT_DATA from 'content/ContactData';
+import CONTACT_DATA from 'contents/contactData';
 
 const ContactContents = () => {
   return (

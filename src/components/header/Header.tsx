@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import ContactButton from 'components/header/ContactButton';
 import ThemeToggleButton from 'components/header/ThemeToggleButton';
-import HEADER_DATA from 'content/HeaderData';
+import HEADER_DATA from 'contents/headerData';
 
 const Header = () => {
   return (
