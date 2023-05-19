@@ -25,9 +25,14 @@ const SideNav = () => {
   const onClickMenu = (menu: MenuListProps) => {
     const element = document.getElementById(menu);
     if (element) {
-      element.scrollIntoView({
+      const offset = 100;
+      const elementPosition = element.getBoundingClientRect().top;
+      const bodyScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+      const offsetPosition = elementPosition + bodyScrollTop - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
         behavior: 'smooth',
-        block: 'start',
       });
     }
   };
