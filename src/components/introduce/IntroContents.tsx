@@ -38,7 +38,6 @@ const IntroContents = () => {
 
 const Wrap = styled.div`
   color: ${({ theme }) => theme.colors.MAIN_FONT};
-  margin-bottom: 10rem;
 `;
 
 const TitleWrap = styled.div`

@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import Divider from 'components/common/Divider';
 
 import SkillsCategoryItemList from './SkillsCategoryItemList';
 
@@ -7,17 +6,17 @@ import type { SkillData } from './SkillsData';
 
 const SkillsCategory = ({ category, skills }: SkillData) => {
   return (
-    <li>
+    <Item>
       <Title>{category}</Title>
       <SkillsCategoryItemList skills={skills} />
-      <Divider
-        height={0.1}
-        marginTop={6}
-        marginBottom={0}
-      />
-    </li>
+    </Item>
   );
 };
+
+const Item = styled.li`
+  padding-bottom: 6rem;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.MAIN_FONT};
+`;
 
 const Title = styled.h4`
   font-family: 'Bebas Neue', cursive;
