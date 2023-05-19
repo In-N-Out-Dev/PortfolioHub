@@ -11,7 +11,7 @@ interface InfoCardProps {
 
 const InfoCard = ({ title, children }: InfoCardProps) => {
   return (
-    <>
+    <div id={title}>
       <Divider
         height={0.2}
         marginBottom={10}
@@ -21,7 +21,7 @@ const InfoCard = ({ title, children }: InfoCardProps) => {
         <Title>{title}</Title>
         <Article>{children}</Article>
       </Wrap>
-    </>
+    </div>
   );
 };
 

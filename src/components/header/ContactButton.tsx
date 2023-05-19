@@ -4,8 +4,13 @@ import styled from '@emotion/styled';
 
 const ContactButton = () => {
   const handleContactClick = () => {
-    // TODO: add contact into view logic
-    console.log('contact is clicked');
+    const contactSection = document.getElementById('CONTACT');
+    if (contactSection) {
+      contactSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
   };
 
   return <ButtonWrapper onClick={handleContactClick}>Contact</ButtonWrapper>;

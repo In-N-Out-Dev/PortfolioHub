@@ -13,6 +13,7 @@ const Portfolio = () => {
 
   return (
     <>
+      <div id="PORTFOLIO" />
       <Divider
         marginBottom={10}
         marginTop={10}

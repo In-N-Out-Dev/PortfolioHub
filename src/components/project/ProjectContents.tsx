@@ -3,8 +3,7 @@ import { Fragment } from 'react';
 import styled from '@emotion/styled';
 import LinkIcon from 'assets/LinkIcon';
 import Divider from 'components/common/Divider';
-
-import PROJECT_DATA from './projectData';
+import PROJECT_DATA from 'contents/projectData';
 
 const ProjectContents = () => {
   return (

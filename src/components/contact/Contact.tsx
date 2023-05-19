@@ -11,7 +11,7 @@ const Contact = () => {
         marginBottom={10}
         marginTop={8}
       />
-      <Section>
+      <Section id="CONTACT">
         <ContactTitle />
         <ContactContents />
       </Section>

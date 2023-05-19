@@ -1,10 +1,11 @@
-import portfolioData from './PortfoiloData';
+import PORTFOLIO_DATA from 'contents/portfolioData';
+
 import PortfolioGallery from './gallery/PortfolioGallery';
 
 import type { PortfolioState } from 'types/portfolio';
 
 const PortfolioContents = ({ portfolioState }: { portfolioState: PortfolioState }) => {
-  if (portfolioState === 'GALLERY') return <PortfolioGallery portfolioData={portfolioData} />;
+  if (portfolioState === 'GALLERY') return <PortfolioGallery portfolioData={PORTFOLIO_DATA} />;
   return <ul></ul>;
 };
 
