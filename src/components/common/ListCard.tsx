@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 
 import styled from '@emotion/styled';
-import Divider from 'components/common/Divider';
+
+import Card from './Card';
 
 interface ListCardProps {
   title: string;
@@ -9,28 +10,26 @@ interface ListCardProps {
 }
 
 const ListCard = ({ title, children }: ListCardProps) => {
+  const renderHeader = useCallback(
+    () => (
+      <TitleWrapper>
+        <Title>{title}</Title>
+        <TitleDescription>대표적인 블로그 포스팅</TitleDescription>
+      </TitleWrapper>
+    ),
+    [],
+  );
+
+  const renderBody = useCallback(() => <ArticleWrapper>{children}</ArticleWrapper>, []);
+
   return (
-    <div id={title}>
-      <Divider
-        marginBottom={10}
-        marginTop={10}
-      />
-      <Wrap>
-        <TitleWrapper>
-          <Title>{title}</Title>
-          <TitleDescription>대표적인 블로그 포스팅</TitleDescription>
-        </TitleWrapper>
-        <ArticleWrapper>{children}</ArticleWrapper>
-      </Wrap>
-    </div>
+    <Card
+      renderHeader={renderHeader}
+      renderBody={renderBody}
+      id={title}
+    />
   );
 };
-
-const Wrap = styled.section`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-`;
 
 const TitleWrapper = styled.div`
   display: flex;
