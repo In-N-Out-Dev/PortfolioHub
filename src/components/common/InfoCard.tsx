@@ -1,28 +1,24 @@
-import React, { PropsWithChildren, useCallback } from 'react';
+import { PropsWithChildren } from 'react';
 
 import styled from '@emotion/styled';
 
 import 'styles/fonts/Berbas.css';
-import Card from './Card';
+import SectionCard from './SectionCard';
 
 interface Props extends PropsWithChildren {
   title: string;
 }
 
 const InfoCard = ({ title, children }: Props) => {
-  const renderHeader = useCallback(() => <Title>{title}</Title>, []);
-  const renderBody = useCallback(() => <Article>{children}</Article>, []);
-
   return (
-    <CardWrapper
-      renderHeader={renderHeader}
-      renderBody={renderBody}
-      id={title}
-    />
+    <CardWrapper id={title}>
+      <Title>{title}</Title>
+      <Article>{children}</Article>
+    </CardWrapper>
   );
 };
 
-const CardWrapper = styled(Card)`
+const CardWrapper = styled(SectionCard)`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;

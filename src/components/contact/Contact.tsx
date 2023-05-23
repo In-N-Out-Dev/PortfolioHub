@@ -1,31 +1,19 @@
-import { useCallback } from 'react';
-
 import styled from '@emotion/styled';
-import Card from 'components/common/Card';
+import SectionCard from 'components/common/SectionCard';
 
 import ContactContents from './ContactContents';
 import ContactTitle from './ContactTitle';
 
 const Contact = () => {
-  const renderBody = useCallback(
-    () => (
-      <>
-        <ContactTitle />
-        <ContactContents />
-      </>
-    ),
-    [],
-  );
-
   return (
-    <Section
-      id="CONTACT"
-      renderBody={renderBody}
-    />
+    <ContactCard id="CONTACT">
+      <ContactTitle />
+      <ContactContents />
+    </ContactCard>
   );
 };
 
-const Section = styled(Card)`
+const ContactCard = styled(SectionCard)`
   display: flex;
   justify-content: space-between;
 `;

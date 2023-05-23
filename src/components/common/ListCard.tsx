@@ -1,33 +1,22 @@
-import React, { useCallback } from 'react';
+import { PropsWithChildren } from 'react';
 
 import styled from '@emotion/styled';
 
-import Card from './Card';
+import SectionCard from './SectionCard';
 
-interface ListCardProps {
+interface Props extends PropsWithChildren {
   title: string;
-  children: React.ReactNode;
 }
 
-const ListCard = ({ title, children }: ListCardProps) => {
-  const renderHeader = useCallback(
-    () => (
+const ListCard = ({ title, children }: Props) => {
+  return (
+    <SectionCard id={title}>
       <TitleWrapper>
         <Title>{title}</Title>
         <TitleDescription>대표적인 블로그 포스팅</TitleDescription>
       </TitleWrapper>
-    ),
-    [],
-  );
-
-  const renderBody = useCallback(() => <ArticleWrapper>{children}</ArticleWrapper>, []);
-
-  return (
-    <Card
-      renderHeader={renderHeader}
-      renderBody={renderBody}
-      id={title}
-    />
+      <ArticleWrapper>{children}</ArticleWrapper>
+    </SectionCard>
   );
 };
 
