@@ -1,5 +1,7 @@
+import { BrowserRouter } from 'react-router-dom';
+
 import { ThemeProvider } from '@emotion/react';
-import Home from 'components/Home';
+import Routes from 'Router';
 import { useThemeStore } from 'stores/useThemeStore';
 import { GlobalStyle, theme } from 'styles';
 
@@ -9,7 +11,7 @@ function App() {
   return (
     <ThemeProvider theme={theme[mode]}>
       <GlobalStyle />
-      <Home />
+      <Routes />
     </ThemeProvider>
   );
 }
