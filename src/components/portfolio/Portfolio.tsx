@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
-import styled from '@emotion/styled';
-import Divider from 'components/common/Divider';
+import SectionCard from 'components/common/SectionCard';
 
 import PortfolioContents from './PortfolioContents';
 import PortfolioHeader from './PortfolioHeader';
@@ -12,25 +11,14 @@ const Portfolio = () => {
   const [portfolioState, setPortfolioState] = useState<PortfolioState>('GALLERY');
 
   return (
-    <>
-      <div id="PORTFOLIO" />
-      <Divider
-        marginBottom={10}
-        marginTop={10}
+    <SectionCard id="PORTFOLIO">
+      <PortfolioHeader
+        portfolioState={portfolioState}
+        setPortfolioState={setPortfolioState}
       />
-      <Section>
-        <PortfolioHeader
-          portfolioState={portfolioState}
-          setPortfolioState={setPortfolioState}
-        />
-        <PortfolioContents portfolioState={portfolioState} />
-      </Section>
-    </>
+      <PortfolioContents portfolioState={portfolioState} />
+    </SectionCard>
   );
 };
-
-const Section = styled.section`
-  width: 100%;
-`;
 
 export default Portfolio;

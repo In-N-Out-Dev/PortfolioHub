@@ -48,7 +48,6 @@ const ButtonWrapper = styled.div<{ width: number }>`
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
-  margin-bottom: 10rem;
 `;
 
 const Button = styled.button`

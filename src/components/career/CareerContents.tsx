@@ -1,15 +1,12 @@
-import { Fragment } from 'react';
-
 import styled from '@emotion/styled';
 import CAREER_DATA from 'components/career/careerData';
-import Divider from 'components/common/Divider';
 
 const CareerContents = () => {
   return (
     <Wrap>
       {CAREER_DATA.map((career, index) => {
         return (
-          <Fragment key={index}>
+          <Item key={index}>
             <TitleWrap>
               <h3>{career.company}</h3>
               {career.cureentCompany ? (
@@ -20,17 +17,23 @@ const CareerContents = () => {
             </TitleWrap>
             <Position>{career.position}</Position>
             <Contents>{career.contnets}</Contents>
-            <Divider />
-          </Fragment>
+          </Item>
         );
       })}
     </Wrap>
   );
 };
 
-const Wrap = styled.div`
+const Wrap = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
   color: ${({ theme }) => theme.colors.MAIN_FONT};
-  margin-bottom: 10rem;
+`;
+
+const Item = styled.li`
+  padding-bottom: 6rem;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.MAIN_FONT};
 `;
 
 const TitleWrap = styled.div`
@@ -81,7 +84,6 @@ const Position = styled.p`
 `;
 
 const Contents = styled.p`
-  margin-bottom: 3.8rem;
   font-size: 1.6rem;
   line-height: 2.2rem;
   white-space: normal;

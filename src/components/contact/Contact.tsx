@@ -1,29 +1,21 @@
 import styled from '@emotion/styled';
-import Divider from 'components/common/Divider';
+import SectionCard from 'components/common/SectionCard';
 
 import ContactContents from './ContactContents';
 import ContactTitle from './ContactTitle';
 
 const Contact = () => {
   return (
-    <>
-      <Divider
-        marginBottom={10}
-        marginTop={8}
-      />
-      <Section id="CONTACT">
-        <ContactTitle />
-        <ContactContents />
-      </Section>
-    </>
+    <ContactCard id="CONTACT">
+      <ContactTitle />
+      <ContactContents />
+    </ContactCard>
   );
 };
 
-const Section = styled.section`
+const ContactCard = styled(SectionCard)`
   display: flex;
   justify-content: space-between;
-  height: 9.3rem;
-  margin-bottom: 10rem;
 `;
 
 export default Contact;

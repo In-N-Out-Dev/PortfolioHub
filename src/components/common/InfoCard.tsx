@@ -1,36 +1,27 @@
-import React from 'react';
+import { PropsWithChildren } from 'react';
 
 import styled from '@emotion/styled';
-import Divider from 'components/common/Divider';
-import 'styles/fonts/Berbas.css';
 
-interface InfoCardProps {
+import 'styles/fonts/Berbas.css';
+import SectionCard from './SectionCard';
+
+interface Props extends PropsWithChildren {
   title: string;
-  children: React.ReactNode;
 }
 
-const InfoCard = ({ title, children }: InfoCardProps) => {
+const InfoCard = ({ title, children }: Props) => {
   return (
-    <div id={title}>
-      <Divider
-        height={0.2}
-        marginBottom={10}
-        marginTop={10}
-      />
-      <Wrap>
-        <Title>{title}</Title>
-        <Article>{children}</Article>
-      </Wrap>
-    </div>
+    <CardWrapper id={title}>
+      <Title>{title}</Title>
+      <Article>{children}</Article>
+    </CardWrapper>
   );
 };
 
-const Wrap = styled.section`
+const CardWrapper = styled(SectionCard)`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  width: 100%;
-
   ${({ theme }) => theme.breakPoint.small} {
     display: block;
   }

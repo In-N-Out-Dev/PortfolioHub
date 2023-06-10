@@ -1,8 +1,5 @@
-import { Fragment } from 'react';
-
 import styled from '@emotion/styled';
 import LinkIcon from 'assets/LinkIcon';
-import Divider from 'components/common/Divider';
 import PROJECT_DATA from 'contents/projectData';
 
 const ProjectContents = () => {
@@ -10,7 +7,7 @@ const ProjectContents = () => {
     <Wrap>
       {PROJECT_DATA.map((project, index) => {
         return (
-          <Fragment key={index}>
+          <Item key={index}>
             <TitleWrap>
               <h3>{project.company}</h3>
               <p>{project.date}</p>
@@ -35,17 +32,23 @@ const ProjectContents = () => {
                 return <Stack key={index}>{stack}</Stack>;
               })}
             </StackList>
-            <Divider />
-          </Fragment>
+          </Item>
         );
       })}
     </Wrap>
   );
 };
 
-const Wrap = styled.div`
+const Wrap = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
   color: ${({ theme }) => theme.colors.MAIN_FONT};
-  margin-bottom: 10rem;
+`;
+
+const Item = styled.li`
+  padding-bottom: 6rem;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.MAIN_FONT};
 `;
 
 const TitleWrap = styled.div`
@@ -115,7 +118,6 @@ const StackList = styled.ul`
   display: flex;
   align-items: center;
   gap: 1.4rem;
-  margin-bottom: 6rem;
 `;
 
 const Stack = styled.li`

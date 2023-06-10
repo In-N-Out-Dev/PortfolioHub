@@ -12,6 +12,8 @@ const ContactTitle = () => {
 const Title = styled.h2`
   position: relative;
   color: ${({ theme }) => theme.colors.MAIN_FONT};
+  height: 9rem;
+  width: fit-content;
 `;
 
 const Span = styled.span`

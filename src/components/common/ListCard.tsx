@@ -1,36 +1,24 @@
-import React from 'react';
+import { PropsWithChildren } from 'react';
 
 import styled from '@emotion/styled';
-import Divider from 'components/common/Divider';
 
-interface ListCardProps {
+import SectionCard from './SectionCard';
+
+interface Props extends PropsWithChildren {
   title: string;
-  children: React.ReactNode;
 }
 
-const ListCard = ({ title, children }: ListCardProps) => {
+const ListCard = ({ title, children }: Props) => {
   return (
-    <div id={title}>
-      <Divider
-        marginBottom={10}
-        marginTop={10}
-      />
-      <Wrap>
-        <TitleWrapper>
-          <Title>{title}</Title>
-          <TitleDescription>대표적인 블로그 포스팅</TitleDescription>
-        </TitleWrapper>
-        <ArticleWrapper>{children}</ArticleWrapper>
-      </Wrap>
-    </div>
+    <SectionCard id={title}>
+      <TitleWrapper>
+        <Title>{title}</Title>
+        <TitleDescription>대표적인 블로그 포스팅</TitleDescription>
+      </TitleWrapper>
+      <ArticleWrapper>{children}</ArticleWrapper>
+    </SectionCard>
   );
 };
-
-const Wrap = styled.section`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-`;
 
 const TitleWrapper = styled.div`
   display: flex;
