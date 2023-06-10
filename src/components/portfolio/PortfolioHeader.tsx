@@ -38,6 +38,7 @@ const TitleWrapper = styled.div`
 const Title = styled.h3`
   font-family: 'Bebas Neue', cursive;
   font-size: 4.8rem;
+  color: ${({ theme }) => theme.colors.MAIN_FONT};
 `;
 
 const IconWrapper = styled.div`
