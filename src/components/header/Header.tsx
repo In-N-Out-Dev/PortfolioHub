@@ -1,16 +1,30 @@
 import styled from '@emotion/styled';
-import ContactButton from 'components/header/ContactButton';
 import ThemeToggleButton from 'components/header/ThemeToggleButton';
 import HEADER_DATA from 'contents/headerData';
 
+import StaticButton from '../common/StaticButton';
+
 const Header = () => {
+  const handleContactClick = () => {
+    const contactSection = document.getElementById('CONTACT');
+    if (contactSection) {
+      contactSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
+
   return (
     <HeaderWrapper>
       <TitleLogo>
         <Title href={'/'}>{HEADER_DATA.title}</Title>
       </TitleLogo>
       <ButtonsWrapper>
-        <ContactButton />
+        <StaticButton
+          title={'contact'}
+          onClickAction={handleContactClick}
+        />
         <ThemeToggleButton />
       </ButtonsWrapper>
     </HeaderWrapper>
