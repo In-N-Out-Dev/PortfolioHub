@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { useModalStore, ModalType } from 'stores/useModalStore';
 
 import PortfolioCardSkills from './PortfolioCardSkills';
 
@@ -12,8 +13,21 @@ const PortfolioCardOpened = ({
   end,
   width,
 }: PortfolioData & { width: number }) => {
+  const { setIsModalOn, modalState } = useModalStore((state) => ({
+    setIsModalOn: state.setIsModalOn,
+    modalState: state.modalState,
+  }));
+
+  const openModal = () => {
+    console.log('clicked');
+    setIsModalOn(ModalType.PORTFOLIO_DETAILED, true);
+  };
+
   return (
-    <Card width={width}>
+    <Card
+      width={width}
+      onClick={openModal}
+    >
       <SkillList>
         <PortfolioCardSkills skills={skills} />
       </SkillList>
