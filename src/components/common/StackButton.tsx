@@ -28,6 +28,7 @@ const Border = styled.a`
   border-radius: 5rem;
   font-size: 1.6rem;
   font-weight: 600;
+  cursor: pointer;
 
   :hover {
     ${({ theme: { colors } }) => {
