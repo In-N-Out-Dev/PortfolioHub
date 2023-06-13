@@ -35,8 +35,12 @@ const ButtonWrapper = styled.button<{ isColorInversion: boolean }>`
   border-radius: 5rem;
   background: ${({ isColorInversion, theme }) =>
     isColorInversion ? theme.colors.BACKGROUND : theme.colors.MAIN_FONT};
-  color: ${({ isColorInversion, theme }) =>
-    isColorInversion ? theme.colors.MAIN_FONT : theme.colors.BACKGROUND};
+  height: min-content;
+
+  p {
+    color: ${({ isColorInversion, theme }) =>
+      isColorInversion ? theme.colors.MAIN_FONT : theme.colors.BACKGROUND};
+  }
 
   ${({ isColorInversion, theme }) =>
     isColorInversion && BorderStyle(isColorInversion, theme.colors.MAIN_FONT)}
