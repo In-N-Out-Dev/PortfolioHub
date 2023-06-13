@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import XIcon from 'assets/XIcon';
-import ContactButton from 'components/common/StaticButton';
+import StaticButton from 'components/common/StaticButton';
 import PortfolioDetailedContainer from 'components/portfolio/detailed/PortfolioDetailedContainer';
 import { ModalType, useModalStore } from 'stores/useModalStore';
 
@@ -20,13 +20,13 @@ const PortfolioDetailedModal = () => {
       <Container>
         <Header>
           <h2>Title</h2>
-          <ContactButton
+          <StaticButton
             title={'Close'}
             onClickAction={closeModal}
             isColorInversion={true}
           >
             <XIcon />
-          </ContactButton>
+          </StaticButton>
         </Header>
         <PortfolioDetailedContainer />
       </Container>
@@ -52,7 +52,8 @@ const Header = styled.div`
   //TODO: 미디어쿼리 패딩 추가
   border-bottom: 0.1rem solid ${({ theme }) => theme.colors.MAIN_FONT};
   h2 {
-    font-family: 'Bebas Neue', cursive;
+    font-family: 'Bebas Neue', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
+      Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     font-size: 3rem;
     color: ${({ theme }) => theme.colors.MAIN_FONT};
   }

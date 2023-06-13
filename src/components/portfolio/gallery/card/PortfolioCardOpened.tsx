@@ -71,7 +71,8 @@ const TitleWrapper = styled.div`
 `;
 
 const CardNo = styled.p`
-  font-family: 'Bebas Neue', cursive;
+  font-family: 'Bebas Neue', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
+    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 `;
 
 const InfoDate = styled.p`

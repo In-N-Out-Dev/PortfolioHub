@@ -60,7 +60,8 @@ const MenuItem = styled.li`
   display: flex;
   align-items: center;
   gap: 1.6rem;
-  font-family: 'Bebas Neue', cursive;
+  font-family: 'Bebas Neue', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
+    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-size: 2.4rem;
   color: ${({ theme }) => theme.colors.MAIN_FONT};
   cursor: pointer;

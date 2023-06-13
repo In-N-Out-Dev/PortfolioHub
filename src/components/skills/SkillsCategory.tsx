@@ -26,7 +26,8 @@ const CategoryCard = styled.li`
 `;
 
 const Title = styled.h4`
-  font-family: 'Bebas Neue', cursive;
+  font-family: 'Bebas Neue', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
+    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   margin-bottom: 1.6rem;
   font-size: 3.2rem;
   color: ${({ theme }) => theme.colors.MAIN_FONT};

@@ -19,7 +19,8 @@ const Title = styled.h2`
 const Span = styled.span`
   position: relative;
   top: -1rem;
-  font-family: 'Bebas Neue', cursive;
+  font-family: 'Bebas Neue', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
+    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-size: 12.8rem;
   line-height: 1;
   vertical-align: top;

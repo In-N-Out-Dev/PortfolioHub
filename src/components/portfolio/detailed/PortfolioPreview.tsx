@@ -49,7 +49,8 @@ const Article = styled.article`
 `;
 
 const Tag = styled.h3`
-  font-family: 'Bebas Neue', cursive;
+  font-family: 'Bebas Neue', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
+    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-size: 2.4rem;
   font-weight: 600;
 
