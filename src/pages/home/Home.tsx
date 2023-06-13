@@ -3,6 +3,7 @@ import Career from 'components/career/Career';
 import Layout from 'components/common/Layout';
 import Contact from 'components/contact/Contact';
 import Introduce from 'components/introduce/Introduce';
+import { ModalSwitcher } from 'components/modal';
 import Portfolio from 'components/portfolio/Portfolio';
 import Project from 'components/project/Project';
 import Skills from 'components/skills/Skills';
@@ -10,6 +11,7 @@ import Skills from 'components/skills/Skills';
 const Home = () => {
   return (
     <Layout>
+      <ModalSwitcher />
       <Introduce />
       <Career />
       <Project />
