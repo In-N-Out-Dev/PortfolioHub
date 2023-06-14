@@ -36,18 +36,11 @@ const Title = styled.h2`
     Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-size: 4.8rem;
   color: ${({ theme }) => theme.colors.MAIN_FONT};
+  min-width: 25rem;
 `;
 
 const Article = styled.article`
-  max-width: 59.1rem;
-
-  ${({ theme }) => theme.breakPoint.small} {
-    width: 100%;
-  }
-
-  ${({ theme }) => theme.breakPoint.medium} {
-    width: 100%;
-  }
+  width: 100%;
 `;
 
 export default InfoCard;

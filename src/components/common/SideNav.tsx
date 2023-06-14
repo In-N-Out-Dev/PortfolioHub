@@ -22,6 +22,7 @@ const SideNav = () => {
       );
     });
   };
+
   const onClickMenu = (menu: MenuListProps) => {
     const element = document.getElementById(menu);
     if (element) {
@@ -44,7 +45,13 @@ const SideNav = () => {
   );
 };
 
-const SideNavWrapper = styled.nav``;
+const SideNavWrapper = styled.nav`
+  display: none;
+  ${({ theme }) => theme.breakPoint.xlarge} {
+    display: block;
+    min-width: 20rem;
+  }
+`;
 
 const ContentWrapper = styled.ul`
   display: flex;
