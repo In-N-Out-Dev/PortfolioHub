@@ -60,7 +60,7 @@ const TitleWrap = styled.div`
     align-items: center;
   }
 
-  p:nth-child(1) {
+  p:nth-of-type(1) {
     color: ${({ theme }) => theme.colors.HIGHTLIGHT};
   }
 `;
