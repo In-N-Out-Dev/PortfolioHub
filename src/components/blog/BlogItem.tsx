@@ -54,16 +54,17 @@ const ItemWrapper = styled.li<{ isHovered: boolean }>`
 `;
 
 const ImageWrapper = styled.div`
-  width: 28.2rem;
-  height: 28.2rem;
+  position: relative;
+  padding-bottom: 100%;
+  overflow: hidden;
+  width: 100%;
 `;
 
 const BlogThumbnail = styled.img<{ isHovered: boolean }>`
+  position: absolute;
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
-  max-width: 100%;
-  max-height: 100%;
 
   -webkit-transition: border-radius 0.3s;
   -moz-transition: border-radius 0.3s;
@@ -72,7 +73,7 @@ const BlogThumbnail = styled.img<{ isHovered: boolean }>`
   ${({ isHovered }) =>
     isHovered &&
     css`
-      border-radius: 14.1rem;
+      border-radius: 50%;
     `}
 `;
 
