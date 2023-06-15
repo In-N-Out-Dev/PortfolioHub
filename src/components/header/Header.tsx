@@ -1,10 +1,16 @@
+import { useMediaQuery } from 'react-responsive';
+
 import styled from '@emotion/styled';
+import HamburgerMenuButton from 'components/common/HamburgerMenuButton';
 import ThemeToggleButton from 'components/header/ThemeToggleButton';
 import HEADER_DATA from 'contents/headerData';
+import { ModalType, useModalStore } from 'stores/useModalStore';
 
 import StaticButton from '../common/StaticButton';
 
 const Header = () => {
+  const isXLargeDisplay = useMediaQuery({ query: '(min-width: 1025px)' });
+
   const handleContactClick = () => {
     const contactSection = document.getElementById('CONTACT');
     if (contactSection) {
@@ -15,17 +21,45 @@ const Header = () => {
     }
   };
 
+  const { setIsModalOn, modalState } = useModalStore((state) => ({
+    setIsModalOn: state.setIsModalOn,
+    modalState: state.modalState,
+  }));
+
+  const openMobileNavModal = () => {
+    console.log('open');
+    setIsModalOn(ModalType.MOBILE_MENU, true);
+  };
+
+  const closeMobileNavModal = () => {
+    console.log('close');
+    setIsModalOn(ModalType.MOBILE_MENU, false);
+  };
+
   return (
     <HeaderWrapper>
       <TitleLogo>
         <Title href={'/'}>{HEADER_DATA.title}</Title>
       </TitleLogo>
       <ButtonsWrapper>
-        <StaticButton
-          title={'contact'}
-          onClickAction={handleContactClick}
-        />
+        {isXLargeDisplay && (
+          <StaticButton
+            title={'contact'}
+            onClickAction={handleContactClick}
+          />
+        )}
         <ThemeToggleButton />
+        {!isXLargeDisplay && (
+          <HamburgerMenuButton
+            onClickAction={() => {
+              if (modalState.display) {
+                closeMobileNavModal();
+              } else {
+                openMobileNavModal();
+              }
+            }}
+          />
+        )}
       </ButtonsWrapper>
     </HeaderWrapper>
   );
@@ -37,13 +71,21 @@ const HeaderWrapper = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2rem 12rem;
+
   width: 100%;
+  padding: 2rem 3.8rem;
   border-bottom: 1px solid ${({ theme }) => theme.colors.MAIN_FONT};
   background: ${({ theme }) => theme.colors.BACKGROUND};
   position: sticky;
   top: 0;
   z-index: 10;
+
+  ${({ theme }) => theme.breakPoint.xlarge} {
+    padding: 2rem 12rem;
+  }
+  ${({ theme }) => theme.breakPoint.large} {
+    padding: 2rem 6.5rem;
+  }
 `;
 
 const TitleLogo = styled.h1``;
@@ -52,6 +94,7 @@ const Title = styled.a`
   font-family: 'Bebas Neue', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
     Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-size: 4.8rem;
+  line-height: 5.8rem;
   color: ${({ theme }) => theme.colors.MAIN_FONT};
 `;
 
