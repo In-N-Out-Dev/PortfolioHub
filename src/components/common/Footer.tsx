@@ -33,16 +33,35 @@ const FooterWrapper = styled.footer`
     background-color: ${({ theme }) => theme.colors.BACKGROUND};
     z-index: -1;
   }
+  ${({ theme }) => theme.breakPoint.large} {
+    padding: 3.5rem 6.5rem;
+  }
+  ${({ theme }) => theme.breakPoint.medium} {
+    padding: 3.5rem 4.5rem;
+  }
+  ${({ theme }) => theme.breakPoint.small} {
+    padding: 2.8rem 1.6rem;
+  }
 `;
 
 const Contents = styled.div`
   display: flex;
   justify-content: space-between;
+  ${({ theme }) => theme.breakPoint.small} {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 `;
 
 const Texts = styled.p`
   font-size: 2.4rem;
   color: ${({ theme }) => theme.colors.MAIN_FONT};
+  ${({ theme }) => theme.breakPoint.small} {
+    font-size: 1.6rem;
+  }
+  ${({ theme }) => theme.breakPoint.medium} {
+    font-size: 2rem;
+  }
 `;
 
 const NameLink = styled.a`
