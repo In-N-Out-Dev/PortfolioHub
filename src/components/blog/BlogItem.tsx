@@ -55,26 +55,34 @@ const ItemWrapper = styled.li<{ isHovered: boolean }>`
 
 const ImageWrapper = styled.div`
   position: relative;
-  padding-bottom: 100%;
   overflow: hidden;
   width: 100%;
+  padding-bottom: 28.2rem;
+
+  ${({ theme }) => theme.breakPoint.xlarge} {
+    padding-bottom: 100%;
+  }
 `;
 
 const BlogThumbnail = styled.img<{ isHovered: boolean }>`
   position: absolute;
   width: 100%;
   height: 100%;
+  max-height: 28.2rem;
   object-fit: cover;
 
   -webkit-transition: border-radius 0.3s;
   -moz-transition: border-radius 0.3s;
   -o-transition: border-radius 0.3s;
   transition: border-radius 0.3s;
-  ${({ isHovered }) =>
-    isHovered &&
-    css`
-      border-radius: 50%;
-    `}
+
+  ${({ theme }) => theme.breakPoint.xlarge} {
+    ${({ isHovered }) =>
+      isHovered &&
+      css`
+        border-radius: 50%;
+      `}
+  }
 `;
 
 const TextWrapper = styled.div`
