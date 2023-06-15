@@ -39,6 +39,11 @@ const Border = styled.a`
       };
     }};
   }
+
+  ${({ theme }) => theme.breakPoint.small} {
+    padding: 1.2rem;
+    border-radius: 50%;
+  }
 `;
 
 export default StackButton;
