@@ -20,7 +20,8 @@ const FooterWrapper = styled.footer`
   position: relative;
   width: 100%;
   padding: 3.5rem 12rem;
-  font-family: 'Bebas Neue', cursive;
+  font-family: 'Bebas Neue', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
+    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   background-color: ${({ theme }) => theme.colors.BACKGROUND_SUB};
   ::after {
     content: '';

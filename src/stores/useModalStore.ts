@@ -3,6 +3,7 @@ import { create } from 'zustand';
 
 export const ModalType = {
   PORTFOLIO_DETAILED: 'portfolioDetailed',
+  MOBILE_MENU: 'mobileMenu',
 };
 
 export const useModalStore = create<ModalStore>((set) => ({

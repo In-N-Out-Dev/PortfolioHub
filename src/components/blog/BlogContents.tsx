@@ -22,8 +22,12 @@ const BlogContents = () => {
 const Wrapper = styled.ul`
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  flex-wrap: wrap;
   gap: 2.4rem;
+
+  ${({ theme }) => theme.breakPoint.xlarge} {
+    grid-template-columns: repeat(3, 1fr);
+  }
 `;
 
 export default BlogContents;

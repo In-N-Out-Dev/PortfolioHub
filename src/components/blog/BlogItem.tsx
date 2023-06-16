@@ -54,26 +54,35 @@ const ItemWrapper = styled.li<{ isHovered: boolean }>`
 `;
 
 const ImageWrapper = styled.div`
-  width: 28.2rem;
-  height: 28.2rem;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-bottom: 28.2rem;
+
+  ${({ theme }) => theme.breakPoint.xlarge} {
+    padding-bottom: 100%;
+  }
 `;
 
 const BlogThumbnail = styled.img<{ isHovered: boolean }>`
+  position: absolute;
   width: 100%;
-  height: auto;
+  height: 100%;
+  max-height: 28.2rem;
   object-fit: cover;
-  max-width: 100%;
-  max-height: 100%;
 
   -webkit-transition: border-radius 0.3s;
   -moz-transition: border-radius 0.3s;
   -o-transition: border-radius 0.3s;
   transition: border-radius 0.3s;
-  ${({ isHovered }) =>
-    isHovered &&
-    css`
-      border-radius: 14.1rem;
-    `}
+
+  ${({ theme }) => theme.breakPoint.xlarge} {
+    ${({ isHovered }) =>
+      isHovered &&
+      css`
+        border-radius: 50%;
+      `}
+  }
 `;
 
 const TextWrapper = styled.div`
@@ -82,7 +91,8 @@ const TextWrapper = styled.div`
 `;
 
 const IndexText = styled.p`
-  font-family: 'Bebas Neue', cursive;
+  font-family: 'Bebas Neue', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
+    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-size: 2.4rem;
   color: ${({ theme }) => theme.colors.MAIN_FONT};
 `;

@@ -22,15 +22,28 @@ const Layout = ({ children }: LayoutProps) => {
 };
 
 const MainWrapper = styled.main`
-  display: grid;
-  grid-template-columns: 1fr 3fr;
+  display: flex;
   gap: 2rem;
-  padding: 0 12rem;
   background-color: ${({ theme }) => theme.colors.BACKGROUND};
+  padding: 0 1.2rem;
+
+  ${({ theme }) => theme.breakPoint.xlarge} {
+    padding: 0 12rem;
+  }
+  ${({ theme }) => theme.breakPoint.large} {
+    padding: 0 6.5rem;
+  }
+  ${({ theme }) => theme.breakPoint.medium} {
+    padding: 0 3.8rem;
+  }
 `;
 
 const SectionWrapper = styled.div`
   width: 100%;
+
+  ${({ theme }) => theme.breakPoint.xlarge} {
+    width: calc(100% - 20rem);
+  }
 `;
 
 export default Layout;
