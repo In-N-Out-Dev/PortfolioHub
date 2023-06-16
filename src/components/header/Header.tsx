@@ -27,12 +27,10 @@ const Header = () => {
   }));
 
   const openMobileNavModal = () => {
-    console.log('open');
     setIsModalOn(ModalType.MOBILE_MENU, true);
   };
 
   const closeMobileNavModal = () => {
-    console.log('close');
     setIsModalOn(ModalType.MOBILE_MENU, false);
   };
 

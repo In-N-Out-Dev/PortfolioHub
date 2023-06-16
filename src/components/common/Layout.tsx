@@ -25,13 +25,16 @@ const MainWrapper = styled.main`
   display: flex;
   gap: 2rem;
   background-color: ${({ theme }) => theme.colors.BACKGROUND};
-  padding: 0 3.8rem;
+  padding: 0 1.2rem;
 
   ${({ theme }) => theme.breakPoint.xlarge} {
     padding: 0 12rem;
   }
   ${({ theme }) => theme.breakPoint.large} {
     padding: 0 6.5rem;
+  }
+  ${({ theme }) => theme.breakPoint.medium} {
+    padding: 0 3.8rem;
   }
 `;
 
