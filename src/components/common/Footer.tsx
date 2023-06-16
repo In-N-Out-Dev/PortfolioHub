@@ -45,7 +45,7 @@ const Texts = styled.p`
 `;
 
 const NameLink = styled.a`
-  color: ${({ theme }) => theme.colors.HIGHTLIGHT};
+  color: ${({ theme }) => theme.colors.HIGHLIGHT};
 `;
 
 export default Footer;

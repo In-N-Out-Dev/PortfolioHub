@@ -20,7 +20,7 @@ const PortfolioCardOpened = ({
       <InfoWrapper>
         <TitleWrapper>
           <CardNo>{String(no).padStart(2, '0')}</CardNo>
-          <h4>{title}</h4>
+          <TitleText>{title}</TitleText>
         </TitleWrapper>
         <InfoDate>
           {start} - {end}
@@ -35,7 +35,7 @@ const Card = styled.li<{ width: number }>`
   ${({ theme: { colors } }) => {
     return {
       color: colors.BACKGROUND,
-      backgroundColor: colors.HIGHTLIGHT,
+      backgroundColor: colors.HIGHLIGHT,
     };
   }};
   padding: 3.2rem 2.4rem;
@@ -43,6 +43,12 @@ const Card = styled.li<{ width: number }>`
   flex-direction: column;
   justify-content: space-between;
   width: ${({ width }) => width}rem;
+  ${({ theme }) => theme.breakPoint.medium} {
+    width: 100%;
+  }
+  ${({ theme }) => theme.breakPoint.small} {
+    width: 100%;
+  }
 `;
 
 const InfoWrapper = styled.div`
@@ -51,13 +57,15 @@ const InfoWrapper = styled.div`
   justify-content: space-between;
 `;
 
-const TitleWrapper = styled.div`
-  font-size: 3.6rem;
-  line-height: 1;
-`;
+const TitleWrapper = styled.div``;
 
 const CardNo = styled.p`
+  font-size: 3.6rem;
   font-family: 'Bebas Neue', cursive;
+`;
+
+const TitleText = styled.h4`
+  font-size: 3.2rem;
 `;
 
 const InfoDate = styled.p`

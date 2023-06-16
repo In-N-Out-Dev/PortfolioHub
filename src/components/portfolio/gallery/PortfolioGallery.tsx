@@ -1,31 +1,43 @@
-import { useTheme } from '@emotion/react';
+import { useState } from 'react';
+
+import { css, useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
 import ForwardIcon from 'assets/ForwardIcon';
-import { usePortfolioGallery } from 'hooks';
 
-import PortfolioCardList from './card/PortfolioCardList';
+import PortfolioCard from './card/PortfolioCard';
 
 import type { PortfolioData } from 'types/portfolio';
 
 const PortfolioGallery = ({ portfolioData }: { portfolioData: PortfolioData[] }) => {
   const { colors } = useTheme();
-  const { portfolios, handleIncreaseOpenedNo, handleDecreaseOpenedNo } =
-    usePortfolioGallery(portfolioData);
-  const openedWidth = 44;
+
+  const [activeIndex, setActiveIndex] = useState(3);
+
+  const handlePrev = () => {
+    setActiveIndex((prevIndex) => (prevIndex === 0 ? portfolioData.length - 1 : prevIndex - 1));
+  };
+
+  const handleNext = () => {
+    setActiveIndex((prevIndex) => (prevIndex === portfolioData.length - 1 ? 0 : prevIndex + 1));
+  };
 
   return (
     <>
-      <List>
-        <PortfolioCardList
-          portfolios={portfolios}
-          openedWidth={openedWidth}
-        />
-      </List>
-      <ButtonWrapper width={openedWidth}>
-        <BackwardButton onClick={handleDecreaseOpenedNo}>
+      <ul css={cardContainerStyle(activeIndex)}>
+        {portfolioData.map((portfolio, i) => {
+          return (
+            <PortfolioCard
+              isActive={i === activeIndex}
+              {...portfolio}
+            />
+          );
+        })}
+      </ul>
+      <ButtonWrapper>
+        <BackwardButton onClick={handlePrev}>
           <ForwardIcon color={colors.MAIN_FONT} />
         </BackwardButton>
-        <Button onClick={handleIncreaseOpenedNo}>
+        <Button onClick={handleNext}>
           <ForwardIcon color={colors.MAIN_FONT} />
         </Button>
       </ButtonWrapper>
@@ -33,18 +45,37 @@ const PortfolioGallery = ({ portfolioData }: { portfolioData: PortfolioData[] })
   );
 };
 
-const List = styled.ul`
-  position: relative;
-  display: flex;
-  justify-content: center;
-  gap: 2.1rem;
-  height: 29.5rem;
-  width: 100%;
-  margin-bottom: 3rem;
-`;
+const cardContainerStyle = (activeIndex: number) => {
+  const theme = useTheme();
+  const move = 45 - (activeIndex + 1) * (9.2 + 2.1);
 
-const ButtonWrapper = styled.div<{ width: number }>`
-  width: ${({ width }) => width}rem;
+  return css({
+    position: 'relative',
+    display: 'flex',
+    justifyContent: 'center',
+    gap: '2.1rem',
+    height: '29.5rem',
+    width: '100%',
+    [theme.breakPoint.small]: {
+      marginBottom: '6rem',
+    },
+    [theme.breakPoint.medium]: {
+      marginBottom: '4rem',
+    },
+    marginBottom: '3rem',
+    transition: 'transform 0.5s',
+    transform: `translateX(calc(${move}rem))`,
+  });
+};
+
+const ButtonWrapper = styled.div`
+  width: 44rem;
+  ${({ theme }) => theme.breakPoint.medium} {
+    width: 22rem;
+  }
+  ${({ theme }) => theme.breakPoint.small} {
+    width: 18rem;
+  }
   display: flex;
   justify-content: space-between;
   margin: 0 auto;

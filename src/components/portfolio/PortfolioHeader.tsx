@@ -11,7 +11,7 @@ const PortfolioHeader = ({ portfolioState, setPortfolioState }: PortfolioHeaderP
     setPortfolioState(type);
   };
   const isHighlighted = (type: PortfolioState) =>
-    portfolioState === type ? colors.HIGHTLIGHT : colors.MAIN_FONT;
+    portfolioState === type ? colors.HIGHLIGHT : colors.MAIN_FONT;
 
   return (
     <TitleWrapper>

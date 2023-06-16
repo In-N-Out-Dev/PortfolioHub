@@ -67,11 +67,11 @@ const CurrentDate = styled.div`
   font-size: 1.4rem;
   font-weight: 400;
   color: ${({ theme }) => theme.colors.MAIN_FONT};
-  background-color: ${({ theme }) => theme.colors.HIGHTLIGHT};
+  background-color: ${({ theme }) => theme.colors.HIGHLIGHT};
 
   ${({ theme }) => theme.breakPoint.small} {
     padding: 0;
-    color: ${({ theme }) => theme.colors.HIGHTLIGHT};
+    color: ${({ theme }) => theme.colors.HIGHLIGHT};
     background-color: transparent;
   }
 `;

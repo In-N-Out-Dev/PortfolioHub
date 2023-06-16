@@ -15,7 +15,7 @@ const PortfolioCardFolded = ({ no, title }: PortfolioData) => {
 
 const Card = styled.li`
   border: 0.1rem solid;
-  width: 9.2rem;
+  min-width: 9.2rem;
   ${({ theme: { colors } }) => {
     return {
       borderColor: colors.BORDER,
@@ -23,6 +23,12 @@ const Card = styled.li`
       color: colors.MAIN_FONT,
     };
   }}
+  ${({ theme }) => theme.breakPoint.medium} {
+    display: none;
+  }
+  ${({ theme }) => theme.breakPoint.small} {
+    display: none;
+  }
 `;
 
 const Wrapper = styled.div`

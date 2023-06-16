@@ -32,8 +32,8 @@ const Border = styled.a`
   :hover {
     ${({ theme: { colors } }) => {
       return {
-        borderColor: colors.HIGHTLIGHT,
-        backgroundColor: colors.HIGHTLIGHT,
+        borderColor: colors.HIGHLIGHT,
+        backgroundColor: colors.HIGHLIGHT,
         color: colors.BACKGROUND,
       };
     }};

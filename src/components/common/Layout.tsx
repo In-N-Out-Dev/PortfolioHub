@@ -12,19 +12,21 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <>
       <Header />
-      <MainWrapper>
-        <SideNav />
-        <SectionWrapper>{children}</SectionWrapper>
-      </MainWrapper>
+      {/* <MainWrapper> */}
+      {/* <SideNav /> */}
+      <SectionWrapper>{children}</SectionWrapper>
+      {/* </MainWrapper> */}
       <Footer />
     </>
   );
 };
 
 const MainWrapper = styled.main`
+  /* ${({ theme }) => theme.breakPoint.xlarge} { */
   display: grid;
   grid-template-columns: 1fr 3fr;
   gap: 2rem;
+  /* } */
   padding: 0 12rem;
   background-color: ${({ theme }) => theme.colors.BACKGROUND};
 `;

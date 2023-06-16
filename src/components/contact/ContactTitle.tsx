@@ -31,7 +31,7 @@ const CircleIcon = styled.div`
   top: 0;
   width: 1.5rem;
   height: 1.5rem;
-  background-color: ${({ theme }) => theme.colors.HIGHTLIGHT};
+  background-color: ${({ theme }) => theme.colors.HIGHLIGHT};
   border-radius: 50%;
 `;
 

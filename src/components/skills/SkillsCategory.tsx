@@ -46,8 +46,8 @@ const Item = styled.li<{ highlight: boolean }>`
   ${({ highlight, theme: { colors } }) => {
     if (highlight) {
       return {
-        borderColor: colors.HIGHTLIGHT,
-        backgroundColor: colors.HIGHTLIGHT,
+        borderColor: colors.HIGHLIGHT,
+        backgroundColor: colors.HIGHLIGHT,
         color: colors.BACKGROUND,
       };
     }
