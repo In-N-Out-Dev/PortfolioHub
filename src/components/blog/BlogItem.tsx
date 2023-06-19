@@ -67,8 +67,7 @@ const ImageWrapper = styled.div`
 const BlogThumbnail = styled.img<{ isHovered: boolean }>`
   position: absolute;
   width: 100%;
-  height: 100%;
-  max-height: 28.2rem;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
 
   -webkit-transition: border-radius 0.3s;
