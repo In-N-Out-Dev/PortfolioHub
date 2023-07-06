@@ -26,14 +26,6 @@ const Header = () => {
     modalState: state.modalState,
   }));
 
-  const openMobileNavModal = () => {
-    setIsModalOn(ModalType.MOBILE_MENU, true);
-  };
-
-  const closeMobileNavModal = () => {
-    setIsModalOn(ModalType.MOBILE_MENU, false);
-  };
-
   return (
     <HeaderWrapper>
       <TitleLogo>
@@ -50,12 +42,9 @@ const Header = () => {
         {!isXLargeDisplay && (
           <HamburgerMenuButton
             onClickAction={() => {
-              if (modalState.display) {
-                closeMobileNavModal();
-              } else {
-                openMobileNavModal();
-              }
+              setIsModalOn(ModalType.MOBILE_MENU, !modalState.display);
             }}
+            isOpen={modalState.display}
           />
         )}
       </ButtonsWrapper>
@@ -94,6 +83,15 @@ const Title = styled.a`
   font-size: 4.8rem;
   line-height: 5.8rem;
   color: ${({ theme }) => theme.colors.MAIN_FONT};
+
+  ${({ theme }) => theme.breakPoint.medium} {
+    font-size: 4rem;
+    line-height: 4.8rem;
+  }
+  ${({ theme }) => theme.breakPoint.small} {
+    font-size: 3rem;
+    line-height: 3.2rem;
+  }
 `;
 
 const ButtonsWrapper = styled.div`
