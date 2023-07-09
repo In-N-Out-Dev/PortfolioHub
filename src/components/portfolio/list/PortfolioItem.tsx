@@ -75,10 +75,14 @@ const Item = styled.li`
   border-bottom: 0.1rem solid ${({ theme }) => theme.colors.MAIN_FONT};
   align-items: center;
   padding: 4rem 0;
-  ${({ theme }) => theme.breakPoint.medium} {
-    padding: 6rem 0;
-    align-items: flex-start;
-  }
+  ${({ theme: { breakPoint } }) => {
+    return {
+      [breakPoint.medium]: {
+        alignItems: 'flex-start',
+        padding: '6rem 0',
+      },
+    };
+  }}
 `;
 
 const TitleWrapper = styled.div`
@@ -90,23 +94,31 @@ const CardNo = styled.p`
   font-size: 3.2rem;
   font-family: 'Bebas Neue', cursive;
   font-weight: 500;
-  ${({ theme }) => theme.breakPoint.medium} {
-    font-size: 2.4rem;
-  }
-  ${({ theme }) => theme.breakPoint.small} {
-    font-size: 2rem;
-  }
+  ${({ theme: { breakPoint } }) => {
+    return {
+      [breakPoint.medium]: {
+        fontSize: '2.4rem',
+      },
+      [breakPoint.small]: {
+        fontSize: '2rem',
+      },
+    };
+  }}
 `;
 
 const TitleText = styled.h4`
   font-size: 3rem;
   font-weight: 700;
-  ${({ theme }) => theme.breakPoint.medium} {
-    font-size: 2.4rem;
-  }
-  ${({ theme }) => theme.breakPoint.small} {
-    font-size: 2rem;
-  }
+  ${({ theme: { breakPoint } }) => {
+    return {
+      [breakPoint.medium]: {
+        fontSize: '2.4rem',
+      },
+      [breakPoint.small]: {
+        fontSize: '2rem',
+      },
+    };
+  }}
 `;
 
 const InfoWrapper = styled.div`
@@ -120,12 +132,16 @@ const InfoDate = styled.p`
   font-size: 2rem;
   font-weight: 400;
   color: ${({ theme }) => theme.colors.MAIN_FONT};
-  ${({ theme }) => theme.breakPoint.medium} {
-    font-size: 1.6rem;
-  }
-  ${({ theme }) => theme.breakPoint.small} {
-    font-size: 1.4rem;
-  }
+  ${({ theme: { breakPoint } }) => {
+    return {
+      [breakPoint.medium]: {
+        fontSize: '1.6rem',
+      },
+      [breakPoint.small]: {
+        fontSize: '1.4rem',
+      },
+    };
+  }}
 `;
 
 const SmallWrapper = styled.div`
