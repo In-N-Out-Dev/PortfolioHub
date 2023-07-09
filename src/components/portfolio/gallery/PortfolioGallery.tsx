@@ -1,5 +1,3 @@
-import { useMediaQuery } from 'react-responsive';
-
 import { useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
 import ForwardIcon from 'assets/ForwardIcon';
@@ -16,19 +14,6 @@ const PortfolioGallery = ({ portfolioData }: { portfolioData: PortfolioData[] })
   const { portfolios, handleIncreaseOpenedNo, handleDecreaseOpenedNo } =
     usePortfolioGallery(portfolioData);
 
-  const mediumBreakPoint = useMediaQuery({ query: '(max-width: 768px)' });
-  const smallBreakPoint = useMediaQuery({ query: '(max-width: 320px)' });
-
-  const buttonWrapperWidth = (() => {
-    if (smallBreakPoint) {
-      return 18;
-    }
-    if (mediumBreakPoint) {
-      return 22;
-    }
-    return 44;
-  })();
-
   return (
     <motion.div
       variants={contentVariants}
@@ -39,7 +24,7 @@ const PortfolioGallery = ({ portfolioData }: { portfolioData: PortfolioData[] })
       <List>
         <PortfolioCardList portfolios={portfolios} />
       </List>
-      <ButtonWrapper width={buttonWrapperWidth}>
+      <ButtonWrapper>
         <BackwardButton onClick={handleDecreaseOpenedNo}>
           <ForwardIcon color={colors.MAIN_FONT} />
         </BackwardButton>
@@ -60,11 +45,21 @@ const List = styled.ul`
   margin-bottom: 3rem;
 `;
 
-const ButtonWrapper = styled.div<{ width: number }>`
-  width: ${({ width }) => width}rem;
+const ButtonWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
+  ${({ theme: { breakPoint } }) => {
+    return {
+      [breakPoint.small]: {
+        width: '18rem',
+      },
+      [breakPoint.medium]: {
+        width: '22rem',
+      },
+      width: '44rem',
+    };
+  }}
 `;
 
 const Button = styled.button`

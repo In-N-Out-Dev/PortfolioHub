@@ -21,12 +21,16 @@ const ContactCard = styled(SectionCard)`
   justify-content: space-between;
   flex-direction: column;
   gap: 6rem;
-  ${({ theme }) => theme.breakPoint.large} {
-    flex-direction: row;
-  }
-  ${({ theme }) => theme.breakPoint.xlarge} {
-    flex-direction: row;
-  }
+  ${({ theme: { breakPoint } }) => {
+    return {
+      [breakPoint.large]: {
+        flexDirection: 'row',
+      },
+      [breakPoint.xlarge]: {
+        flexDirection: 'row',
+      },
+    };
+  }}
 `;
 
 export default Contact;

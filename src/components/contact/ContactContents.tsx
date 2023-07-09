@@ -35,12 +35,19 @@ const Article = styled.article`
 const Email = styled.p`
   font-size: 3.2rem;
   line-height: 0.7;
-  ${({ theme }) => theme.breakPoint.medium} {
-    font-size: 2.4rem;
-  }
-  ${({ theme }) => theme.breakPoint.small} {
-    font-size: 2rem;
-  }
+  ${({ theme: { breakPoint } }) => {
+    return {
+      [breakPoint.large]: {
+        fontSize: '2.4rem',
+      },
+      [breakPoint.medium]: {
+        fontSize: '2.4rem',
+      },
+      [breakPoint.small]: {
+        fontSize: '2rem',
+      },
+    };
+  }}
 `;
 
 const List = styled.ul`
