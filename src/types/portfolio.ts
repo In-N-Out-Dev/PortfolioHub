@@ -8,5 +8,4 @@ export interface PortfolioData {
 
 export type PortfolioCartListProps = {
   portfolios: PortfolioData[];
-  openedWidth: number;
 };
