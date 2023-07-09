@@ -1,12 +1,20 @@
 import styled from '@emotion/styled';
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 import remarkGfm from 'remark-gfm';
+import markdownStyle from 'styles/MarkdownStyle';
 
 const markdown = `
   # 헤딩
 
-  **굵게**
+  ## 헤딩
+
+  ### 헤딩
+
+  > ㅇㅇㅇ
+
+  [d]("ddd")
 `;
+
 const MarkdownRenderer = () => {
   return (
     <MarkdownStyle>
@@ -17,10 +25,10 @@ const MarkdownRenderer = () => {
     </MarkdownStyle>
   );
 };
+
 const MarkdownStyle = styled.div`
-  font-size: 1rem;
-  line-height: 2.5rem;
-  background-color: antiquewhite;
+  ${markdownStyle}
+  padding: 2rem;
 `;
 
 export default MarkdownRenderer;
