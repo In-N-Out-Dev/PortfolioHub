@@ -3,7 +3,7 @@ import PortfolioCardOpened from './PortfolioCardOpened';
 
 import type { PortfolioCartListProps } from 'types/portfolio';
 
-const PortfolioCardList = ({ portfolios, openedWidth }: PortfolioCartListProps) => {
+const PortfolioCardList = ({ portfolios }: PortfolioCartListProps) => {
   const n = portfolios.length;
   const half = Math.floor(n / 2);
 
@@ -13,7 +13,6 @@ const PortfolioCardList = ({ portfolios, openedWidth }: PortfolioCartListProps) 
         i === half ? (
           <PortfolioCardOpened
             {...portfolio}
-            width={openedWidth}
             key={'' + portfolio.no + i}
           />
         ) : (

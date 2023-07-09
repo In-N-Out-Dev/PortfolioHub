@@ -1,8 +1,16 @@
+import { useMediaQuery } from 'react-responsive';
+
 import styled from '@emotion/styled';
 
 import type { PortfolioData } from 'types/portfolio';
 
 const PortfolioCardFolded = ({ no, title }: PortfolioData) => {
+  const mediumBreakPoint = useMediaQuery({ query: '(max-width: 768px)' });
+
+  if (mediumBreakPoint) {
+    return null;
+  }
+
   return (
     <Card>
       <Wrapper>
@@ -16,6 +24,7 @@ const PortfolioCardFolded = ({ no, title }: PortfolioData) => {
 const Card = styled.li`
   border: 0.1rem solid;
   width: 9.2rem;
+  height: 29.5rem;
   ${({ theme: { colors } }) => {
     return {
       borderColor: colors.BORDER,

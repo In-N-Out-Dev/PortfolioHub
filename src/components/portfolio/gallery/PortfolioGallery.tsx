@@ -1,3 +1,5 @@
+import { useMediaQuery } from 'react-responsive';
+
 import { useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
 import ForwardIcon from 'assets/ForwardIcon';
@@ -11,17 +13,26 @@ const PortfolioGallery = ({ portfolioData }: { portfolioData: PortfolioData[] })
   const { colors } = useTheme();
   const { portfolios, handleIncreaseOpenedNo, handleDecreaseOpenedNo } =
     usePortfolioGallery(portfolioData);
-  const openedWidth = 44;
+
+  const mediumBreakPoint = useMediaQuery({ query: '(max-width: 768px)' });
+  const smallBreakPoint = useMediaQuery({ query: '(max-width: 320px)' });
+
+  const buttonWrapperWidth = (() => {
+    if (smallBreakPoint) {
+      return 18;
+    }
+    if (mediumBreakPoint) {
+      return 22;
+    }
+    return 44;
+  })();
 
   return (
     <>
       <List>
-        <PortfolioCardList
-          portfolios={portfolios}
-          openedWidth={openedWidth}
-        />
+        <PortfolioCardList portfolios={portfolios} />
       </List>
-      <ButtonWrapper width={openedWidth}>
+      <ButtonWrapper width={buttonWrapperWidth}>
         <BackwardButton onClick={handleDecreaseOpenedNo}>
           <ForwardIcon color={colors.MAIN_FONT} />
         </BackwardButton>
@@ -38,7 +49,6 @@ const List = styled.ul`
   display: flex;
   justify-content: center;
   gap: 2.1rem;
-  height: 29.5rem;
   width: 100%;
   margin-bottom: 3rem;
 `;
