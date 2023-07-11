@@ -5,15 +5,14 @@ import styled from '@emotion/styled';
 
 interface HamburgerMenuButtonProps {
   onClickAction: () => void;
+  isOpen: boolean;
 }
 
-const HamburgerMenuButton = ({ onClickAction }: HamburgerMenuButtonProps) => {
-  const [isOpen, setIsOpen] = React.useState(false);
+const HamburgerMenuButton = ({ onClickAction, isOpen }: HamburgerMenuButtonProps) => {
   return (
     <ButtonWrapper
       onClick={() => {
         onClickAction();
-        setIsOpen(!isOpen);
       }}
     >
       <Line isOpen={isOpen}></Line>
