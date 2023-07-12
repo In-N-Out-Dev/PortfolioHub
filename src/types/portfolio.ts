@@ -15,5 +15,4 @@ export type PortfolioHeaderProps = {
 
 export type PortfolioCartListProps = {
   portfolios: PortfolioData[];
-  openedWidth: number;
 };
