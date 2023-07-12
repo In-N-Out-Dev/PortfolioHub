@@ -1,19 +1,27 @@
 import { PropsWithChildren } from 'react';
 
 import styled from '@emotion/styled';
+import { ListHeaderProps } from 'types/props';
 
 import SectionCard from './SectionCard';
+import ViewModeButton from './ViewModeButton';
 
-interface Props extends PropsWithChildren {
+interface Props extends PropsWithChildren, ListHeaderProps {
   title: string;
 }
 
-const ListCard = ({ title, children }: Props) => {
+const ListCard = ({ title, children, ViewModeState, setViewModeState }: Props) => {
   return (
     <SectionCard id={title}>
       <TitleWrapper>
-        <Title>{title}</Title>
-        <TitleDescription>대표적인 블로그 포스팅</TitleDescription>
+        <TextWrapper>
+          <Title>{title}</Title>
+          <TitleDescription>대표적인 블로그 포스팅</TitleDescription>
+        </TextWrapper>
+        <ViewModeButton
+          ViewModeState={ViewModeState}
+          setViewModeState={setViewModeState}
+        />
       </TitleWrapper>
       <ArticleWrapper>{children}</ArticleWrapper>
     </SectionCard>
@@ -22,7 +30,12 @@ const ListCard = ({ title, children }: Props) => {
 
 const TitleWrapper = styled.div`
   display: flex;
+  justify-content: space-between;
   width: 100%;
+`;
+
+const TextWrapper = styled.div`
+  display: flex;
   align-items: flex-end;
   gap: 1.6rem;
 `;

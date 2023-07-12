@@ -2,17 +2,9 @@ import { useState } from 'react';
 
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
+import { BlogItemProps } from 'types/blog';
 
-export interface BlogItemProps {
-  id?: number;
-  index?: string;
-  title: string;
-  date: string;
-  image: string;
-  link: string;
-}
-
-const BlogItem = ({ index, title, date, image, link }: BlogItemProps) => {
+const GalleryBlogItem = ({ index, title, date, image, link }: BlogItemProps) => {
   const [isBlogItemHovered, setIsBlogItemHovered] = useState(false);
 
   const handleClickBlogItem = () => {
@@ -116,4 +108,4 @@ const DateText = styled.p`
   color: ${({ theme }) => theme.colors.MAIN_FONT};
 `;
 
-export default BlogItem;
+export default GalleryBlogItem;
