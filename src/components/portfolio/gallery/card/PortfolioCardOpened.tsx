@@ -49,7 +49,7 @@ const Card = styled.li<{ width: number }>`
   ${({ theme: { colors } }) => {
     return {
       color: colors.BACKGROUND,
-      backgroundColor: colors.HIGHTLIGHT,
+      backgroundColor: colors.HIGHLIGHT,
     };
   }};
   padding: 3.2rem 2.4rem;

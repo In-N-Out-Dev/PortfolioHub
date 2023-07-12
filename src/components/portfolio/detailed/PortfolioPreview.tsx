@@ -131,10 +131,10 @@ const RepoLink = styled.a`
   align-items: center;
   gap: 0.5rem;
   cursor: pointer;
-  color: ${({ theme }) => theme.colors.HIGHTLIGHT};
+  color: ${({ theme }) => theme.colors.HIGHLIGHT};
 
   :hover {
-    color: ${({ theme }) => theme.colors.HIGHTLIGHT};
+    color: ${({ theme }) => theme.colors.HIGHLIGHT};
     filter: brightness(1.1);
   }
 `;
@@ -157,8 +157,8 @@ const Item = styled.div<{ highlight: boolean }>`
   ${({ highlight, theme: { colors } }) => {
     if (highlight) {
       return {
-        borderColor: colors.HIGHTLIGHT,
-        backgroundColor: colors.HIGHTLIGHT,
+        borderColor: colors.HIGHLIGHT,
+        backgroundColor: colors.HIGHLIGHT,
         color: colors.BACKGROUND,
       };
     }

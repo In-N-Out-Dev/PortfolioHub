@@ -112,7 +112,7 @@ const CopyrightText = styled.span`
 `;
 
 const NameText = styled(CopyrightText)`
-  color: ${({ theme }) => theme.colors.HIGHTLIGHT};
+  color: ${({ theme }) => theme.colors.HIGHLIGHT};
 `;
 
 export default MenuList;

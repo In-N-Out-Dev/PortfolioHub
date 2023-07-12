@@ -61,7 +61,7 @@ const TitleWrap = styled.div`
   }
 
   p:nth-of-type(1) {
-    color: ${({ theme }) => theme.colors.HIGHTLIGHT};
+    color: ${({ theme }) => theme.colors.HIGHLIGHT};
   }
 `;
 
