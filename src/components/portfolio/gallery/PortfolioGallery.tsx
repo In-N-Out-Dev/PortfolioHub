@@ -11,13 +11,17 @@ const PortfolioGallery = ({ portfolioData }: { portfolioData: PortfolioData[] })
   const { colors } = useTheme();
   const { portfolios, handleIncreaseOpenedNo, handleDecreaseOpenedNo } =
     usePortfolioGallery(portfolioData);
+  const openedWidth = 44;
 
   return (
     <>
       <List>
-        <PortfolioCardList portfolios={portfolios} />
+        <PortfolioCardList
+          portfolios={portfolios}
+          openedWidth={openedWidth}
+        />
       </List>
-      <ButtonWrapper>
+      <ButtonWrapper width={openedWidth}>
         <BackwardButton onClick={handleDecreaseOpenedNo}>
           <ForwardIcon color={colors.MAIN_FONT} />
         </BackwardButton>
@@ -34,25 +38,16 @@ const List = styled.ul`
   display: flex;
   justify-content: center;
   gap: 2.1rem;
+  height: 29.5rem;
   width: 100%;
   margin-bottom: 3rem;
 `;
 
-const ButtonWrapper = styled.div`
+const ButtonWrapper = styled.div<{ width: number }>`
+  width: ${({ width }) => width}rem;
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
-  ${({ theme: { breakPoint } }) => {
-    return {
-      [breakPoint.small]: {
-        width: '18rem',
-      },
-      [breakPoint.medium]: {
-        width: '22rem',
-      },
-      width: '44rem',
-    };
-  }}
 `;
 
 const Button = styled.button`

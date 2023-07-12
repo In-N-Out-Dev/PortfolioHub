@@ -1,5 +1,3 @@
-import { useMediaQuery } from 'react-responsive';
-
 import styled from '@emotion/styled';
 import { useModalStore, ModalType } from 'stores/useModalStore';
 
@@ -7,7 +5,14 @@ import PortfolioCardSkills from './PortfolioCardSkills';
 
 import type { PortfolioData } from 'types/portfolio';
 
-const PortfolioCardOpened = ({ title, no, skills, start, end }: PortfolioData) => {
+const PortfolioCardOpened = ({
+  title,
+  no,
+  skills,
+  start,
+  end,
+  width,
+}: PortfolioData & { width: number }) => {
   const { setIsModalOn, modalState } = useModalStore((state) => ({
     setIsModalOn: state.setIsModalOn,
     modalState: state.modalState,
@@ -18,15 +23,14 @@ const PortfolioCardOpened = ({ title, no, skills, start, end }: PortfolioData) =
     setIsModalOn(ModalType.PORTFOLIO_DETAILED, true);
   };
 
-  const smallBreakPoint = useMediaQuery({ query: '(max-width: 320px)' });
-
   return (
-    <Card onClick={openModal}>
-      {!smallBreakPoint && (
-        <SkillList>
-          <PortfolioCardSkills skills={skills} />
-        </SkillList>
-      )}
+    <Card
+      width={width}
+      onClick={openModal}
+    >
+      <SkillList>
+        <PortfolioCardSkills skills={skills} />
+      </SkillList>
       <InfoWrapper>
         <TitleWrapper>
           <CardNo>{String(no).padStart(2, '0')}</CardNo>
@@ -40,7 +44,7 @@ const PortfolioCardOpened = ({ title, no, skills, start, end }: PortfolioData) =
   );
 };
 
-const Card = styled.li`
+const Card = styled.li<{ width: number }>`
   position: relative;
   ${({ theme: { colors } }) => {
     return {
@@ -52,36 +56,13 @@ const Card = styled.li`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  ${({ theme: { breakPoint } }) => {
-    return {
-      [breakPoint.small]: {
-        width: '29rem',
-        height: '39rem',
-        justifyContent: 'flex-end',
-      },
-      [breakPoint.medium]: {
-        width: '64rem',
-        height: '43rem',
-      },
-      width: '44rem',
-      height: '29.5rem',
-    };
-  }}
+  width: ${({ width }) => width}rem;
 `;
 
 const InfoWrapper = styled.div`
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  ${({ theme: { breakPoint } }) => {
-    return {
-      [breakPoint.small]: {
-        flexDirection: 'column',
-        alignItems: 'flex-start',
-        gap: '2rem',
-      },
-    };
-  }}
 `;
 
 const TitleWrapper = styled.div`
