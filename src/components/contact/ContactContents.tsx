@@ -14,10 +14,10 @@ const ContactContents = () => {
           {isSmallDisplay ? <img src="/src/assets/img/GitHub.png" /> : 'Github'}
         </StackButton>
         <StackButton url={CONTACT_DATA.linkedin}>
-          {isSmallDisplay ? <img src="/src/assets/img/Instagram.png" /> : 'Linkedin'}
+          {isSmallDisplay ? <img src="/src/assets/img/LinkedIn.png" /> : 'LinkedIn'}
         </StackButton>
         <StackButton url={CONTACT_DATA.instagram}>
-          {isSmallDisplay ? <img src="/src/assets/img/LinkedIn.png" /> : 'Instagram'}
+          {isSmallDisplay ? <img src="/src/assets/img/Instagram.png" /> : 'Instagram'}
         </StackButton>
       </List>
     </Article>
