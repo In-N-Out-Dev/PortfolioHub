@@ -6,6 +6,7 @@ export const lightTheme: ColorTheme = {
   BACKGROUND: '#FFFFFF',
   HIGHTLIGHT: '#E85913',
   BACKGROUND_SUB: 'rgba(217, 217, 217, 0.2)',
+  TEXT_DECORATION: '#D9D9D9',
 };
 
 export const darkTheme = {
@@ -16,6 +17,7 @@ export const darkTheme = {
   BACKGROUND: '#000000',
   HIGHTLIGHT: '#ED6927',
   BACKGROUND_SUB: 'rgba(51, 51, 51, 0.2)',
+  TEXT_DECORATION: '#FFFFFF',
 };
 
 const Color = {
