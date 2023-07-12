@@ -1,3 +1,4 @@
+import PageTitle from 'components/PageTitle/PageTitle';
 import Blog from 'components/blog/Blog';
 import Career from 'components/career/Career';
 import Layout from 'components/common/Layout';
@@ -12,6 +13,7 @@ const Home = () => {
   return (
     <Layout>
       <ModalSwitcher />
+      <PageTitle />
       <Introduce />
       <Career />
       <Project />
