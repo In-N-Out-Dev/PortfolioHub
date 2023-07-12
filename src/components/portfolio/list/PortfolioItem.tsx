@@ -92,7 +92,8 @@ const TitleWrapper = styled.div`
 
 const CardNo = styled.p`
   font-size: 3.2rem;
-  font-family: 'Bebas Neue', cursive;
+  font-family: 'Bebas Neue', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
+    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: 500;
   ${({ theme: { breakPoint } }) => {
     return {
