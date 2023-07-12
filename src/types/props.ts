@@ -9,3 +9,10 @@ export interface IconProps {
 export interface SectionProps {
   forwardRef: RefObject<HTMLDivElement>;
 }
+
+export type ViewModeState = 'GALLERY' | 'LIST';
+
+export type ListHeaderProps = {
+  ViewModeState: ViewModeState;
+  setViewModeState: React.Dispatch<React.SetStateAction<ViewModeState>>;
+};

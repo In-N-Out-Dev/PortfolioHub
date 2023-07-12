@@ -1,22 +1,20 @@
 import { useState } from 'react';
 
 import SectionCard from 'components/common/SectionCard';
-import { SectionProps } from 'types/props';
+import { SectionProps, ViewModeState } from 'types/props';
 
 import PortfolioContents from './PortfolioContents';
 import PortfolioHeader from './PortfolioHeader';
 
-import type { PortfolioState } from 'types/portfolio';
-
 const Portfolio = ({ forwardRef }: SectionProps) => {
-  const [portfolioState, setPortfolioState] = useState<PortfolioState>('GALLERY');
+  const [portfolioState, setPortfolioState] = useState<ViewModeState>('GALLERY');
 
   return (
     <div ref={forwardRef}>
       <SectionCard id="PORTFOLIO">
         <PortfolioHeader
-          portfolioState={portfolioState}
-          setPortfolioState={setPortfolioState}
+          ViewModeState={portfolioState}
+          setViewModeState={setPortfolioState}
         />
         <PortfolioContents portfolioState={portfolioState} />
       </SectionCard>
