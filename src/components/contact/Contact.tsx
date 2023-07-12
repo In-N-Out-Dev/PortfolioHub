@@ -1,15 +1,18 @@
 import styled from '@emotion/styled';
 import SectionCard from 'components/common/SectionCard';
+import { SectionProps } from 'types/props';
 
 import ContactContents from './ContactContents';
 import ContactTitle from './ContactTitle';
 
-const Contact = () => {
+const Contact = ({ forwardRef }: SectionProps) => {
   return (
-    <ContactCard id="CONTACT">
-      <ContactTitle />
-      <ContactContents />
-    </ContactCard>
+    <div ref={forwardRef}>
+      <ContactCard id="CONTACT">
+        <ContactTitle />
+        <ContactContents />
+      </ContactCard>
+    </div>
   );
 };
 

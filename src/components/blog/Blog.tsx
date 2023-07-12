@@ -1,11 +1,14 @@
 import BlogContents from 'components/blog/BlogContents';
 import ListCard from 'components/common/ListCard';
+import { SectionProps } from 'types/props';
 
-const Blog = () => {
+const Blog = ({ forwardRef }: SectionProps) => {
   return (
-    <ListCard title="BLOG">
-      <BlogContents />
-    </ListCard>
+    <div ref={forwardRef}>
+      <ListCard title="BLOG">
+        <BlogContents />
+      </ListCard>
+    </div>
   );
 };
 
