@@ -34,6 +34,22 @@ const CircleIcon = styled.div`
   height: 1.5rem;
   background-color: ${({ theme }) => theme.colors.HIGHLIGHT};
   border-radius: 50%;
+  animation: blink 0.6s infinite;
+
+  ${({ theme }) => theme.breakPoint.small} {
+    right: -2rem;
+    width: 1.05rem;
+    height: 1.05rem;
+  }
+
+  @keyframes blink {
+    0% {
+      background-color: transparent;
+    }
+    100% {
+      background-color: ${({ theme }) => theme.colors.HIGHLIGHT};
+    }
+  }
 `;
 
 export default ContactTitle;
