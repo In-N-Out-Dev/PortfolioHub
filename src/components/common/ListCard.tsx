@@ -1,6 +1,7 @@
 import { PropsWithChildren } from 'react';
 
 import styled from '@emotion/styled';
+import HoverInteractionButton from 'components/common/HoverInteractionButton';
 import SectionCard from 'components/common/SectionCard';
 import ViewModeButton from 'components/common/ViewModeButton';
 import { ListHeaderProps } from 'types/props';
@@ -23,6 +24,9 @@ const ListCard = ({ title, children, ViewModeState, setViewModeState }: Props) =
         />
       </TitleWrapper>
       <ArticleWrapper>{children}</ArticleWrapper>
+      <ButtonPositioner>
+        <HoverInteractionButton />
+      </ButtonPositioner>
     </SectionCard>
   );
 };
@@ -59,7 +63,14 @@ const TitleDescription = styled.p`
 `;
 
 const ArticleWrapper = styled.article`
-  margin-top: 6rem;
+  margin: 6rem 0;
+`;
+
+const ButtonPositioner = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 `;
 
 export default ListCard;

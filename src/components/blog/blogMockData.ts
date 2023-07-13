@@ -1,5 +1,7 @@
 import { BlogItemProps } from 'types/blog';
 
+export const BLOG_URL = 'https://www.google.com/';
+
 export const BLOG_DATA: BlogItemProps[] = [
   {
     id: 1,
