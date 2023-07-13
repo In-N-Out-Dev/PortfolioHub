@@ -63,7 +63,7 @@ const ContentWrapper = styled.ul`
   flex-direction: column;
   gap: 1.6rem;
   position: sticky;
-  top: 50vh;
+  top: 28vh;
   height: fit-content;
   width: fit-content;
 `;
