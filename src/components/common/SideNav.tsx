@@ -1,10 +1,15 @@
-import { useState } from 'react';
-
 import styled from '@emotion/styled';
 import { MENU_LIST, MenuListProps } from 'contents';
+import { useActiveSectionStore } from 'stores/useActiveSectionStore';
 
 const SideNav = () => {
-  const [selectedMenu, setSelectedMenu] = useState<MenuListProps>('HOME');
+  const { setActiveSection } = useActiveSectionStore((state) => ({
+    setActiveSection: state.setActiveSection,
+  }));
+
+  const { activeSection } = useActiveSectionStore((state) => ({
+    activeSection: state.activeSection,
+  }));
 
   const renderMenu = () => {
     return MENU_LIST.map((menu) => {
@@ -13,10 +18,10 @@ const SideNav = () => {
           key={menu}
           onClick={() => {
             onClickMenu(menu);
-            setSelectedMenu(menu);
+            setActiveSection(menu);
           }}
         >
-          <Dot isSelectedMenu={selectedMenu === menu} />
+          <Dot isActiveSection={activeSection === menu} />
           <span>{menu}</span>
         </MenuItem>
       );
@@ -58,7 +63,7 @@ const ContentWrapper = styled.ul`
   flex-direction: column;
   gap: 1.6rem;
   position: sticky;
-  top: 50vh;
+  top: 28vh;
   height: fit-content;
   width: fit-content;
 `;
@@ -74,14 +79,14 @@ const MenuItem = styled.li`
   cursor: pointer;
 `;
 
-const Dot = styled.div<{ isSelectedMenu: boolean }>`
+const Dot = styled.div<{ isActiveSection: boolean }>`
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
-  background-color: ${({ theme, isSelectedMenu }) =>
-    isSelectedMenu ? theme.colors.MAIN_FONT : theme.colors.BACKGROUND};
-  border: ${({ theme, isSelectedMenu }) =>
-    isSelectedMenu ? 'none' : `1px solid ${theme.colors.BORDER} `};
+  background-color: ${({ theme, isActiveSection }) =>
+    isActiveSection ? theme.colors.MAIN_FONT : theme.colors.BACKGROUND};
+  border: ${({ theme, isActiveSection }) =>
+    isActiveSection ? 'none' : `1px solid ${theme.colors.BORDER} `};
 `;
 
 export default SideNav;

@@ -1,12 +1,14 @@
+import CareerContents from 'components/career/CareerContents';
 import InfoCard from 'components/common/InfoCard';
+import { SectionProps } from 'types/props';
 
-import CareerContents from './CareerContents';
-
-const Career = () => {
+const Career = ({ forwardRef }: SectionProps) => {
   return (
-    <InfoCard title="CAREER">
-      <CareerContents />
-    </InfoCard>
+    <div ref={forwardRef}>
+      <InfoCard title="CAREER">
+        <CareerContents />
+      </InfoCard>
+    </div>
   );
 };
 

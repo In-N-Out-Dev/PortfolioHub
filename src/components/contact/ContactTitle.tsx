@@ -14,9 +14,6 @@ const Title = styled.h2`
   color: ${({ theme }) => theme.colors.MAIN_FONT};
   height: 9rem;
   width: fit-content;
-  ${({ theme }) => theme.breakPoint.small} {
-    height: 6.3rem;
-  }
 `;
 
 const Span = styled.span`
@@ -27,9 +24,6 @@ const Span = styled.span`
   font-size: 12.8rem;
   line-height: 1;
   vertical-align: top;
-  ${({ theme }) => theme.breakPoint.small} {
-    font-size: 8.96rem;
-  }
 `;
 
 const CircleIcon = styled.div`
@@ -38,13 +32,23 @@ const CircleIcon = styled.div`
   top: 0;
   width: 1.5rem;
   height: 1.5rem;
-  background-color: ${({ theme }) => theme.colors.HIGHTLIGHT};
+  background-color: ${({ theme }) => theme.colors.HIGHLIGHT};
   border-radius: 50%;
+  animation: blink 1s infinite;
 
   ${({ theme }) => theme.breakPoint.small} {
     right: -2rem;
     width: 1.05rem;
     height: 1.05rem;
+  }
+
+  @keyframes blink {
+    0% {
+      background-color: transparent;
+    }
+    100% {
+      background-color: ${({ theme }) => theme.colors.HIGHLIGHT};
+    }
   }
 `;
 

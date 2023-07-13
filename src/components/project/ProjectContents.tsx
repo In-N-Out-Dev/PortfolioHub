@@ -1,19 +1,27 @@
 import styled from '@emotion/styled';
 import LinkIcon from 'assets/LinkIcon';
 import PROJECT_DATA from 'contents/projectData';
+import { motion } from 'framer-motion';
+import { contentVariants } from 'styles/interaction';
 
 const ProjectContents = () => {
   return (
     <Wrap>
       {PROJECT_DATA.map((project, index) => {
         return (
-          <Item key={index}>
+          <Item
+            key={index}
+            variants={contentVariants}
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true }}
+          >
             <TitleWrap>
               <h3>{project.company}</h3>
               <p>{project.date}</p>
             </TitleWrap>
             <Position>{project.position}</Position>
-            <Contents>{project.contnets}</Contents>
+            <Contents>{project.contents}</Contents>
             <Project>
               {project.projectFeature.map((feature, index) => {
                 return <Feature key={index}>{feature}</Feature>;
@@ -46,7 +54,7 @@ const Wrap = styled.ul`
   color: ${({ theme }) => theme.colors.MAIN_FONT};
 `;
 
-const Item = styled.li`
+const Item = styled(motion.li)`
   padding-bottom: 6rem;
   border-bottom: 1px solid ${({ theme }) => theme.colors.MAIN_FONT};
 `;

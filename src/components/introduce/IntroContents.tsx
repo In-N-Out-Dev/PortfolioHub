@@ -2,10 +2,17 @@ import styled from '@emotion/styled';
 import MailIcon from 'assets/MailIcon';
 import StackButton from 'components/common/StackButton';
 import INTRODUCE_DATA from 'contents/introduceData';
+import { motion } from 'framer-motion';
+import { contentVariants } from 'styles/interaction';
 
 const IntroContents = () => {
   return (
-    <Wrap>
+    <Wrap
+      variants={contentVariants}
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: true }}
+    >
       <TitleWrap>
         <h3>{INTRODUCE_DATA.title}</h3>
         <div>
@@ -13,7 +20,7 @@ const IntroContents = () => {
           <p>입니다.</p>
         </div>
       </TitleWrap>
-      <Contents>{INTRODUCE_DATA.contnets}</Contents>
+      <Contents>{INTRODUCE_DATA.contents}</Contents>
       <Contact>
         <li>
           <MailIcon />
@@ -36,7 +43,7 @@ const IntroContents = () => {
   );
 };
 
-const Wrap = styled.div`
+const Wrap = styled(motion.div)`
   color: ${({ theme }) => theme.colors.MAIN_FONT};
 `;
 
@@ -61,7 +68,7 @@ const TitleWrap = styled.div`
   }
 
   p:nth-of-type(1) {
-    color: ${({ theme }) => theme.colors.HIGHTLIGHT};
+    color: ${({ theme }) => theme.colors.HIGHLIGHT};
   }
 `;
 

@@ -1,11 +1,14 @@
 import InfoCard from 'components/common/InfoCard';
 import IntroContents from 'components/introduce/IntroContents';
+import { SectionProps } from 'types/props';
 
-const Introduce = () => {
+const Introduce = ({ forwardRef }: SectionProps) => {
   return (
-    <InfoCard title="INTRODUCE">
-      <IntroContents />
-    </InfoCard>
+    <div ref={forwardRef}>
+      <InfoCard title="INTRODUCE">
+        <IntroContents />
+      </InfoCard>
+    </div>
   );
 };
 

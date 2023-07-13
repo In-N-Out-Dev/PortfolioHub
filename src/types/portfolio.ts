@@ -6,13 +6,7 @@ export interface PortfolioData {
   skills: string[];
 }
 
-export type PortfolioState = 'GALLERY' | 'LIST';
-
-export type PortfolioHeaderProps = {
-  portfolioState: PortfolioState;
-  setPortfolioState: React.Dispatch<React.SetStateAction<PortfolioState>>;
-};
-
 export type PortfolioCartListProps = {
   portfolios: PortfolioData[];
+  openedWidth: number;
 };

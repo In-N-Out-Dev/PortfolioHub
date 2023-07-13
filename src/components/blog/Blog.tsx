@@ -1,11 +1,21 @@
+import { useState } from 'react';
+
 import BlogContents from 'components/blog/BlogContents';
 import ListCard from 'components/common/ListCard';
+import { SectionProps, ViewModeState } from 'types/props';
 
-const Blog = () => {
+const Blog = ({ forwardRef }: SectionProps) => {
+  const [blogViewState, setBlogViewState] = useState<ViewModeState>('GALLERY');
   return (
-    <ListCard title="BLOG">
-      <BlogContents />
-    </ListCard>
+    <div ref={forwardRef}>
+      <ListCard
+        title="BLOG"
+        ViewModeState={blogViewState}
+        setViewModeState={setBlogViewState}
+      >
+        <BlogContents blogViewState={blogViewState} />
+      </ListCard>
+    </div>
   );
 };
 

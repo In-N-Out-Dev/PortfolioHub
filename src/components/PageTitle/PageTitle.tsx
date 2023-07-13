@@ -1,8 +1,9 @@
 import { useMediaQuery } from 'react-responsive';
 
 import styled from '@emotion/styled';
+import { SectionProps } from 'types/props';
 
-const PageTitle = () => {
+const PageTitle = ({ forwardRef }: SectionProps) => {
   const isXLargeDisplay = useMediaQuery({ query: '(min-width: 1024px)' });
   const isSmallDisplay = useMediaQuery({ query: '(max-width: 320px)' });
 
@@ -16,25 +17,27 @@ const PageTitle = () => {
   const codeBracketOpen = '<';
   const codeBracketClosed = '/>';
   return (
-    <PageTitleWrap>
-      <li>
-        {!isXLargeDisplay && <DecoIcon>{atIcon}</DecoIcon>}
-        {isSmallDisplay && <br />}
-        <span>{partField}</span>
-        {isSmallDisplay && <br />}
-        {!isXLargeDisplay && <DecoIcon>{bracketOpen}</DecoIcon>}
-        <span>{partLast}</span>
-        {!isXLargeDisplay && <DecoIcon>{bracketClosed}</DecoIcon>}
-      </li>
-      <li>
-        <span>{position}</span>
-      </li>
-      <li>
-        {!isXLargeDisplay && <DecoIcon>{codeBracketOpen}</DecoIcon>}
-        <span>{userName}</span>
-        {!isXLargeDisplay && <DecoIcon>{codeBracketClosed}</DecoIcon>}
-      </li>
-    </PageTitleWrap>
+    <div ref={forwardRef}>
+      <PageTitleWrap id="HOME">
+        <li>
+          {!isXLargeDisplay && <DecoIcon>{atIcon}</DecoIcon>}
+          {isSmallDisplay && <br />}
+          <span>{partField}</span>
+          {isSmallDisplay && <br />}
+          {!isXLargeDisplay && <DecoIcon>{bracketOpen}</DecoIcon>}
+          <span>{partLast}</span>
+          {!isXLargeDisplay && <DecoIcon>{bracketClosed}</DecoIcon>}
+        </li>
+        <li>
+          <span>{position}</span>
+        </li>
+        <li>
+          {!isXLargeDisplay && <DecoIcon>{codeBracketOpen}</DecoIcon>}
+          <span>{userName}</span>
+          {!isXLargeDisplay && <DecoIcon>{codeBracketClosed}</DecoIcon>}
+        </li>
+      </PageTitleWrap>
+    </div>
   );
 };
 
@@ -60,7 +63,7 @@ const PageTitleWrap = styled.ul`
   }
 
   li:last-of-type {
-    color: ${({ theme }) => theme.colors.HIGHTLIGHT};
+    color: ${({ theme }) => theme.colors.HIGHLIGHT};
   }
 `;
 
