@@ -1,8 +1,10 @@
 import { PropsWithChildren } from 'react';
 
-import styled from '@emotion/styled';
-
 import 'styles/fonts/Berbas.css';
+import styled from '@emotion/styled';
+import { motion } from 'framer-motion';
+import { titleVariants } from 'styles/interaction';
+
 import SectionCard from './SectionCard';
 
 interface Props extends PropsWithChildren {
@@ -12,7 +14,14 @@ interface Props extends PropsWithChildren {
 const InfoCard = ({ title, children }: Props) => {
   return (
     <CardWrapper id={title}>
-      <Title>{title}</Title>
+      <Title
+        variants={titleVariants}
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true }}
+      >
+        {title}
+      </Title>
       <Article>{children}</Article>
     </CardWrapper>
   );
@@ -31,7 +40,7 @@ const CardWrapper = styled(SectionCard)`
   }
 `;
 
-const Title = styled.h2`
+const Title = styled(motion.h2)`
   font-family: 'Bebas Neue', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
     Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-size: 4.8rem;

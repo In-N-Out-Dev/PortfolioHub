@@ -1,22 +1,30 @@
 import styled from '@emotion/styled';
 import CAREER_DATA from 'components/career/careerData';
+import { motion } from 'framer-motion';
+import { contentVariants } from 'styles/interaction';
 
 const CareerContents = () => {
   return (
     <Wrap>
       {CAREER_DATA.map((career, index) => {
         return (
-          <Item key={index}>
+          <Item
+            key={index}
+            variants={contentVariants}
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true }}
+          >
             <TitleWrap>
               <h3>{career.company}</h3>
-              {career.cureentCompany ? (
+              {career.currentCompany ? (
                 <CurrentDate>{career.date}</CurrentDate>
               ) : (
                 <p>{career.date}</p>
               )}
             </TitleWrap>
             <Position>{career.position}</Position>
-            <Contents>{career.contnets}</Contents>
+            <Contents>{career.contents}</Contents>
           </Item>
         );
       })}
@@ -31,7 +39,7 @@ const Wrap = styled.ul`
   color: ${({ theme }) => theme.colors.MAIN_FONT};
 `;
 
-const Item = styled.li`
+const Item = styled(motion.li)`
   padding-bottom: 6rem;
   border-bottom: 1px solid ${({ theme }) => theme.colors.MAIN_FONT};
 `;

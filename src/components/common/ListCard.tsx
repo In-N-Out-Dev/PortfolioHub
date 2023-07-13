@@ -4,6 +4,8 @@ import styled from '@emotion/styled';
 import HoverInteractionButton from 'components/common/HoverInteractionButton';
 import SectionCard from 'components/common/SectionCard';
 import ViewModeButton from 'components/common/ViewModeButton';
+import { motion } from 'framer-motion';
+import { contentVariants, titleVariants } from 'styles/interaction';
 import { ListHeaderProps } from 'types/props';
 
 interface Props extends PropsWithChildren, ListHeaderProps {
@@ -14,7 +16,12 @@ const ListCard = ({ title, children, ViewModeState, setViewModeState }: Props) =
   return (
     <SectionCard id={title}>
       <TitleWrapper>
-        <TextWrapper>
+        <TextWrapper
+          variants={titleVariants}
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true }}
+        >
           <Title>{title}</Title>
           <TitleDescription>대표적인 블로그 포스팅</TitleDescription>
         </TextWrapper>
@@ -23,7 +30,14 @@ const ListCard = ({ title, children, ViewModeState, setViewModeState }: Props) =
           setViewModeState={setViewModeState}
         />
       </TitleWrapper>
-      <ArticleWrapper>{children}</ArticleWrapper>
+      <ArticleWrapper
+        variants={contentVariants}
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true }}
+      >
+        {children}
+      </ArticleWrapper>
       <ButtonPositioner>
         <HoverInteractionButton />
       </ButtonPositioner>
@@ -37,7 +51,7 @@ const TitleWrapper = styled.div`
   width: 100%;
 `;
 
-const TextWrapper = styled.div`
+const TextWrapper = styled(motion.div)`
   display: flex;
   align-items: flex-end;
   gap: 1.6rem;
@@ -62,7 +76,7 @@ const TitleDescription = styled.p`
   color: #858585;
 `;
 
-const ArticleWrapper = styled.article`
+const ArticleWrapper = styled(motion.article)`
   margin: 6rem 0;
 `;
 

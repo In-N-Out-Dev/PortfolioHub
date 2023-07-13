@@ -1,7 +1,9 @@
 import { useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
 import ForwardIcon from 'assets/ForwardIcon';
+import { motion } from 'framer-motion';
 import { usePortfolioGallery } from 'hooks';
+import { contentVariants } from 'styles/interaction';
 
 import PortfolioCardList from './card/PortfolioCardList';
 
@@ -14,7 +16,12 @@ const PortfolioGallery = ({ portfolioData }: { portfolioData: PortfolioData[] })
   const openedWidth = 44;
 
   return (
-    <>
+    <motion.div
+      variants={contentVariants}
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: true }}
+    >
       <List>
         <PortfolioCardList
           portfolios={portfolios}
@@ -29,7 +36,7 @@ const PortfolioGallery = ({ portfolioData }: { portfolioData: PortfolioData[] })
           <ForwardIcon color={colors.MAIN_FONT} />
         </Button>
       </ButtonWrapper>
-    </>
+    </motion.div>
   );
 };
 

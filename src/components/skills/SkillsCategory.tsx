@@ -1,10 +1,17 @@
 import styled from '@emotion/styled';
+import { motion } from 'framer-motion';
+import { contentVariants } from 'styles/interaction';
 
 import type { SkillData } from './SkillsData';
 
 const SkillsCategory = ({ category, skills }: SkillData) => {
   return (
-    <CategoryCard>
+    <CategoryCard
+      variants={contentVariants}
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: true }}
+    >
       <Title>{category}</Title>
       <SkillsList>
         {skills.map(({ highlight, skill }) => (
@@ -20,7 +27,7 @@ const SkillsCategory = ({ category, skills }: SkillData) => {
   );
 };
 
-const CategoryCard = styled.li`
+const CategoryCard = styled(motion.li)`
   padding-bottom: 6rem;
   border-bottom: 1px solid ${({ theme }) => theme.colors.MAIN_FONT};
 `;
