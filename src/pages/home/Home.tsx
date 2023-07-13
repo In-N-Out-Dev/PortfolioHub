@@ -1,4 +1,4 @@
-import PageTitle from 'components/PageTitle/PageTitle';
+import PageTitle from 'components/pageTitle/PageTitle';
 import Blog from 'components/blog/Blog';
 import Career from 'components/career/Career';
 import Layout from 'components/common/Layout';

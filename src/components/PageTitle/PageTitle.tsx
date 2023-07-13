@@ -45,15 +45,18 @@ const PageTitleWrap = styled.ul`
   font-size: 18rem;
   line-height: 17rem;
   color: ${({ theme }) => theme.colors.MAIN_FONT};
+  padding: 9rem 0;
 
   ${({ theme }) => theme.breakPoint.medium} {
     font-size: 14rem;
     line-height: 13rem;
+    padding: 7rem 0;
   }
   ${({ theme }) => theme.breakPoint.small} {
     font-size: 8rem;
     line-height: 9.6rem;
     text-align: left;
+    padding: 5rem 0;
   }
 
   li:last-of-type {
