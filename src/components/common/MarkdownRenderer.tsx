@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 import remarkGfm from 'remark-gfm';
-import markdownStyle from 'styles/MarkdownStyle';
+import markdownStyle from 'styles/markdownStyle';
 
 const markdown = `
   # 헤딩
