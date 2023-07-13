@@ -60,7 +60,7 @@ const PageTitleWrap = styled.ul`
   }
 
   li:last-of-type {
-    color: ${({ theme }) => theme.colors.HIGHTLIGHT};
+    color: ${({ theme }) => theme.colors.HIGHLIGHT};
   }
 `;
 
