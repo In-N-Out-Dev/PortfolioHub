@@ -34,7 +34,7 @@ const CircleIcon = styled.div`
   height: 1.5rem;
   background-color: ${({ theme }) => theme.colors.HIGHLIGHT};
   border-radius: 50%;
-  animation: blink 0.6s infinite;
+  animation: blink 1s infinite;
 
   ${({ theme }) => theme.breakPoint.small} {
     right: -2rem;
