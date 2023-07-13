@@ -54,7 +54,7 @@ const Home = () => {
   return (
     <Layout>
       <ModalSwitcher />
-      <PageTitle />
+      <PageTitle forwardRef={refs['HOME']} />
       <Introduce forwardRef={refs['INTRODUCE']} />
       <Career forwardRef={refs['CAREER']} />
       <Project forwardRef={refs['PROJECT']} />
