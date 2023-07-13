@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { BLOG_DATA } from 'components/blog/blogMockData';
-import GalleryBlogItem from 'components/blog/gallery/BlogItem';
+import GalleryBlogItem from 'components/blog/gallery/GalleryBlogItem';
 
 const BlogGallery = () => {
   return (

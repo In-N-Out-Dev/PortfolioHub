@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 import { MEDIA_QUERY_BREAK_POINT } from 'styles/theme';
 import { BlogItemProps } from 'types/blog';
 
-const BlogItem = ({ index, title, date, link }: BlogItemProps) => {
+const ListBlogItem = ({ index, title, date, link }: BlogItemProps) => {
   const handleClickBlogItem = () => {
     window.open(link, '_blank');
   };
@@ -119,4 +119,4 @@ const MediumTitleWrapper = styled.div`
   gap: 2rem;
 `;
 
-export default BlogItem;
+export default ListBlogItem;

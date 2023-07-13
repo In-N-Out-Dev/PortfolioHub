@@ -1,12 +1,12 @@
 import styled from '@emotion/styled';
 import { BLOG_DATA } from 'components/blog/blogMockData';
-import BlogItem from 'components/blog/list/BlogItem';
+import ListBlogItem from 'components/blog/list/ListBlogItem';
 
 const BlogList = () => {
   return (
     <List>
       {BLOG_DATA.map((item, index) => (
-        <BlogItem
+        <ListBlogItem
           title={item.title}
           image={item.image}
           date={item.date}
