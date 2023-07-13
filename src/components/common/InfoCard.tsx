@@ -37,6 +37,13 @@ const Title = styled.h2`
   font-size: 4.8rem;
   color: ${({ theme }) => theme.colors.MAIN_FONT};
   min-width: 25rem;
+
+  ${({ theme }) => theme.breakPoint.medium} {
+    padding-bottom: 6rem;
+  }
+  ${({ theme }) => theme.breakPoint.small} {
+    padding-bottom: 4rem;
+  }
 `;
 
 const Article = styled.article`
