@@ -1,10 +1,9 @@
 import { PropsWithChildren } from 'react';
 
 import styled from '@emotion/styled';
+import SectionCard from 'components/common/SectionCard';
+import ViewModeButton from 'components/common/ViewModeButton';
 import { ListHeaderProps } from 'types/props';
-
-import SectionCard from './SectionCard';
-import ViewModeButton from './ViewModeButton';
 
 interface Props extends PropsWithChildren, ListHeaderProps {
   title: string;
@@ -38,6 +37,11 @@ const TextWrapper = styled.div`
   display: flex;
   align-items: flex-end;
   gap: 1.6rem;
+
+  ${({ theme }) => theme.breakPoint.small} {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 
 const Title = styled.h2`

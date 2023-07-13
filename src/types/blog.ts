@@ -5,4 +5,5 @@ export interface BlogItemProps {
   date: string;
   image: string;
   link: string;
+  isHeader?: boolean;
 }
