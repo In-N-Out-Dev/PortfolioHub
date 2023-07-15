@@ -23,8 +23,6 @@ const PortfolioCardFolded = ({ no, title }: PortfolioData) => {
 
 const Card = styled.li`
   border: 0.1rem solid;
-  width: 9.2rem;
-  height: 29.5rem;
   ${({ theme: { colors } }) => {
     return {
       borderColor: colors.BORDER,
@@ -32,6 +30,8 @@ const Card = styled.li`
       color: colors.MAIN_FONT,
     };
   }}
+  padding-top:2rem;
+  flex: 1;
 `;
 
 const Wrapper = styled.div`
@@ -41,7 +41,6 @@ const Wrapper = styled.div`
   justify-content: space-between;
   transform: rotate(90deg) translate(50%, -50%);
   transform-origin: top;
-  padding: 2rem 0 2rem 2rem;
 `;
 
 const CardNo = styled.p`
