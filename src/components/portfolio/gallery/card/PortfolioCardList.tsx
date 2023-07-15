@@ -1,9 +1,9 @@
 import PortfolioCardFolded from './PortfolioCardFolded';
 import PortfolioCardOpened from './PortfolioCardOpened';
 
-import type { PortfolioCartListProps } from 'types/portfolio';
+import type { PortfolioData } from 'types/portfolio';
 
-const PortfolioCardList = ({ portfolios }: PortfolioCartListProps) => {
+const PortfolioCardList = ({ portfolios }: { portfolios: PortfolioData[] }) => {
   const n = portfolios.length;
   const half = Math.floor(n / 2);
 

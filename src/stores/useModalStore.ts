@@ -11,5 +11,8 @@ export const useModalStore = create<ModalStore>((set) => ({
     type: '',
     display: false,
   },
-  setIsModalOn: (type, status) => set({ modalState: { type: type, display: status } }),
+  setIsModalOn: (type, status) =>
+    set(({ modalState }) => ({ modalState: { ...modalState, type: type, display: status } })),
+  setComponent: (component) =>
+    set(({ modalState }) => ({ modalState: { ...modalState, component } })),
 }));

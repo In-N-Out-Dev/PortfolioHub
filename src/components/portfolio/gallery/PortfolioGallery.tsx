@@ -1,7 +1,7 @@
 import { useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
 import ForwardIcon from 'assets/ForwardIcon';
-import { usePortfolioGallery } from 'hooks';
+import { usePortfolioGallery } from 'hooks/usePortfolio';
 
 import PortfolioCardList from './card/PortfolioCardList';
 

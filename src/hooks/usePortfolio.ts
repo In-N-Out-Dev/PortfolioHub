@@ -15,7 +15,7 @@ const initPortoflioData = (portfolios: PortfolioData[]) => {
   return ret.slice(0, 5);
 };
 
-const usePortfolioGallery = () => {
+export const usePortfolioGallery = () => {
   const totalCnt = PORTFOLIO_DATA.length;
   const [firstNo, setFirstNo] = useState(0);
   const [portfolios, setPortfolios] = useState<PortfolioData[]>(initPortoflioData(PORTFOLIO_DATA));
@@ -46,5 +46,3 @@ const usePortfolioGallery = () => {
     handleDecreaseOpenedNo,
   };
 };
-
-export default usePortfolioGallery;
