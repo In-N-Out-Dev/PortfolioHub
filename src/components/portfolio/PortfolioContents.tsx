@@ -1,4 +1,5 @@
-import PORTFOLIO_DATA from 'contents/portfolioData';
+import { FC } from 'react';
+
 import { motion } from 'framer-motion';
 import { contentVariants } from 'styles/interaction';
 
@@ -7,7 +8,11 @@ import PortfolioList from './list/PortfolioList';
 
 import type { ViewModeState } from 'types/props';
 
-const PortfolioContents = ({ portfolioState }: { portfolioState: ViewModeState }) => {
+interface Props {
+  portfolioState: ViewModeState;
+}
+
+const PortfolioContents: FC<Props> = ({ portfolioState }) => {
   return (
     <motion.div
       variants={contentVariants}
@@ -15,8 +20,8 @@ const PortfolioContents = ({ portfolioState }: { portfolioState: ViewModeState }
       whileInView="onscreen"
       viewport={{ once: true }}
     >
-      {portfolioState === 'GALLERY' && <PortfolioGallery portfolioData={PORTFOLIO_DATA} />}
-      {portfolioState === 'LIST' && <PortfolioList portfolioData={PORTFOLIO_DATA} />}
+      {portfolioState === 'GALLERY' && <PortfolioGallery />}
+      {portfolioState === 'LIST' && <PortfolioList />}
     </motion.div>
   );
 };

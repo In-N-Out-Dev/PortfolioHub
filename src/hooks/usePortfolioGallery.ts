@@ -1,43 +1,50 @@
 import { useState } from 'react';
 
+import PORTFOLIO_DATA from 'contents/portfolioData';
+
 import type { PortfolioData } from 'types/portfolio';
 
-const usePortfolioGallery = (portfolioData: PortfolioData[]) => {
-  const totalCnt = portfolioData.length;
-  const [openedNo, setOpenedNo] = useState(0); // totalCnt 미만으로
-  /**
-   * TODO: portfolioCnt도 커스텀할 수 있게 만들기
-   */
-  const [portfolioCnt, setPortfolioCnt] = useState(5);
-  const halfCnt = Math.floor(portfolioCnt / 2);
-  const boundaryCnt = openedNo + halfCnt + 1;
-  const initPortfolio =
-    halfCnt <= openedNo
-      ? [
-          ...portfolioData.slice(openedNo - halfCnt, boundaryCnt),
-          ...(boundaryCnt >= totalCnt ? portfolioData.slice(0, boundaryCnt - totalCnt) : []),
-        ]
-      : [
-          ...portfolioData.slice(totalCnt - (portfolioCnt - boundaryCnt), totalCnt),
-          ...portfolioData.slice(0, boundaryCnt),
-        ];
+const initPortoflioData = (portfolios: PortfolioData[]) => {
+  const ret = [...portfolios];
+  const totalCnt = portfolios.length;
+  if (totalCnt < 5) {
+    while (ret.length < 5) {
+      ret.push(...portfolios);
+    }
+  }
+  return ret.slice(0, 5);
+};
 
-  const [portfolios, setPortfolios] = useState(initPortfolio);
+const usePortfolioGallery = () => {
+  const totalCnt = PORTFOLIO_DATA.length;
+  const [firstNo, setFirstNo] = useState(0);
+  const [portfolios, setPortfolios] = useState<PortfolioData[]>(initPortoflioData(PORTFOLIO_DATA));
 
   const handleIncreaseOpenedNo = () => {
-    setOpenedNo((prev) => (prev + 1) % totalCnt);
-    setPortfolios((prev) => [...prev.slice(1), portfolioData[boundaryCnt % totalCnt]]);
+    setFirstNo((prev) => (prev + 1) % totalCnt);
+    setPortfolios((prev) => {
+      const next = [...prev];
+      next.pop();
+      next.unshift(PORTFOLIO_DATA[(firstNo + 1) % totalCnt]);
+      return next;
+    });
   };
 
   const handleDecreaseOpenedNo = () => {
-    setOpenedNo((prev) => (prev - 1 + totalCnt) % totalCnt);
-    setPortfolios((prev) => [
-      portfolioData[(openedNo - halfCnt - 1 + totalCnt) % totalCnt],
-      ...prev.slice(0, prev.length - 1),
-    ]);
+    setFirstNo((prev) => (prev - 1 + totalCnt) % totalCnt);
+    setPortfolios((prev) => {
+      const next = [...prev];
+      next.shift();
+      next.push(PORTFOLIO_DATA[(firstNo - 1 + totalCnt) % totalCnt]);
+      return next;
+    });
   };
 
-  return { portfolios, handleIncreaseOpenedNo, handleDecreaseOpenedNo };
+  return {
+    portfolios,
+    handleIncreaseOpenedNo,
+    handleDecreaseOpenedNo,
+  };
 };
 
 export default usePortfolioGallery;

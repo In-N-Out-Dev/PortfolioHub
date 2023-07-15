@@ -1,13 +1,12 @@
 import styled from '@emotion/styled';
+import PORTFOLIO_DATA from 'contents/portfolioData';
 
 import PortfolioItem from './PortfolioItem';
 
-import type { PortfolioData } from 'types/portfolio';
-
-const PortfolioList = ({ portfolioData }: { portfolioData: PortfolioData[] }) => {
+const PortfolioList = () => {
   return (
     <List>
-      {portfolioData.map((portfolio) => (
+      {PORTFOLIO_DATA.map((portfolio) => (
         <PortfolioItem
           key={portfolio.no}
           {...portfolio}

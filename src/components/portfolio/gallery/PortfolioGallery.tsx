@@ -5,12 +5,9 @@ import { usePortfolioGallery } from 'hooks';
 
 import PortfolioCardList from './card/PortfolioCardList';
 
-import type { PortfolioData } from 'types/portfolio';
-
-const PortfolioGallery = ({ portfolioData }: { portfolioData: PortfolioData[] }) => {
+const PortfolioGallery = () => {
   const { colors } = useTheme();
-  const { portfolios, handleIncreaseOpenedNo, handleDecreaseOpenedNo } =
-    usePortfolioGallery(portfolioData);
+  const { portfolios, handleIncreaseOpenedNo, handleDecreaseOpenedNo } = usePortfolioGallery();
 
   return (
     <>
