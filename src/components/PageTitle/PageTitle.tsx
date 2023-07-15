@@ -1,11 +1,16 @@
+import { useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
 import styled from '@emotion/styled';
+import { motion, useMotionValueEvent, useScroll } from 'framer-motion';
+import { pageTitleNameTextVariants, pageTitleJobPositionTextVariants } from 'styles/interaction';
 import { SectionProps } from 'types/props';
 
 const PageTitle = ({ forwardRef }: SectionProps) => {
   const isXLargeDisplay = useMediaQuery({ query: '(min-width: 1024px)' });
   const isSmallDisplay = useMediaQuery({ query: '(max-width: 320px)' });
+
+  const [scrollYPosition, setScrollYPosition] = useState(0);
 
   const atIcon = '@';
   const bracketOpen = '{';
@@ -16,26 +21,59 @@ const PageTitle = ({ forwardRef }: SectionProps) => {
   const userName = 'NAME FILED';
   const codeBracketOpen = '<';
   const codeBracketClosed = '/>';
+
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, 'change', (latest) => {
+    setScrollYPosition(latest > 200 ? 200 : latest);
+  });
+
   return (
     <div ref={forwardRef}>
       <PageTitleWrap id="HOME">
-        <li>
-          {!isXLargeDisplay && <DecoIcon>{atIcon}</DecoIcon>}
-          {isSmallDisplay && <br />}
-          <span>{partField}</span>
-          {isSmallDisplay && <br />}
-          {!isXLargeDisplay && <DecoIcon>{bracketOpen}</DecoIcon>}
-          <span>{partLast}</span>
-          {!isXLargeDisplay && <DecoIcon>{bracketClosed}</DecoIcon>}
-        </li>
-        <li>
-          <span>{position}</span>
-        </li>
-        <li>
+        <motion.ul
+          variants={
+            scrollYPosition === 0
+              ? pageTitleJobPositionTextVariants
+              : {
+                  onscreen: { x: scrollYPosition, transition: { duration: 2 } },
+                  offscreen: { x: 0, transition: { duration: 2 } },
+                }
+          }
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true }}
+        >
+          <li>
+            {!isXLargeDisplay && <DecoIcon>{atIcon}</DecoIcon>}
+            {isSmallDisplay && <br />}
+            <span>{partField}</span>
+            {isSmallDisplay && <br />}
+            {!isXLargeDisplay && <DecoIcon>{bracketOpen}</DecoIcon>}
+            <span>{partLast}</span>
+            {!isXLargeDisplay && <DecoIcon>{bracketClosed}</DecoIcon>}
+          </li>
+          <li>
+            <span>{position}</span>
+          </li>
+        </motion.ul>
+        <LastMotionLI
+          variants={
+            scrollYPosition === 0
+              ? pageTitleNameTextVariants
+              : {
+                  onscreen: { x: -scrollYPosition, transition: { duration: 1 } },
+                  offscreen: { x: 0, transition: { duration: 2 } },
+                }
+          }
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true }}
+        >
           {!isXLargeDisplay && <DecoIcon>{codeBracketOpen}</DecoIcon>}
           <span>{userName}</span>
           {!isXLargeDisplay && <DecoIcon>{codeBracketClosed}</DecoIcon>}
-        </li>
+        </LastMotionLI>
       </PageTitleWrap>
     </div>
   );
@@ -61,10 +99,10 @@ const PageTitleWrap = styled.ul`
     text-align: left;
     padding: 5rem 0;
   }
+`;
 
-  li:last-of-type {
-    color: ${({ theme }) => theme.colors.HIGHLIGHT};
-  }
+const LastMotionLI = styled(motion.li)`
+  color: ${({ theme }) => theme.colors.HIGHLIGHT};
 `;
 
 const DecoIcon = styled.span`
