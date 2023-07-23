@@ -1,19 +1,19 @@
 import { useMediaQuery } from 'react-responsive';
 
 import styled from '@emotion/styled';
+import PortfolioDetailedContainer from 'components/portfolio/detailed/PortfolioDetailedContainer';
 import { ModalType, useModalStore } from 'stores/useModalStore';
 import { PortfolioData } from 'types/portfolio';
 
 import PortfolioItemSkills from './PortfolioItemSkills';
 
-const PortfolioItem = ({ no, title, skills, start, end }: PortfolioData) => {
-  const { setIsModalOn, modalState } = useModalStore((state) => ({
-    setIsModalOn: state.setIsModalOn,
-    modalState: state.modalState,
-  }));
+const PortfolioItem = (portfolio: PortfolioData) => {
+  const { title, no, skills, start, end } = portfolio;
+  const { setIsModalOn, setComponent } = useModalStore();
 
   const openModal = () => {
     setIsModalOn(ModalType.PORTFOLIO_DETAILED, true);
+    setComponent(<PortfolioDetailedContainer portfolio={portfolio} />);
   };
 
   const isSmallDisplay = useMediaQuery({ query: '(max-width: 320px)' });

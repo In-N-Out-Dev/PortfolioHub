@@ -1,21 +1,20 @@
 import { useMediaQuery } from 'react-responsive';
 
 import styled from '@emotion/styled';
+import PortfolioDetailedContainer from 'components/portfolio/detailed/PortfolioDetailedContainer';
 import { useModalStore, ModalType } from 'stores/useModalStore';
 
 import PortfolioCardSkills from './PortfolioCardSkills';
 
 import type { PortfolioData } from 'types/portfolio';
 
-const PortfolioCardOpened = ({ title, no, skills, start, end }: PortfolioData) => {
-  const { setIsModalOn, modalState } = useModalStore((state) => ({
-    setIsModalOn: state.setIsModalOn,
-    modalState: state.modalState,
-  }));
+const PortfolioCardOpened = (portfolio: PortfolioData) => {
+  const { title, no, skills, start, end } = portfolio;
+  const { setIsModalOn, setComponent } = useModalStore();
 
   const openModal = () => {
-    console.log('clicked');
     setIsModalOn(ModalType.PORTFOLIO_DETAILED, true);
+    setComponent(<PortfolioDetailedContainer portfolio={portfolio} />);
   };
 
   const smallBreakPoint = useMediaQuery({ query: '(max-width: 320px)' });
@@ -30,7 +29,7 @@ const PortfolioCardOpened = ({ title, no, skills, start, end }: PortfolioData) =
       <InfoWrapper>
         <TitleWrapper>
           <CardNo>{String(no).padStart(2, '0')}</CardNo>
-          <h4>{title}</h4>
+          <Title>{title}</Title>
         </TitleWrapper>
         <InfoDate>
           {start} - {end}
@@ -63,6 +62,10 @@ const Card = styled.li`
         width: '64rem',
         height: '43rem',
       },
+      [breakPoint.large]: {
+        width: '64rem',
+        height: '43rem',
+      },
       width: '44rem',
       height: '29.5rem',
     };
@@ -85,8 +88,12 @@ const InfoWrapper = styled.div`
 `;
 
 const TitleWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   font-size: 3.6rem;
   line-height: 1;
+  width: 100%;
 `;
 
 const CardNo = styled.p`
@@ -94,8 +101,18 @@ const CardNo = styled.p`
     Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 `;
 
+const Title = styled.h4`
+  word-break: break-all;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+`;
+
 const InfoDate = styled.p`
   font-size: 1.4rem;
+  width: 100%;
+  text-align: right;
 `;
 
 const SkillList = styled.ul`

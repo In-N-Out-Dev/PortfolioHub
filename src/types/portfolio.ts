@@ -4,5 +4,7 @@ export interface PortfolioData {
   start: string;
   end?: string;
   skills: string[];
-  contents?: string;
+  contents: string;
+  description?: string;
+  role?: string;
 }

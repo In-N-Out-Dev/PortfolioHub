@@ -1,18 +1,16 @@
 import styled from '@emotion/styled';
 import XIcon from 'assets/XIcon';
 import StaticButton from 'components/common/StaticButton';
-import PortfolioDetailedContainer from 'components/portfolio/detailed/PortfolioDetailedContainer';
 import { ModalType, useModalStore } from 'stores/useModalStore';
 
 import BaseModal from './BaseModal';
 
 const PortfolioDetailedModal = () => {
-  const { setIsModalOn } = useModalStore((state) => ({
-    setIsModalOn: state.setIsModalOn,
-  }));
+  const { setIsModalOn, modalState, setComponent } = useModalStore();
 
   const closeModal = () => {
     setIsModalOn(ModalType.PORTFOLIO_DETAILED, false);
+    setComponent(null);
   };
 
   return (
@@ -28,7 +26,7 @@ const PortfolioDetailedModal = () => {
             <XIcon />
           </StaticButton>
         </Header>
-        <PortfolioDetailedContainer />
+        {modalState.component}
       </Container>
     </BaseModal>
   );
