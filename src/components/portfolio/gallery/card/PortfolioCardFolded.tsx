@@ -5,23 +5,27 @@ import styled from '@emotion/styled';
 import type { PortfolioData } from 'types/portfolio';
 
 const PortfolioCardFolded = ({ no, title }: PortfolioData) => {
-  const mediumBreakPoint = useMediaQuery({ query: '(max-width: 768px)' });
+  const largeBreakPoint = useMediaQuery({ maxWidth: 1024 });
 
-  if (mediumBreakPoint) {
+  if (largeBreakPoint) {
     return null;
   }
 
   return (
     <Card>
-      <Wrapper>
-        <CardNo>{String(no).padStart(2, '0')}</CardNo>
-        <Title>{title}</Title>
-      </Wrapper>
+      <Container>
+        <Wrapper>
+          <CardNo>{String(no).padStart(2, '0')}</CardNo>
+          <Title>{title}</Title>
+        </Wrapper>
+      </Container>
     </Card>
   );
 };
 
 const Card = styled.li`
+  display: flex;
+  justify-content: flex-start;
   border: 0.1rem solid;
   ${({ theme: { colors } }) => {
     return {
@@ -30,17 +34,26 @@ const Card = styled.li`
       color: colors.MAIN_FONT,
     };
   }}
-  padding-top:2rem;
   flex: 1;
 `;
 
+const Container = styled.div`
+  position: relative;
+  height: 100%;
+  width: 100%;
+`;
+
 const Wrapper = styled.div`
+  position: absolute;
+  top: 1.9rem;
+  left: 8rem;
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
+  gap: 0.8rem;
   justify-content: space-between;
-  transform: rotate(90deg) translate(50%, -50%);
-  transform-origin: top;
+  transform: rotate(90deg);
+  transform-origin: top left;
+  width: 100%;
 `;
 
 const CardNo = styled.p`
@@ -52,7 +65,11 @@ const CardNo = styled.p`
 
 const Title = styled.h4`
   font-size: 2rem;
-  white-space: nowrap;
+  word-break: break-all;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 `;
 
 export default PortfolioCardFolded;
