@@ -52,9 +52,15 @@ const SideNav = () => {
 
 const SideNavWrapper = styled.nav`
   display: none;
+
   ${({ theme }) => theme.breakPoint.xlarge} {
     display: block;
-    min-width: 20rem;
+    min-width: 25rem;
+  }
+
+  @media (min-width: 1920px) {
+    min-width: 40rem;
+    display: block;
   }
 `;
 
