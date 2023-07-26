@@ -58,7 +58,7 @@ const SideNavWrapper = styled.nav`
     min-width: 25rem;
   }
 
-  @media (min-width: 1920px) {
+  ${({ theme }) => theme.breakPoint.xxlarge} {
     min-width: 40rem;
     display: block;
   }

@@ -45,7 +45,7 @@ const SectionWrapper = styled.div`
     width: calc(100% - 25rem);
   }
 
-  @media (min-width: 1920px) {
+  ${({ theme }) => theme.breakPoint.xxlarge} {
     width: calc(100% - 40rem);
   }
 `;

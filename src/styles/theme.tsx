@@ -47,6 +47,7 @@ export const MEDIA_QUERY_BREAK_POINT = {
   SMALL: '320px',
   MEDIUM: '768px',
   LARGE: '1024px',
+  XLARGE: '1920px',
 };
 
 export const breakPoint = {
@@ -54,6 +55,7 @@ export const breakPoint = {
   medium: `@media (min-width: 321px) and (max-width: ${MEDIA_QUERY_BREAK_POINT.MEDIUM})`, // Mobile size
   large: `@media (min-width: 769px) and (max-width: ${MEDIA_QUERY_BREAK_POINT.LARGE})`, // Tablet size
   xlarge: `@media (min-width: 1025px)`, // Desktop+ size
+  xxlarge: `@media (min-width: 1920px)`, // Desktop++ size
 };
 
 export type BreakPointType = typeof breakPoint;
