@@ -34,7 +34,7 @@ const Header = () => {
       <ButtonsWrapper>
         {isXLargeDisplay && (
           <StaticButton
-            title={'contact'}
+            title={'Contact'}
             onClickAction={handleContactClick}
           />
         )}
@@ -98,7 +98,8 @@ const ButtonsWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 2rem;
-  /* TODO: this code is temp */
+
+  /* for theme toggler */
   * {
     color: ${({ theme }) => theme.colors.MAIN_FONT};
   }
