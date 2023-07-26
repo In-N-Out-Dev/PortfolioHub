@@ -27,15 +27,17 @@ const Home = () => {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (!entry.isIntersecting) return;
-        MENU_LIST.forEach((menu) => {
-          if (entry.target === refs[menu].current) {
-            setActiveSection(menu);
-          }
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          MENU_LIST.forEach((menu) => {
+            if (entry.target === refs[menu].current) {
+              setActiveSection(menu);
+            }
+          });
         });
       },
-      { threshold: 0.6 },
+      { threshold: 0.5 },
     );
 
     Object.values(refs).forEach((ref) => {

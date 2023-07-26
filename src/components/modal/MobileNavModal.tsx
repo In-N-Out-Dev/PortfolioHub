@@ -19,10 +19,14 @@ const Wrapper = styled.div`
   bottom: 0;
   background-color: ${({ theme }) => theme.colors.BACKGROUND};
   z-index: 9;
-  padding: 10rem 6.5rem 10rem;
+  padding: 10rem 3.8rem 10rem;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+
+  ${({ theme }) => theme.breakPoint.large} {
+    padding: 10rem 6.5rem 10rem;
+  }
 `;
 
 export default MobileNavModal;

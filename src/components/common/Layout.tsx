@@ -42,7 +42,11 @@ const SectionWrapper = styled.div`
   width: 100%;
 
   ${({ theme }) => theme.breakPoint.xlarge} {
-    width: calc(100% - 20rem);
+    width: calc(100% - 25rem);
+  }
+
+  ${({ theme }) => theme.breakPoint.xxlarge} {
+    width: calc(100% - 40rem);
   }
 `;
 

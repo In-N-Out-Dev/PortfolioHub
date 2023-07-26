@@ -25,7 +25,7 @@ const Wrapper = styled.ul`
   flex-wrap: wrap;
   gap: 2.4rem;
 
-  ${({ theme }) => theme.breakPoint.xlarge} {
+  ${({ theme }) => theme.breakPoint.xlarge || theme.breakPoint.large} {
     grid-template-columns: repeat(3, 1fr);
   }
 `;

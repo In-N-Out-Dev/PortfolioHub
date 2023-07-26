@@ -31,7 +31,7 @@ const ButtonWrapper = styled.button<{ isColorInversion: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem 1.4rem;
+  padding: 1.2rem 2rem;
   border-radius: 5rem;
   background: ${({ isColorInversion, theme }) =>
     isColorInversion ? theme.colors.BACKGROUND : theme.colors.MAIN_FONT};
