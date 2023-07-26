@@ -11,6 +11,7 @@ const BlogList = () => {
   return (
     <ListWrapper>
       {!isSmallDisplay && (
+        // add header for list view
         <ListBlogItem
           title="Title"
           image=""
