@@ -19,6 +19,18 @@ const Contact = ({ forwardRef }: SectionProps) => {
 const ContactCard = styled(SectionCard)`
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
+  gap: 6rem;
+  ${({ theme: { breakPoint } }) => {
+    return {
+      [breakPoint.large]: {
+        flexDirection: 'row',
+      },
+      [breakPoint.xlarge]: {
+        flexDirection: 'row',
+      },
+    };
+  }}
 `;
 
 export default Contact;

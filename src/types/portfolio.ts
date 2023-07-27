@@ -4,9 +4,7 @@ export interface PortfolioData {
   start: string;
   end?: string;
   skills: string[];
+  contents: string;
+  description?: string;
+  role?: string;
 }
-
-export type PortfolioCartListProps = {
-  portfolios: PortfolioData[];
-  openedWidth: number;
-};

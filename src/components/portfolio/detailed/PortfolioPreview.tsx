@@ -1,30 +1,31 @@
+import { FC } from 'react';
+
 import styled from '@emotion/styled';
 import LinkArrow from 'assets/LinkArrow';
+import { PortfolioData } from 'types/portfolio';
 
-const PortfolioPreview = () => {
+const PortfolioPreview: FC<{ portfolio: PortfolioData }> = ({ portfolio }) => {
+  const { no, title, skills, start, end, description, role } = portfolio;
   return (
     <Article>
-      <Tag>[01]</Tag>
-      <Title>프로젝트 제목 작성란입니다.</Title>
-      <Contents>
-        프로젝트에 대해서 짧게 1줄 내지 2줄로 작성을 해주세요. 2줄이 최대 리미트 값으로
-        맞춰주세요.맞춰주세요맞춰주세요맞춰주세요맞춰주세요
-      </Contents>
+      <Tag>[{String(no).padStart(2, '0')}]</Tag>
+      <Title>{title}</Title>
+      <Contents>{description}</Contents>
       <Wrap>
         <li>
-          <h4>Date</h4>2023.00.00-2023.00.00
+          <h4>Date</h4>
+          {start}-{end}
         </li>
         <li>
-          <h4>Role</h4>front-end develop
+          <h4>Role</h4>
+          {role}
         </li>
         <li>
           <h4>Skills</h4>
           <SkillsWrap>
-            <Item highlight={false}>Node.js</Item>
-            <Item highlight={false}>Node.js</Item>
-            <Item highlight={false}>Node.js</Item>
-            <Item highlight={false}>Node.js</Item>
-            <Item highlight={false}>Node.js</Item>
+            {skills.map((skill) => (
+              <Item highlight={false}>{skill}</Item>
+            ))}
           </SkillsWrap>
         </li>
         <li>
