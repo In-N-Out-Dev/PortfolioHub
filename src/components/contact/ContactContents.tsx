@@ -11,7 +11,7 @@ const ContactContents = () => {
       <Email>{CONTACT_DATA.email}</Email>
       <List>
         <StackButton url={CONTACT_DATA.github}>
-          {isSmallDisplay ? <img src="/src/assets/img/GitHub.png" /> : 'Github'}
+          {isSmallDisplay ? <img src="/src/assets/img/GitHub.png" /> : 'GitHub'}
         </StackButton>
         <StackButton url={CONTACT_DATA.linkedin}>
           {isSmallDisplay ? <img src="/src/assets/img/LinkedIn.png" /> : 'LinkedIn'}

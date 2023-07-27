@@ -31,10 +31,11 @@ const Border = styled.a`
   cursor: pointer;
 
   :hover {
+    text-decoration: underline;
     ${({ theme: { colors } }) => {
       return {
-        borderColor: colors.HIGHLIGHT,
-        backgroundColor: colors.HIGHLIGHT,
+        borderColor: colors.MAIN_FONT,
+        backgroundColor: colors.MAIN_FONT,
         color: colors.BACKGROUND,
       };
     }};
