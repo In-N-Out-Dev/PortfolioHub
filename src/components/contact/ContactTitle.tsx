@@ -14,6 +14,9 @@ const Title = styled.h2`
   color: ${({ theme }) => theme.colors.MAIN_FONT};
   height: 9rem;
   width: fit-content;
+  ${({ theme }) => theme.breakPoint.small} {
+    height: 6.3rem;
+  }
 `;
 
 const Span = styled.span`
@@ -24,6 +27,9 @@ const Span = styled.span`
   font-size: 12.8rem;
   line-height: 1;
   vertical-align: top;
+  ${({ theme }) => theme.breakPoint.small} {
+    font-size: 8.96rem;
+  }
 `;
 
 const CircleIcon = styled.div`

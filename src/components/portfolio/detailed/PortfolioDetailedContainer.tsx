@@ -1,12 +1,20 @@
+import { FC } from 'react';
+
 import styled from '@emotion/styled';
 import MarkdownRenderer from 'components/common/MarkdownRenderer';
 import PortfolioPreview from 'components/portfolio/detailed/PortfolioPreview';
+import { PortfolioData } from 'types/portfolio';
 
-const PortfolioDetailedContainer = () => {
+interface Props {
+  portfolio: PortfolioData;
+}
+
+const PortfolioDetailedContainer: FC<Props> = ({ portfolio }) => {
+  const { contents } = portfolio;
   return (
     <Section>
-      <PortfolioPreview />
-      <MarkdownRenderer />
+      <PortfolioPreview portfolio={portfolio} />
+      <MarkdownRenderer contents={contents} />
     </Section>
   );
 };

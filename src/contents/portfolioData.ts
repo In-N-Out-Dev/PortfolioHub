@@ -7,6 +7,7 @@ const PORTFOLIO_DATA: PortfolioData[] = [
     end: '2022.05',
     title: '프로젝트 1',
     skills: ['React', 'Redux', 'Node.js', 'MongoDB'],
+    contents: '# 프로젝트 1의 내용입니다.',
   },
   {
     no: 2,
@@ -14,6 +15,7 @@ const PORTFOLIO_DATA: PortfolioData[] = [
     end: '2022.05',
     title: '프로젝트 2',
     skills: ['Next.js', 'Recoil', 'Node.js', 'MongoDB'],
+    contents: '# 프로젝트 2의 내용입니다.',
   },
   {
     no: 3,
@@ -21,6 +23,7 @@ const PORTFOLIO_DATA: PortfolioData[] = [
     end: '2022.05',
     title: '프로젝트 3',
     skills: ['React', 'Redux', 'Node.js', 'MongoDB'],
+    contents: '# 프로젝트 3의 내용입니다.',
   },
   {
     no: 4,
@@ -28,6 +31,7 @@ const PORTFOLIO_DATA: PortfolioData[] = [
     end: '2022.05',
     title: '프로젝트 4',
     skills: ['React', 'Redux', 'Node.js', 'MySQL'],
+    contents: '프로젝트 4의 내용입니다.',
   },
   {
     no: 5,
@@ -35,6 +39,7 @@ const PORTFOLIO_DATA: PortfolioData[] = [
     end: '2022.05',
     title: '프로젝트 5',
     skills: ['React', 'zustand', 'Node.js', 'MongoDB'],
+    contents: '프로젝트 5의 내용입니다.',
   },
   {
     no: 6,
@@ -42,6 +47,7 @@ const PORTFOLIO_DATA: PortfolioData[] = [
     end: '2022.05',
     title: '프로젝트 6',
     skills: ['React', 'Redux', 'Node.js', 'MongoDB'],
+    contents: '프로젝트 6의 내용입니다.',
   },
   {
     no: 7,
@@ -49,6 +55,7 @@ const PORTFOLIO_DATA: PortfolioData[] = [
     end: '2022.11',
     title: '프로젝트 7',
     skills: ['React', 'React-Query', 'Node.js', 'MongoDB'],
+    contents: '프로젝트 7의 내용입니다.',
   },
 ];
 
