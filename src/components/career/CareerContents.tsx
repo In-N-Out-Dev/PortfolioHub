@@ -74,7 +74,7 @@ const CurrentDate = styled.div`
   padding: 1.1rem 1rem;
   font-size: 1.4rem;
   font-weight: 400;
-  color: ${({ theme }) => theme.colors.MAIN_FONT};
+  color: #fff;
   background-color: ${({ theme }) => theme.colors.HIGHLIGHT};
 
   ${({ theme }) => theme.breakPoint.small} {
