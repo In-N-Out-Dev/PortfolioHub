@@ -6,7 +6,7 @@ import { ModalType, useModalStore } from 'stores/useModalStore';
 import BaseModal from './BaseModal';
 
 const PortfolioDetailedModal = () => {
-  const { setIsModalOn, modalState, setComponent } = useModalStore();
+  const { setIsModalOn, modalState, setComponent } = useModalStore((state) => state);
 
   const closeModal = () => {
     setIsModalOn(ModalType.PORTFOLIO_DETAILED, false);
