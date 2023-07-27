@@ -7,7 +7,7 @@ const ContactContents = () => {
     <Article>
       <Email>{CONTACT_DATA.email}</Email>
       <List>
-        <StackButton url={CONTACT_DATA.github}>Github</StackButton>
+        <StackButton url={CONTACT_DATA.github}>GitHub</StackButton>
         <StackButton url={CONTACT_DATA.linkedin}>Linkedin</StackButton>
         <StackButton url={CONTACT_DATA.instagram}>Instagram</StackButton>
       </List>
